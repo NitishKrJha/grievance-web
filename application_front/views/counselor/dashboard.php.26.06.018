@@ -1,0 +1,148 @@
+ <section class="main-container">
+    <div class="container-fluid">
+      <div class="row">
+         <?php echo $this->load->view('layout/counselorLeftMenu') ?>
+        <div class="col-md-7">
+          <div class="top-section top-section-counselor">
+            <div class="dashboard-header" style="background-image: url(<?php echo CSS_IMAGES_JS_BASE_URL;?>images/dashboard-header2.jpg);">
+              <div class="profile-info">
+			  
+			  <?php //foreach($memberData as $details)
+			   //pr($details);
+			   
+			  ?>
+			  <?php //echo $memberData; die;?>
+			  
+                <div class="profile-photo"> <img src="<?php echo $memberData['picture'];?>" alt="avatar"> </div>
+                <div class="profile-des">
+                  <h5> <?php echo $memberData['name'];?> <span class="online-status active"></span></h5>
+                  <p> <?php echo $memberData['profile_heading'];?> </p>
+                </div>
+              </div>
+              <div class="profile-status">
+                <div class="action_wrap"> <a class="bookNwBtnMain" data-toggle="modal" data-target="#booknow" href="#"> <i class="fa fa-calendar" aria-hidden="true"></i> Book Now</a> 
+                  <!-- Modal -->
+                  <div class="modal fade" id="booknow" role="dialog">
+                    <div class="modal-dialog"> 
+                      
+                      <!-- Modal content-->
+                      <div class="modal-content"> <img class="serchIcn" src="<?php echo CSS_IMAGES_JS_BASE_URL;?>images/NoImage.pngg" alt="">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Book A Counselor</h4>
+                        </div>
+                        <div class="modal-body">
+                          <ul>
+                            <li>
+                              <input type="text" class="form-control customFormcontrol" placeholder="Choose start date and time">
+                              <span class="custmIcn"> <i class="fa fa-calendar" aria-hidden="true"></i> </span> </li>
+                            <li>
+                              <input type="text" class="form-control customFormcontrol" placeholder="Choose start date and time">
+                              <span class="custmIcn"> <i class="fa fa-calendar" aria-hidden="true"></i> </span> </li>
+                          </ul>
+                          <a class="showTipsBtn" href="#">Book Now</a> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Modal -->
+                  <ul>
+                    <li><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-video-camera" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btm-section counselorSec ">
+            <div class="row">
+              <div class="col-md-8">
+                <h3 class="des-title cnslrPd"> About Me</h3>
+                <p><?php echo $memberData['about_me'];?></p>
+                <br>
+              </div>
+              <div class="col-md-4"> <span class="brd"></span>
+                <h3 class="des-title">Certificates</h3>
+                <div class="row certificates">
+				<?php foreach($certificate as $certificateImage){?>
+                  <div class="col-md-6 col-xs-6 col-sm-4"><img class="img-responsive" src="<?php echo $certificateImage['certificate']; ?>" alt=""></div>				  
+				<?php } ?>
+				  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 rightSideBar">
+          <div class="contactSec rightcontactSec">
+            <div class="header-title">My Contacts </div>
+             <div class="scrollbar-outer">
+            <ul class="inner-content">
+              <li> <span class="userIcn img-circle"><img src="images/chat-icn1.jpg" alt=""> <span class="onlineActv"></span></span> <span class="textSec">
+                <h3>Jennifer</h3>
+                <p>How are you :)</p>
+                </span> <span class="count">1</span> </li>
+              <li> <span class="userIcn img-circle"><img src="images/chat-icn2.jpg" alt=""> <span class="offline"></span></span> <span class="textSec">
+                <h3>Nataliya</h3>
+                <p>Feeling Awesome...</p>
+                </span> </li>
+              <li> <span class="userIcn img-circle"><img src="images/chat-icn3.jpg" alt=""></span> <span class="textSec">
+                <h3>Angela</h3>
+                <p>Whatsupppp</p>
+                </span> <span class="count">3</span> </li>
+              <li> <span class="userIcn img-circle"><img src="images/chat-icn1.jpg" alt=""></span> <span class="textSec">
+                <h3>Nataliya</h3>
+                <p>Feeling Awesome...</p>
+                </span> </li>
+              <li> <span class="userIcn img-circle"><img src="images/chat-icn2.jpg" alt=""></span> <span class="textSec">
+                <h3>Angela</h3>
+                <p>Whatsupppp</p>
+                </span> <span class="count">3</span> </li>
+            </ul>
+            </div>
+            <div id="custom-search-input">
+              <div class="input-group col-md-12">
+                <input type="text" class="  search-query form-control" placeholder="Search Contact">
+                <span class="input-group-btn">
+                <button class="btn btn-danger" type="button"> <span class=" glyphicon glyphicon-search"></span> </button>
+                </span> </div>
+            </div>
+          </div>
+          
+          <div class="contactSec chatRequests">
+            <div class="header-title">Chat Requests </div>
+           <div class="scrollbar-outer">
+            <ul class="inner-content">
+              <li> <span class="userIcn img-circle"><img src="images/chat-icn1.jpg" alt=""> <span class="onlineActv"></span></span> <span class="textSec">
+                <h3>Jennifer</h3>
+                <p>How are you :)</p>
+                </span> <span class="count"><a href="#">Reply</a></span> </li>
+              <li> <span class="userIcn img-circle"><img src="images/chat-icn2.jpg" alt=""> <span class="offline"></span></span> <span class="textSec">
+                <h3>Nataliya</h3>
+                <p>Feeling Awesome...</p>
+                </span> </li>
+              <li> <span class="userIcn img-circle"><img src="images/chat-icn3.jpg" alt=""></span> <span class="textSec">
+                <h3>Angela</h3>
+                <p>Whatsupppp....</p>
+                </span> <span class="count"><a href="#">Reply</a></span> </li>
+              <li> <span class="userIcn img-circle"><img src="images/chat-icn1.jpg" alt=""> <span class="onlineActv"></span></span> <span class="textSec">
+                <h3>Nataliya</h3>
+                <p>Feeling Awesome...</p>
+                </span> </li>
+              <li> <span class="userIcn img-circle"><img src="images/chat-icn2.jpg" alt=""> <span class="offline"></span></span> <span class="textSec">
+                <h3>Jennifer</h3>
+                <p>How are you :)</p>
+                </span> <span class="count"><a href="#">Reply</a></span> </li>
+              <li> <span class="userIcn img-circle"><img src="images/chat-icn3.jpg" alt=""></span> <span class="textSec">
+                <h3>Angela</h3>
+                <p>How are you :)</p>
+                </span> </li>
+            </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          
+        </div>
+      </div>
+    </div>
+  </section>

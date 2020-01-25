@@ -1,0 +1,51 @@
+<?php 
+$ctrl = $this->uri->segment(1);
+$action = $this->uri->segment(2);
+if($this->nsession->userdata('member_session_membertype')==1){
+    $profile_link = base_url('member/profile');
+}else{
+    $profile_link = base_url('counselor/dashboard');
+}
+$actionArr = array('appearance','lifestyle','relationship','background','activities','pet','zodiac','politics','vacation');
+?>
+<div class="col-md-2">
+    <div class="dashboard-nav">
+        <div class="dashboard-list">
+            <ul id="left_menu">
+                <li class="<?php if(in_array($action,$actionArr)) { echo "active"; }?>">
+                <a data-toggle="collapse" data-target="#matchMkng" href="#">My Account</a>
+                <ul id="matchMkng" class="collapse <?php if(in_array($action,$actionArr)) { echo "in"; }?>">
+                    	<li class="<?php if($ctrl=="member" && $action=="appearance"){echo "active";}?>"><a href="<?php echo base_url("member/appearance")?>">Appearance</a></li>
+                        <li class="<?php if($ctrl=="member" && $action=="lifestyle"){echo "active";}?>"><a href="<?php echo base_url("member/lifestyle")?>">Lifestyle</a></li>
+                        <li class="<?php if($ctrl=="member" && $action=="relationship"){echo "active";}?>"><a href="<?php echo base_url("member/relationship")?>">Relationship</a></li>
+                        <li class="<?php if($ctrl=="member" && $action=="background"){echo "active";}?>"><a href="<?php echo base_url("member/background")?>">Background</a></li>
+                        <li class="<?php if($ctrl=="member" && $action=="activities"){echo "active";}?>"><a href="<?php echo base_url("member/activities")?>">Activities/Exercise</a></li>
+                        <li class="<?php if($ctrl=="member" && $action=="pet"){echo "active";}?>"><a href="<?php echo base_url("member/pet")?>">Pet</a></li>
+                        <li class="<?php if($ctrl=="member" && $action=="zodiac"){echo "active";}?>"><a href="<?php echo base_url("member/zodiac")?>">Zodiac </a></li>
+                        <li class="<?php if($ctrl=="member" && $action=="politics"){echo "active";}?>"><a href="<?php echo base_url("member/politics")?>">Politics</a></li>
+                        <li class="<?php if($ctrl=="member" && $action=="vacation"){echo "active";}?>"><a href="<?php echo base_url("member/vacation")?>">Vacation</a></li>
+                    </ul>
+                </li>
+                <li class="<?php if($ctrl=="member" && $action=="profile"){echo "active";}?>"><a href="<?php echo $profile_link;?>"> Profile</a></li>                
+                <li class="<?php 
+					$data = $ctrl=="member" && $action=="counselor";
+					$data1 = $ctrl=="counselor" && $action=="profile";
+					if($data || $data1)
+					{echo "active";}?>">
+				<a href="<?php echo base_url('member/counselor') ?>"> Counselling</a></li>
+                <!--<li ><a href="#"> Chat/Message</a></li>-->
+                <li class="<?php if($ctrl=="member" && $action=="membershipplan"){echo "active";}?>"><a href="<?php echo base_url('member/membershipplan') ?>"> Membership </a></li>
+                <!--<li><a href="#"> My Contact</a></li>-->
+                <!--<li class="<?php if($ctrl=="member" && $action=="search"){echo "active";}?>"><a href="<?php echo base_url('member/search') ?>"> Search</a></li>-->
+                <li><a href="#" data-toggle="modal" data-target="#interests"> Interest</a></li>
+                <li class="<?php $data1 = $ctrl=="tips" && $action==""; $data = $ctrl=="tips" && $action=="viewdetails"; if($data1 || $data){echo "active";}?>"><a href="<?php echo base_url('tips') ?>"> Tips </a></li>
+                <li><a href="<?= base_url('member/favourite')?>"> Favorites</a></li>
+                <li class="<?php if($ctrl=="member" && $action=="mymatch"){echo "active";}?>"><a href="<?php echo base_url('member/mymatch') ?>"> My Matches</a></li>
+				
+				<li class="<?php if($ctrl=="member" && $action=="block_member_list"){echo "active";}?>"><a href="<?php echo base_url('member/block_member_list') ?>">Block Member </a></li>
+				
+                <li><a href="<?php echo base_url('logout') ?>"> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

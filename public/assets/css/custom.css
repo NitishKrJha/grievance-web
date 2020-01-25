@@ -1,0 +1,128 @@
+/* Write your custom CSS here */
+#container {
+height: 100%;
+width: 100%;
+}
+.login-body {
+background-color: #f1f2f7;
+}
+.form-signin {
+background: #fff none repeat scroll 0 0;
+border-radius: 5px;
+margin: 25px auto 0;
+max-width: 650px;
+}
+.form-signin h2.form-signin-heading {
+background: #41cac0 none repeat scroll 0 0;
+border-radius: 5px 5px 0 0;
+color: #fff;
+font-family: "Open Sans",sans-serif;
+font-size: 18px;
+font-weight: 300;
+margin: 0;
+padding: 12px 15px;
+text-align: center;
+text-transform: uppercase;
+}
+.form-signin .checkbox {
+margin-bottom: 14px;
+}
+.form-signin .checkbox {
+color: #b6b6b6;
+font-family: "Open Sans",sans-serif;
+font-weight: 300;
+float:left;
+}
+.form-signin .form-control {
+box-sizing: border-box;
+font-size: 16px;
+height: auto;
+padding: 10px;
+position: relative;
+}
+.form-signin .form-control:focus {
+z-index: 2;
+}
+.form-signin input[type="text"], .form-signin input[type="password"] {
+border: 1px solid #eaeaea;
+border-radius: 5px;
+box-shadow: none;
+font-size: 12px;
+margin-bottom: 5px;
+}
+.form-signin .btn-login {
+background: #f67a6e none repeat scroll 0 0;
+box-shadow: 0 4px #e56b60;
+color: #fff;
+font-family: "Open Sans",sans-serif;
+font-weight: 300;
+margin-bottom: 20px;
+text-transform: uppercase;
+}
+.form-signin p {
+color: #41CAC0;
+font-size: 16px;
+font-weight: 300;
+text-align: left;
+}
+
+.form-signin label {
+  display: inline-block;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-align: left;
+}
+.form-signin .form-group {
+  text-align: left;
+}
+.form-signin a {
+color: #41cac0;
+}
+.form-signin a:hover {
+color: #b6b6b6;
+}
+.login-wrap {
+  padding: 10px 20px;
+}
+.login-social-link {
+display: inline-block;
+margin-bottom: 15px;
+margin-top: 20px;
+}
+.login-social-link a {
+border-radius: 4px;
+color: #fff;
+padding: 15px 28px;
+}
+.login-social-link a:hover {
+color: #fff;
+}
+.login-social-link a i {
+font-size: 20px;
+padding-right: 10px;
+}
+.login-social-link a.facebook {
+background: #5193ea none repeat scroll 0 0;
+box-shadow: 0 4px #2775e2;
+float: left;
+margin-right: 22px;
+}
+.login-social-link a.twitter {
+background: #44ccfe none repeat scroll 0 0;
+box-shadow: 0 4px #2bb4e8;
+float: left;
+}
+.small.red.text-warning {
+  margin-bottom: 6px;
+  text-align: left;
+  color: red;
+}
+.login-wrap .form-group {
+  float: left;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  width: 48%;
+}
+#addEdit textarea {
+    height: 34px;
+}

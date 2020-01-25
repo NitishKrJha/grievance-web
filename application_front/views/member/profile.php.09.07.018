@@ -1,0 +1,92 @@
+<?php //pr($memberMoreData); ?>
+<section class="main-container">
+    <div class="container-fluid">
+        <div class="row">
+            <?php $this->load->view('layout/member_left_menu')?>
+            <div class="col-md-10">
+                <?php $this->load->view('layout/member_view')?>
+                <div class="btm-section">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="des-title"> About Me</h3>
+                            <p><?php echo $memberData['about_me']?></p><br>
+                            <h3 class="des-title"> Details </h3>
+                            <div class="table-borderless">
+                                <table class="table w-100 ">
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Looking For </strong>
+                                                <?php
+                                                    switch ($memberData['interested_in']){
+                                                        case 1:
+                                                            echo "Male";
+                                                            break;
+                                                        case 2:
+                                                            echo "Female";
+                                                            break;
+                                                        case 3:
+                                                            echo "Both";
+                                                            break;
+                                                    }
+                                                ?>
+                                            </td>
+                                            <td><strong>Income</strong> $ <?php echo isset($memberMoreData['income'])?$memberMoreData['income']:''; ?> </td>
+                                            <td><strong>Hair Type</strong> <?php echo isset($memberMoreData['hairType'])?$memberMoreData['hairType']:''; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Ethnicity </strong> <?php echo isset($memberMoreData['ethnicityType'])?$memberMoreData['ethnicityType']:''; ?> </td>
+                                            <td><strong>Children </strong> <?php echo isset($memberMoreData['have_kids'])?$memberMoreData['have_kids']:''; ?> </td>
+                                            <td><strong>Language</strong> <?php echo isset($memberMoreData['languageType'])?$memberMoreData['languageType']:''; ?> </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Education</strong><?php echo isset($memberMoreData['educationType'])?$memberMoreData['educationType']:''; ?></td>
+                                            <td><strong>Smokes</strong> <?php
+                                                switch (isset($memberMoreData['smoking'])?$memberMoreData['smoking']:''){
+                                                    case 1:
+                                                        echo "Non Smoker";
+                                                        break;
+                                                    case 2:
+                                                        echo "Light Smoker";
+                                                        break;
+                                                    case 3:
+                                                        echo "High Smoker";
+                                                        break;
+                                                }
+                                                ?></td>
+                                            <td><strong>Body Type</strong> <?php echo isset($memberMoreData['bodyType'])?$memberMoreData['bodyType']:''; ?></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+						
+						
+						<div class="col-md-12 chkBx" >
+                       		
+							<h3 class="des-title"> My Interest </h3>
+						<span class="checkboxSec" >
+                            <ul class="unstyled ">
+                                <?php                                
+									if(!empty($memberInterest)){
+										foreach ($memberInterest as $interestDetails){									
+									?>
+                                        <li>
+                                      
+                                       <strong> <?php echo $interestDetails['name']; ?></strong>
+                                      </li>
+                                    <?php  } } ?>
+                              </ul>
+                        </span>
+                       </div>
+						
+						
+						
+						
+                    </div>
+                </div>
+            </div>
+            <?php //echo $this->load->view('layout/memberMyContact'); ?>
+            <?php //echo $this->load->view('layout/memberChatRequest'); ?>
+        </div>
+    </div>
+</section>

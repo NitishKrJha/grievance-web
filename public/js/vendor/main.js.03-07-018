@@ -1,0 +1,17 @@
+/* var $ = jQuery.noConflict();
+(function($) {
+    "use strict";
+    $('#left_menu').slicknav({
+        label: 'Menu',
+        prependTo: '.dashboard-nav'
+    });
+
+})(jQuery);
+
+$(document).ready(function () {
+	
+ jQuery(document).ready(function(){
+    jQuery(".scrollbar-outer").scrollbar();
+});
+	
+}); */

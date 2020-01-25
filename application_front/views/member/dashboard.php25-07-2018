@@ -1,0 +1,281 @@
+<link rel="stylesheet" href="<?php echo CSS_IMAGES_JS_BASE_URL; ?>css/owl.carousel.min.css">
+<link rel="stylesheet" href="<?php echo CSS_IMAGES_JS_BASE_URL; ?>css/owl.theme.default.min.css">
+<script>
+var page='dashboard';
+</script>
+<section class="main-container">
+    <div class="container-fluid">
+      <div class="row">
+       <?php $this->load->view('layout/member_left_menu')?>
+        <div class="col-md-10">
+          <div class="dashboardSec">
+            <div class="row">
+              <div class="col-md-6" >
+                <div class="owl-carousel owl-theme" id="dashboardSecSlid">
+				<?php 
+				if(!empty($maches['result'])){ foreach($maches['result'] as $k=>$val){ 
+				$city_name = get_where('cities',array('id'=>$val['city'])); 
+					$state = get_where('states',array('id'=>$val['state']));
+					if($val['maritial_status']==3)
+					{
+						$marital_status = "Divorced";
+					}
+					else if($val['maritial_status']==2)
+					{
+						$marital_status = "Married";
+					}
+					else{
+						$marital_status = "Single";
+					}
+					//height
+					$height = isset($val['member_details'][0]['height'])?$val['member_details'][0]['height']:'';
+					$height_cm = $height*2.54;
+					//want kids
+					if(isset($val['member_details'][0]['want_kids']) && $val['member_details'][0]['want_kids']==1 )
+					{
+						$want_kids = "Yes";
+					}
+					else{
+						$want_kids = "No";
+					}
+					 //have kids
+					 $have_kids = isset($val['member_details'][0]['have_kids'])?$val['member_details'][0]['have_kids']:'No';
+					 //faith
+					 $faith =  isset($val['member_details'][0]['faith'])&& ($val['member_details'][0]['faith']>0)?$val['member_details'][0]['faith']:'No Faith';
+					 //smoking
+					 if(isset($val['member_details'][0]['faith']) && $val['member_details'][0]['smoking']==1)
+					 {
+						 $smoking = "Non-Smoker";
+					 }
+					 else if(isset($val['member_details'][0]['faith']) && $val['member_details'][0]['smoking']==2)
+					 {
+						  $smoking = "Light-Smoker";
+					 }
+					 else if(isset($val['member_details'][0]['faith']) && $val['member_details'][0]['smoking']==3)
+					 {
+						  $smoking = "High-Smoker";
+					 }
+					 else{
+						  $smoking = "Unknown";
+					}
+					//drinker
+					if(isset($val['member_details'][0]['drinking']) && $val['member_details'][0]['drinking']==1)
+					 {
+						 $drinking = "Non-Drinker";
+					 }
+					 else if(isset($val['member_details'][0]['faith']) && $val['member_details'][0]['drinking']==2)
+					 {
+						  $drinking = "Light-Drinker";
+					 }
+					 else if(isset($val['member_details'][0]['faith']) && $val['member_details'][0]['drinking']==3)
+					 {
+						  $drinking = "High-Drinker";
+					 }
+					 else{
+						  $drinking = "Unknown";
+					}
+					$favourite = $this->db->where('member_id',$user_id)->where('favorite_member_id',$val['member_id'])->get('my_favorite')->result_array();
+					
+					if(!empty($favourite))
+					{
+						$is_favourite = 1;
+					}
+					else{
+						$is_favourite = 0;
+					}
+				?>
+                    <div class=" item">
+                    <div class="box"> 
+				<?php	if(!empty($favourite) && $favourite[0]['is_delete']==1){ ?>
+					<a class="like heart-dropdwnMenu "  onclick="my_favaourite(<?=$val['member_id']?>,this)" href="javascript:void(0)"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                    <ul class="like-dropdwnMenu">
+                    	<li><a href="#">Likes</a></li>
+                        <li><a href="#">Yes rating</a></li>
+                        <li><a href="#">Winks</a></li>
+                        <li><a href="#">Faves</a></li>
+                        <li><a href="#">Phonebook</a></li>
+                    </ul>
+                    
+                     
+					<?php } else { ?>
+					<a class="like heart-dropdwnMenu" onclick="my_favaourite(<?=$val['member_id']?>,this)" href="javascript:void(0)"><i class="fa fa-heart fa fa-heart-o" aria-hidden="true"></i></a>
+                    <ul class="like-dropdwnMenu">
+                    	<li><a href="#">Likes</a></li>
+                        <li><a href="#">Yes rating</a></li>
+                        <li><a href="#">Winks</a></li>
+                        <li><a href="#">Faves</a></li>
+                        <li><a href="#">Phonebook</a></li>
+                    </ul>
+					<?php } ?>
+                      <h3>Daily Match</h3>
+                      <img class="mainPrfl-img" src="<?= $val['picture'] ?>" alt="">
+                      <div class="details">
+                        <h2><?= $val['name']?></h2>
+                        <p><?= $val['age']?> • <?=isset($city_name[0]['name'])?$city_name[0]['name']:'N/A' ?><?= isset($state[0]['name'])?",".$state[0]['name']:'' ?></p>
+                        <ul>
+                          <li><i class="fa fa-address-book" aria-hidden="true"></i><!--<img src="<?php //echo CSS_IMAGES_JS_BASE_URL;?>images/relation.png" alt="Relationship">--> <?=$marital_status?>
+                          	
+                          </li>
+                          <li><i class="fa fa-level-up" aria-hidden="true"></i> <!--<img src="<?php //echo CSS_IMAGES_JS_BASE_URL;?>images/height.png" alt="Height">--><?=$height?>" (<?=$height_cm ?> cm)</li>
+                          <li><i class="fa fa-child" aria-hidden="true"></i> <!--<img src="<?php //echo CSS_IMAGES_JS_BASE_URL;?>images/kids.png" alt="Want Kids">--><?= $want_kids ?></li>
+                          <li><i class="fa fa-grav" aria-hidden="true"></i> <!--<img src="<?php //echo CSS_IMAGES_JS_BASE_URL;?>images/have-kids.png" alt="Have Kids">--><?= $have_kids?></li>
+                          <li><i class="fa fa-hand-paper-o" aria-hidden="true"></i> <!--<img src="<?php echo CSS_IMAGES_JS_BASE_URL;?>images/hand.png" alt="Faith">--><?= $faith ?></li>
+                          <li><i class="fa fa-fire" aria-hidden="true"></i> <!--<img src="<?php //echo CSS_IMAGES_JS_BASE_URL;?>images/cigar.png" alt="Smoke">--> <?=$smoking?></li>
+                          <li><i class="fa fa-glass" aria-hidden="true"></i> <!--<img src="<?php echo CSS_IMAGES_JS_BASE_URL;?>images/drink.png" alt="Drink">--><?=$drinking?></li>
+                        </ul>
+                      </div>
+                      <div class="clearfix"></div>
+                      <p><?=substr($val['about_me'], 0, 250); ?>..</p>
+                    </div>
+                  </div>
+				<?php }}else { ?>
+				No Matches Found
+				<?php } ?>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row recentMatch">
+                  <h3>recent match</h3>
+				  <?php if(!empty($maches['result'])){ foreach($maches['result'] as $k=>$val){ if($k <6){ ?>
+                  <div class="col-md-4 col-sm-4">
+                    <div class="myMatch">
+                      <figure><img src="<?=$val['picture']?>" alt=""></figure>
+                      <div class="textSec">
+                        <p><a href="#"><?=$val['name']?>,<?=$val['age']?></a></p>
+                      </div>
+                    </div>
+                  </div>
+				  <?php }} } else {?>
+				  No Matches Found
+				  <?php } ?>
+                </div>
+              </div>
+             <!-- <div class="col-md-6">
+                <div class="row callMissCall">
+                  <div class="col-lg-12">
+                    <h3>Call / Miss Call</h3>
+                    <a href="#" class="btn btn-sq btn-success"> <img class="img-circle" src="images/chat-icn3.jpg" alt=""> <span class="name">Elen</span> Call </a> <a href="#" class="btn btn-sq btn-danger"> <img class="img-circle" src="images/chat-icn3.jpg" alt=""> <span class="name">Elen</span>Miss Call </a> <a href="#" class="btn btn-sq btn-success"> <img class="img-circle" src="images/chat-icn3.jpg" alt=""> <span class="name">Elen</span> Call </a> <a href="#" class="btn btn-sq btn-danger"> <img class="img-circle" src="images/chat-icn3.jpg" alt=""> <span class="name">Elen</span>Miss Call </a> <a href="#" class="btn btn-sq btn-success"> <img class="img-circle" src="images/chat-icn3.jpg" alt=""> <span class="name">Elen</span> Call </a> <a href="#" class="btn btn-sq btn-danger"> <img class="img-circle" src="images/chat-icn3.jpg" alt=""> <span class="name">Elen</span>Miss Call </a> <a href="#" class="btn btn-sq btn-success"> <img class="img-circle" src="images/chat-icn3.jpg" alt=""> <span class="name">Elen</span>Call </a> <a href="#" class="btn btn-sq btn-danger"> <img class="img-circle" src="images/chat-icn3.jpg" alt=""> <span class="name">Elen</span>Miss Call </a> <a href="#" class="btn btn-sq btn-success"> <img class="img-circle" src="images/chat-icn3.jpg" alt=""> <span class="name">Elen</span>Call </a> <a href="#" class="btn btn-sq btn-danger"> <img class="img-circle" src="images/chat-icn3.jpg" alt=""> <span class="name">Elen</span>Miss Call </a> </div>
+                </div>
+              </div> -->
+             <div class="col-md-6">
+                <div class="contactSec chatRequests">
+                  <div class="header-title">Chats / Message </div>
+                  <div class="scrollbar-outer">
+                    <ul class="inner-content chatReqList">
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="<?php echo CSS_IMAGES_JS_BASE_URL;?>js/vendor/owl.carousel.min.js"></script> 
+  <script>
+   function my_favaourite(member_id,obj)
+	{
+		
+		$.ajax({
+			
+			url:'<?= base_url('member/my_favaourite')?>',
+			method:'POST',
+			data:{'member_id':member_id},
+			type:'json',
+			success:function(data){
+				//window.location.reload();
+			}
+			
+		})
+		var crnt_class = $(obj).children().attr('class');
+		if(crnt_class == 'fa fa-heart')
+		{
+			$(obj).children().attr('class','fa fa-heart fa fa-heart-o');
+		}
+		else{
+			$(obj).children().attr('class','fa fa-heart');
+		}
+	}
+ $(function(){
+	 
+  
+
+$("#dashboardSecSlid").owlCarousel({
+        autoplay: false,
+        items : 1, 
+		navText: true,
+		dots: false, 
+		loop:false,      
+		nav : true,
+		mouseDrag:true,
+		lazyLoad : false,
+		responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        900:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+      });
+
+$("#dailyMatcheSlid").owlCarousel({
+        autoplay: false,
+        items : 1, 
+		navText: true,
+		dots: false, 
+		loop:false,      
+		nav : true,
+		mouseDrag:true,
+		lazyLoad : false,
+		responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        900:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+      });
+});
+ 
+  </script>
+ 
+<script>
+  	$(".heart-dropdwnMenu").click(function(){
+    $(".like-dropdwnMenu").toggle(300);
+});
+  </script>
+  <div class="chat-window" style="display:none;">
+    <div class="top-chat-section">
+      <div class="leftSec"> <span><img src="" class="chatWithImg" alt=""></span> <strong class="chatWithName"></strong> </div>
+      <div class="rightSec" id="closeBTNs"> <a href="javascript:void(0);" class="hideParent"><i class="fa fa-times" aria-hidden="true"></i></a> </div>
+    </div>
+    <div class="scrollbar-outer" id="chatboxcontentDataAccess">
+    	<ul class="inner-chat-section inner-content chatboxcontent">
+              
+              
+    	</ul>
+    </div>
+	<div class="typeYourMesg"> <!--<a href="#"><i class="material-icons">attach_file</i></a>-->
+		
+		<div id="addLBTN">
+			 	
+		</div>
+		
+	</div>
+</div>

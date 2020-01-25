@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('CenturyGothic-Bold.woff2') format('woff2'),
+        url('CenturyGothic-Bold.woff') format('woff'),
+        url('CenturyGothic-Bold.svg#CenturyGothic-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Freestyle Script';
+    src: url('FreestyleScript-Regular.woff2') format('woff2'),
+        url('FreestyleScript-Regular.woff') format('woff'),
+        url('FreestyleScript-Regular.svg#FreestyleScript-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

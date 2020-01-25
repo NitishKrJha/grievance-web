@@ -1,0 +1,275 @@
+@charset "utf-8";
+/* CSS Document */
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media only screen and (max-width: 1400px) {
+    
+}
+
+@media screen and (max-width: 1199px) {	
+.activity_btn a {
+  padding: 8px 17px 10px;
+}
+.activity_btn img {
+  margin-left: 7px;
+}
+.navbar-default .navbar-nav > li {
+  font-size: 14px;
+}
+.navbar-default .navbar-nav > li > a {
+  margin-right: 20px;
+}
+.post_btn a {
+  padding: 5px 13px;
+}
+.banner {
+  min-height:inherit;
+  z-index: 9;
+}
+.camera_caption {
+  top: 15%;
+  width:52% !important;
+  bottom:15%;
+}
+.camera_wrap .camera_pag .camera_pag_ul {
+  right: 46%;
+}
+.banner_form_sec {
+  top: 64%;
+  width: 50%;
+}
+.rd-mailform1 select {
+  width: 72%;
+}
+.btn-send_1 {
+  padding: 6px 10px;
+}
+.about_wrap {
+  padding: 40px 0;
+}
+.about_img {
+  height: 224px;
+}
+.about_icon a {
+  margin-top: 8px;
+}
+}
+
+@media screen and (max-width: 991px) {	
+.post_btn a {
+  padding: 3px 10px;
+  font-size:13px;
+}
+.navbar-default .navbar-nav > li {
+  font-size: 13px;
+}
+.navbar-default .navbar-nav > li > a {
+  margin-right: 14px;
+}
+.top-menu {
+  margin-top: 20px;
+}
+.activity_btn a {
+  font-size: 12px;
+  padding: 4px 4px 5px;
+}
+.activity_btn img {
+  margin-left: 5px;
+}
+.dropdown_activity_menu {
+  bottom: -82px;
+}
+.dropdown_activity_menu ul li a {
+  padding: 4px 0;
+  width: 110px;
+}
+.camera_caption {
+  padding: 15px 10px 0;
+  bottom:24%;
+}
+.camera_caption > div {
+  padding: 6px;
+}
+.camera_caption h4 {
+  font-size: 18px;
+}
+.camera_caption h2 {
+  font-size: 92px;
+  margin: -2px 0 0;
+}
+.camera_caption h3 {
+  font-size: 17px;
+  margin: -5px 0 0;
+}
+.banner_form_sec {
+  top: 47%;
+  width: 57%;
+}
+.form-group {
+  padding: 0 0 0 5px;
+}
+.btn-send_1 {
+  margin-left: -3px;
+  padding: 6px 8px;
+}
+.camera_wrap .camera_pag .camera_pag_ul {
+  margin-top: -40px !important;
+}
+.about_wrap {
+  padding: 30px 0;
+}
+.about_icon {
+  margin-left: 20px;
+}
+.about_img {
+  height: 200px;
+}
+.about_icon a {
+  font-size: 16px;
+}
+.mar_left_desk {
+	margin-left:10px;	
+	margin-right:0px;	
+}
+}
+@media screen and (max-width: 767px) {
+.header {
+  background: #0b0d0a none repeat scroll 0 0;
+  position: static;
+}
+.logo {
+  margin: 10px 0 0 0;
+  width: 40%;
+}
+.post_btn {
+  float: right;
+  margin-left: 0;
+  margin-top: -40px;
+}
+.top-menu {
+  float: none;
+  margin-top: 0;
+  position: relative;
+}
+.dropdown_activity_menu {
+  z-index: 999;
+}
+.activity_btn {
+  margin: 16px 0 0;
+  position: absolute;
+  width: 35%;
+  z-index: 99;
+}
+.pull-right {
+  float: none !important;
+}
+.mar_left_desk {
+	margin-left:0px;	
+	margin-right:0px;	
+}
+.navbar-nav {
+  margin: 0;
+  width: 100%;
+}
+.camera_caption {
+  padding: 15px 0 0;
+  width: 80% !important;
+  top: 3%;
+}
+.camera_caption h4 {
+  font-size: 14px;
+}
+.camera_caption h2 {
+  font-size: 73px;
+}
+.camera_caption h3 {
+  font-size: 12px;
+}
+.banner_form_sec {
+  transform: translateX(0);
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  padding: 0;
+  position: static;
+  margin-top:14px;
+}
+.rd-mailform1 {
+  background: rgba(0, 0, 0, 0.18) none repeat scroll 0 0;
+  border-radius: 15px;
+  padding: 8px;
+}
+.rd-mailform1 {
+  background: rgba(0, 0, 0, 0.18) none repeat scroll 0 0;
+}
+form {
+  padding: 5px 7px;
+}
+.form-group {
+  border-right: 0 none !important;
+  margin-bottom: 6px;
+  padding: 0 0 0 5px;
+}
+.rd-mailform1 select {
+  border: 1px solid #e9e9e9;
+  width: 85%;
+}
+.btn-send_1 {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 6px 0;
+  text-align: center;
+  width: 100%;
+}
+button img {
+  display: block;
+  margin: auto;
+}
+.no_padding {
+  padding: 0 15px;
+}
+.camera_wrap .camera_pag .camera_pag_ul {
+  right: 40%;
+}
+.about_wrap {
+  padding: 20px 0 0;
+}
+.about_icon {
+  margin-left: 0;
+}
+.about_img {
+  height: 264px;
+}
+.about_wrap .col-sm-6 {
+  margin-bottom: 20px;
+}
+.about_icon a {
+  font-size: 18px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+.footer {
+  padding: 12px 0;
+}
+.footer_bottom p {
+  font-size: 11px;
+  line-height: 18px;
+}
+.footer_bottom a {
+  font-size: 11px;
+}
+}
+
+
+@media only screen and (max-width: 479px) {
+
+}
+
+@media only screen and (max-width: 320px) {
+
+}
+
+
