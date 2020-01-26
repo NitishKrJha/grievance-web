@@ -10,12 +10,7 @@ class Logout extends CI_Controller {
 
 	function index()
 	{
-		//set online status
-		$update_status['online_status']=0;
-		$this->db->where('id',$this->nsession->userdata('member_session_id'))->update('member',$update_status);
-		$this->facebook->destroy_session();	
 		$this->nsession->destroy();
-		delete_cookie('mmr_user_id');
 		redirect(base_url());
 	}
 	

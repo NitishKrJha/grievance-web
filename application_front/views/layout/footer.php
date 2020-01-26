@@ -28,289 +28,130 @@ $global_youtube_url = $this->functions->getGlobalInfo('global_youtube_url');
 $global_linkedin_url = $this->functions->getGlobalInfo('global_linkdin_url');
 $global_instagram_url = $this->functions->getGlobalInfo('global_instagram_url');
 ?>
-<!-- Modal -->
-<!--chat-window--> 
-			
-					  
-<div id="videoChat111111" class="modal fade in" role="dialog" data-backdrop="static" data-keyboard="false">
-  <div class="modal-dialog">
-	<!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">×</button>
-        <h4 class="modal-title">Video Chat</h4>
-      </div>
-      <div class="modal-body">
-      	<div class="video-popup-leftBx"><!-- Left Video Box-->
-        	<div id="remote-media">
-            	<div class="video-popup-smallBx" id="local-media"><!-- Left Video Box-->
-            	
-            	</div>
-        	</div>
-        </div>
-	  </div>
-      <div class="clearfix"></div>	
-      <div class="modal-footer" style="text-align:center;">
-			<button type="button" class="btn showTipsBtn btn-success acceptCall" id="acceptCall">Accept</button>
-			<button type="button" class="btn showTipsBtn btn-danger rejectCall" id="rejectCall">Reject</button>
-      </div>
-	</div>
-  </div>
-</div>	
-
-
-<div id="videoChat" class="modal fade in" role="dialog" data-backdrop="static" data-keyboard="false">
-  <div class="modal-dialog">
-	<!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <!-- <button type="button" class="close" data-dismiss="modal">×</button> -->
-        <h4 class="modal-title text-center">MMR Video Chat</h4>
-      </div>
-      <div class="modal-body">
-			<div class="video_call_thumb">
-				<img id="imgsrcforvid" src="https://www.mymissingrib.com//uploads//profile_pic/tmp/1532525804download_(6)_thumb.jpg" alt="" >
-			</div>
-			<div class="video_call_name">
-				<h4></h4>
-			</div>
-      	<div class="video-popup-leftBx"><!-- Left Video Box-->
-        	<div id="remote-media111">
-            
-            	<div class="video-popup-smallBx111 bxvid" id="local-media111"><!-- Left Video Box-->
-				<!-- <i class="Phone is-animating"></i> -->
-				<div class='phone'>
-					<a href="#">
-						<div class="quick-alo-ph-circle"></div>
-						<div class="quick-alo-ph-circle-fill"></div>
-						<div class="quick-alo-ph-img-circle"></div>
-					</a>
-					</div>
-            	</div>
-        	</div>
-        </div>
-	  </div>
-      <div class="clearfix"></div>	
-      <div class="modal-footer" style="text-align:center;">
-			<button type="button" class="btn showTipsBtn btn-success acceptCall" id="acceptCall" style="display: none;">Accept</button>
-			<button type="button" class="btn showTipsBtn btn-danger rejectCall" id="rejectCall">Reject</button>
-      </div>
-	</div>
-  </div>
-</div>				  
-					  
-<!-- Modal for image -->
-<!-- Modal -->
-                  <div class="modal fade modal-img" id="image_modal" role="dialog">
-                    <div class="modal-dialog"> 
-                      
-                      <!-- Modal content-->
-                      <div class="modal-content"> <img class="serchIcn" src="" alt="">
-                        <div class="modal-header">
-                          <button type="button" class="close closedivtohid" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title"></h4>
-                        </div>
-                        <div class="modal-body">
-						   <img src="https://www.mymissingrib.com//uploads/profile_pic/1532412342bg19.jpg" alt="avatar" id="modal_pop_image">
+<!--====== FOOTER 1 ==========-->
+<section>
+		<div class="rows">
+				<div class="footer1 home_title tb-space">
+						<div class="pla1 container">
+								<!-- FOOTER OFFER 1 -->
+								<div class="col-md-3 col-sm-6 col-xs-12">
+										<div class="disco">
+												<h3>30%<span>OFF</span></h3>
+												<h4>Eiffel Tower,Rome</h4>
+												<p>valid only for 24th Dec</p> <a href="booking.html">Book Now</a> </div>
+								</div>
+								<!-- FOOTER OFFER 2 -->
+								<div class="col-md-3 col-sm-6 col-xs-12">
+										<div class="disco1 disco">
+												<h3>42%<span>OFF</span></h3>
+												<h4>Colosseum,Burj Al Arab</h4>
+												<p>valid only for 18th Nov</p> <a href="booking.html">Book Now</a> </div>
+								</div>
+								<!-- FOOTER MOST POPULAR VACATIONS -->
+								<div class="col-md-6 col-sm-12 col-xs-12 foot-spec footer_places">
+										<h4><span>Most Popular</span> Vacations</h4>
+										<ul>
+												<li><a href="tour-details.html">Angkor Wat</a> </li>
+												<li><a href="tour-details.html">Buckingham Palace</a> </li>
+												<li><a href="tour-details.html">High Line</a> </li>
+												<li><a href="tour-details.html">Sagrada Família</a> </li>
+												<li><a href="tour-details.html">Statue of Liberty </a> </li>
+												<li><a href="tour-details.html">Notre Dame de Paris</a> </li>
+												<li><a href="tour-details.html">Taj Mahal</a> </li>
+												<li><a href="tour-details.html">The Louvre</a> </li>
+												<li><a href="tour-details.html">Tate Modern, London</a> </li>
+												<li><a href="tour-details.html">Gothic Quarter</a> </li>
+												<li><a href="tour-details.html">Table Mountain</a> </li>
+												<li><a href="tour-details.html">Bayon</a> </li>
+												<li><a href="tour-details.html">Great Wall of China</a> </li>
+												<li><a href="tour-details.html">Hermitage Museum</a> </li>
+												<li><a href="tour-details.html">Yellowstone</a> </li>
+												<li><a href="tour-details.html">Musée d'Orsay</a> </li>
+										</ul>
+								</div>
 						</div>
-						</form>
-                      </div>
-                    </div>
-                  </div>
-       <!-- Modal -->
-<!-- modal for video-->
- <div class="modal fade modal-video" id="pop_video_modal" role="dialog">
-	<div class="modal-dialog"> 
-	  
-	  <!-- Modal content-->
-	  <div class="modal-content"> <img class="serchIcn" src="" alt="">
-		<div class="modal-header">
-		  <button type="button" class="close" data-dismiss="modal">&times;</button>
-		  <h4 class="modal-title">My Video</h4>
+				</div>
 		</div>
-		<div class="modal-body">
-		   <video width="552px"  controls class="video_div" id="pop_video">
-            <source src="" type="video/mp4" >
-                            				 
-                            				
-            </video>
-		  </div>
-		</form>
-	  </div>
-	</div>
-  </div>
-<!-- end modal for video-->
-<footer class="footer_main">
-    <div class="container">
-        <ul class="share_wrap">
-            <li><a target="_blank" href="<?php echo $global_facebook; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-            <li><a target="_blank" href="<?php echo $global_twitter; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-            <li><a target="_blank" href="<?php echo $global_youtube_url; ?>"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-            <li><a target="_blank" href="<?php echo $global_linkedin_url; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-            <li><a target="_blank" href="<?php echo $global_instagram_url; ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-        </ul>
-        <ul class="f-nav">
-            <li><a href="<?php echo base_url('about');?>">About</a></li>
-            <li><a href="<?php echo base_url('terms-conditions');?>">Terms & Conditions </a></li>
-            <li><a href="<?php echo base_url('privacy-policy');?>">Privacy Policy</a></li>
-            <li><a href="<?php echo base_url('dating-securely');?>">Dating Securely</a></li>
-            <li><a href="<?php echo base_url('dating-disclaimer');?>">Dating Disclaimer</a></li>
-            <li><a href="<?php echo base_url('page/contact_us');?>"> Contact Us</a></li>
-            <li><a href="<?php echo base_url('help-center');?>"> Help Center</a></li>
-        </ul>
-        <p class="copyright">&copy; <?php echo date('Y'); ?> All Rights Reserved. <a href="https://www.mymissingrib.com" rel="nofollow" target="_blank"> Mymissingrib </a></p>
-    </div>
-</footer>
+</section>
+<!--====== FOOTER 2 ==========-->
+<section>
+		<div class="rows">
+				<div class="footer">
+						<div class="container">
+								<div class="foot-sec2">
+										<div>
+												<div class="row">
+														<div class="col-sm-3 foot-spec foot-com">
+																<h4><span>Holiday</span> Tour & Travels</h4>
+																<p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
+														</div>
+														<div class="col-sm-3 foot-spec foot-com">
+																<h4><span>Address</span> & Contact Info</h4>
+																<p>28800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A. Landmark : Next To Airport</p>
+																<p> <span class="strong">Phone: </span> <span class="highlighted">+101-1231-1231</span> </p>
+														</div>
+														<div class="col-sm-3 col-md-3 foot-spec foot-com">
+																<h4><span>SUPPORT</span> & HELP</h4>
+																<ul class="two-columns">
+																		<li> <a href="#">About Us</a> </li>
+																		<li> <a href="#">FAQ</a> </li>
+																		<li> <a href="#">Feedbacks</a> </li>
+																		<li> <a href="#">Blog </a> </li>
+																		<li> <a href="#">Use Cases</a> </li>
+																		<li> <a href="#">Advertise us</a> </li>
+																		<li> <a href="#">Discount</a> </li>
+																		<li> <a href="#">Vacations</a> </li>
+																		<li> <a href="#">Branding Offers </a> </li>
+																		<li> <a href="#">Contact Us</a> </li>
+																</ul>
+														</div>
+														<div class="col-sm-3 foot-social foot-spec foot-com">
+																<h4><span>Follow</span> with us</h4>
+																<p>Join the thousands of other There are many variations of passages of Lorem Ipsum available</p>
+																<ul>
+																		<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
+																		<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
+																		<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
+																		<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
+																		<li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a> </li>
+																</ul>
+														</div>
+												</div>
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>
+</section>
+<!--====== FOOTER - COPYRIGHT ==========-->
+<section>
+		<div class="rows copy">
+				<div class="container">
+						<p>Copyrights © 2018 Company Name. All Rights Reserved</p>
+				</div>
+		</div>
+</section>
+<section>
+		<div class="icon-float">
+				<ul>
+						<li><a href="#" class="sh">1k <br> Share</a> </li>
+						<li><a href="#" class="fb1"><i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
+						<li><a href="#" class="gp1"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
+						<li><a href="#" class="tw1"><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
+						<li><a href="#" class="li1"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
+						<li><a href="#" class="wa1"><i class="fa fa-whatsapp" aria-hidden="true"></i></a> </li>
+						<li><a href="#" class="sh1"><i class="fa fa-envelope-o" aria-hidden="true"></i></a> </li>
+				</ul>
+		</div>
+</section>
 
 <script>
-	window.host = '<?php echo base_url();?>';
-	window.loginas = '<?php echo 'member_'.$this->nsession->userdata("member_session_id");?>';
-</script>
-<script src="https://media.twiliocdn.com/sdk/js/chat/releases/1.2.1/twilio-chat.js"></script>
-<script src="//media.twiliocdn.com/sdk/js/common/v0.1/twilio-common.min.js"></script>
-<script src="//media.twiliocdn.com/sdk/js/video/releases/1.0.0/twilio-video.js"></script>
-<script src="https://media.twiliocdn.com/sdk/js/conversations/v0.13/twilio-conversations.min.js"></script>
-<script src="//media.twiliocdn.com/sdk/conversations/v0.7/js/releases/0.7.1.b1-7238b35/twilio-conversations-loader.min.js"></script>
-<!-- <script type="text/javascript" src="https://requirejs.org/docs/release/2.2.0/minified/require.js"></script> -->
-<script src="<?php echo base_url();?>public/js/chat/index.js"></script>
-<script src="<?php echo base_url();?>public/js/videochat/quickstart.js"></script>
-<script>
-	$(function(){
-		$(".chat-window").css({'display':'none'});
-	})
-	$(document).on('click',".hideParent",function(){
-		$(this).parent().parent().parent().hide();
-	})
-	$(document).on('click',".openChatBox",function(){
-		//alert($(this).parent().parent().find("figure img").attr('src'));
-		$(".chatWithName").html($(this).parent().find(".chatName").text());
-		$(".chatWithImg").attr('src',$(this).parent().parent().find("figure img").attr('src'));
-		$(".chat-window").show();
-		$(".useridentifier").attr('useridentifier',$(this).attr('identifier'));		
-		$(".useridentifier").addClass('chatwindowfor_'+$(this).attr('identifier'));
-		var userid = '<?php echo $this->nsession->userdata("member_session_id");?>';
-		if(userid > $(this).attr('identifier')){
-			var roomName = userid+'_'+$(this).attr('identifier');
-		}else{
-			var roomName = $(this).attr('identifier')+'_'+userid;
-		}
-		window.me = 'member_<?php echo $this->nsession->userdata("member_session_id");?>';
-		$(".inner-chat-section").html('<li style="margin-bottom: 20px; position:absolute;width: 120px;height: 156px;left: 0;right: 0;margin: auto;top: 0;bottom: 0;"><img style="width: 126px;" src="<?php echo base_url();?>public/images/loading.gif"></li>').addClass('inner-chat-section'+roomName);
-		functionCall(roomName,'member_<?php echo $this->nsession->userdata("member_session_id");?>');
-	})
-
-	$(document).on('click',".openVideoBox",function(){
-		var toType="<?php echo isset($toType)?$toType:''; ?>";
-		var $this=$(this);
-		var member_type="<?php echo ($this->nsession->userdata('member_session_membertype'))?$this->nsession->userdata('member_session_membertype'):0; ?>";
-		if(member_type==1){
-			console.log(12);
-			var url="<?php echo base_url().'page/checkAvailTimeForVideoCall'; ?>"
-			$.ajax({
-	          type:'POST',
-	          url: url,
-	          data:{},
-	          success:function(msg){ //alert(11);
-	            var response=$.parseJSON(msg);
-	            if(response.error==0){
-	            	if(toType=='counselor'){
-						var imgUrl = $this.parent().parent().parent().find('figure img').attr('src');
-						var chatName=$this.parent().parent().find(".chatName").text();
-					}else{
-						var imgUrl = $this.parent().parent().find('figure img').attr('src');
-						var chatName=$this.parent().find(".chatName").text();
-					}
-					$('#imgsrcforvid').attr('src',imgUrl);
-        			$('.video_call_name').html('<h4>'+chatName+'</h4>');
-        			$("#videoChat").modal('show');
-					$('#videoChat').modal({backdrop: 'static', keyboard: false});
-					chatRequest($this.attr('identifier'),imgUrl,chatName);
-					play_rt();
-					var from='';
-					var to='';
-					addfriendListFromVideo(firebaseparentid,$this.attr('identifier'),from,to);
-	            }else{
-	            	messagealert('Error',response.msg,'error');
-	            	window.location.reload();
-	            }
-			  	//clearInterval(window.addTimerForVideo);
-			  },
-	          error: function () {
-	            messagealert('Error','Technical issue , Please try later','error');
-	            clearInterval(window.addTimerForVideo);
-	            window.location.reload();
-	          }
-	        });
-		}else{
-			if(toType=='counselor'){
-				var imgUrl = $this.parent().parent().parent().find('figure img').attr('src');
-				var chatName=$this.parent().parent().find(".chatName").text();
-			}else{
-				var imgUrl = $this.parent().parent().find('figure img').attr('src');
-				var chatName=$this.parent().find(".chatName").text();
-			}
-			$('#imgsrcforvid').attr('src',imgUrl);
-			$('.video_call_name').html('<h4>'+chatName+'</h4>');
-			$("#videoChat").modal('show');
-			$('#videoChat').modal({backdrop: 'static', keyboard: false});
-			chatRequest($this.attr('identifier'),imgUrl,chatName);
-			play_rt();
-			var from='';
-			var to='';
-			addfriendListFromVideo(firebaseparentid,$this.attr('identifier'),from,to);
-		}
-		
-	})
-
-	function addTimerForVideo(){
-		var member_type="<?php echo ($this->nsession->userdata('member_session_membertype'))?$this->nsession->userdata('member_session_membertype'):0; ?>";
-		if(member_type==1){
-			console.log(1);
-			var url="<?php echo base_url().'page/addTimerForVideo'; ?>"
-			$.ajax({
-	          type:'POST',
-	          url: url,
-	          data:{},
-	          success:function(msg){ //alert(11);
-	            var response=$.parseJSON(msg);
-	            if(response.error==0){
-	            	//messagealert('Success',response.msg,'success');
-	            	var data=response.data;
-	            	if(parseInt(data.time_available) <= 10){
-	            		if(data.time_available > 0){
-	            			var result = confirm("Do you want add more 100 minute becuase there are only "+data.time_available+" minute remaining");
-							if (result) {
-							   window.location.href="<?php echo base_url('member/add_more_time'); ?>";
-							}
-	            		}else{
-	            			window.location.reload();
-	            		}
-	            	}
-	            }else{
-	            	messagealert('Error',response.msg,'error');
-	            	clearInterval(window.addTimerForVideo);
-	            	window.location.reload();
-	            }
-			  	//clearInterval(window.addTimerForVideo);
-			  },
-	          error: function () {
-	            messagealert('Error','Technical issue , Please try later','error');
-	            clearInterval(window.addTimerForVideo);
-	            window.location.reload();
-	          }
-	        });
-		}else{
-			clearInterval(window.addTimerForVideo);
-		}
-		
-	}
-
 	function messagealert(title,text,type){
-        new PNotify({
-              title: title,
-              text:  text,
-              type:  type,
-              styling: 'bootstrap3'
-            });
-    }
+			new PNotify({
+						title: title,
+						text:  text,
+						type:  type,
+						styling: 'bootstrap3'
+					});
+	}
 </script>

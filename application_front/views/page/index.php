@@ -1,420 +1,535 @@
-<div class="top-wrap">
-    <div class="container">
-        <div class="row">
-            <?php if($this->nsession->userdata('member_session_id')==""){?>
-            <div class="col-md-5 col-sm-6 pull-right">
-                <div class="create_account">
-                    <a class="backBtn back_type_selection" href="javascript:void(0);" id="bck-btn" style="display: none;"><i class="fa fa-chevron-circle-left"></i></a>
-                    <h3 class="titleaccount">Create your Account</h3>
-                    <p>Signing up for Seeking, Counseling and getting Tips is fast and free.</p>
 
-                    <div class="stepwizard">
-                        <ul class="stepwizard-row">
-                            <li class="stepwizard-step">
-                                <div class="stepspace"><span class="step-circle spanStep2 current">1</span></div>
-                                <p class="bold">Step</p>
+<section>
+    <div class="tourz-search">
+        <div class="container">
+            <div class="row">
+                <div class="tourz-search-1">
+                    <h1>Plan Your Travel Now!</h1>
+                    <p>Experience the various exciting tour and travel packages and Make hotel reservations, find vacation packages, search cheap hotels and events</p>
+                    <form class="tourz-search-form">
+                        <div class="input-field">
+                            <input type="text" id="select-city" class="autocomplete">
+                            <label for="select-city">Enter city</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="select-search" class="autocomplete">
+                            <label for="select-search" class="search-hotel-type">Search over a million tour and travels, sight seeings, hotels and more</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="submit" value="search" class="waves-effect waves-light tourz-sear-btn"> </div>
+                    </form>
+                    <div class="tourz-hom-ser">
+                        <ul>
+                            <li>
+                                <a href="booking-tour-package.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="0.5s"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/2.png" alt=""> Tour</a>
                             </li>
-                            <li class="stepwizard-step">
-                                <div class="stepspace"><span class="step-circle spanStep2">2</span></div>
-                                <p class="bold">Step</p>
+                            <li>
+                                <a href="booking-flight.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="1s"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/31.png" alt=""> Flight</a>
                             </li>
-                            <li class="stepwizard-step">
-                                <div class="stepspace"><span class="step-circle spanStep3">3</span></div>
-                                <p class="bold">Step</p>
+                            <li>
+                                <a href="booking-car-rentals.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="1.5s"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/30.png" alt=""> Car Rentals</a>
                             </li>
-                            <li class="stepwizard-step">
-                                <div class="stepspace"><span class="step-circle spanStep4">4</span></div>
-                                <p class="bold">Step</p>
+                            <li>
+                                <a href="booking-hotel.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="2s"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/1.png" alt=""> Hotel</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="selectiontab ">
-                        <form class="form-inline" id="reg_form" method="post" action="<?php echo base_url('member/doMemberReg'); ?>">
-                            <div id="iamDiv" class="hideAll" data-span="spanStep2">
-                                <div class="form-group">
-                                    <label for="exampleInputName2">I'm a</label>
-                                </div>
-                                <button type="button" data-manwoman="1" data-currentdiv="iamDiv" data-nextdiv="whosDiv" data-nextspanclass="spanStep2" class="btn btn-cmn type_selection">Man</button>
-                                <button type="button" data-manwoman="2" data-currentdiv="iamDiv" data-nextdiv="whosDiv" data-nextspanclass="spanStep2" class="btn btn-cmn type_selection">Woman</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== HOME HOTELS ==========-->
+<section>
+    <div class="rows tb-space pad-top-o pad-bot-redu">
+        <div class="container">
+            <!-- TITLE & DESCRIPTION -->
+            <div class="spe-title">
+                <h2>Hotels <span>booking open now! </span> </h2>
+                <div class="title-line">
+                    <div class="tl-1"></div>
+                    <div class="tl-2"></div>
+                    <div class="tl-3"></div>
+                </div>
+                <p>World's leading Hotel Booking website,Over 30,000 Hotel rooms worldwide. Book Hotel rooms and enjoy your holidays with distinctive experience</p>
+            </div>
+            <!-- HOTEL GRID -->
+            <div class="to-ho-hotel">
+                <!-- HOTEL GRID -->
+                <div class="col-md-4">
+                    <div class="to-ho-hotel-con">
+                        <div class="to-ho-hotel-con-1">
+                            <div class="hot-page2-hli-3"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/hci1.png" alt=""> </div>
+                            <div class="hom-hot-av-tic"> Available Tickets: 42 </div> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/hotels/1.jpg" alt=""> </div>
+                        <div class="to-ho-hotel-con-23">
+                            <div class="to-ho-hotel-con-2">
+                                <a href="hotel-details.html">
+                                    <h4>GTC Grand Chola</h4>
+                                </a>
                             </div>
-                            <div id="whosDiv" class="hideAll" data-span="spanStep2" style="display: none">
-                                <div class="form-group">
-                                    <label for="exampleInputName2">Marital Status</label>
-                                </div>
-                                <button type="button" data-maritial_status="1" data-currentdiv="whosDiv" data-nextspanclass="spanStep3" data-nextdiv="interestedDiv" class="btn btn-cmn type_selection">Single</button>
-                                <button type="button" data-maritial_status="2" data-currentdiv="whosDiv" data-nextspanclass="spanStep3" data-nextdiv="interestedDiv" class="btn btn-cmn type_selection">Separated</button>
-                                <button type="button" data-maritial_status="3" data-currentdiv="whosDiv" data-nextspanclass="spanStep3" data-nextdiv="interestedDiv" class="btn btn-cmn type_selection">Divorced</button>
+                            <div class="to-ho-hotel-con-3">
+                                <ul>
+                                    <li>City: illunois,united states
+                                        <div class="dir-rat-star ho-hot-rat-star"> Rating: <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o"
+                                                aria-hidden="true"></i> </div>
+                                    </li>
+                                    <li><span class="ho-hot-pri-dis">$720</span><span class="ho-hot-pri">$420</span> </li>
+                                </ul>
                             </div>
-                            <div id="interestedDiv" class="hideAll" data-span="spanStep3" style="display: none">
-                                <div class="form-group">
-                                    <label for="exampleInputName2">Interested in</label>
-                                </div>
-                                <button type="button" data-interested_in="2" data-currentdiv="interestedDiv" data-nextdiv="emailDiv" data-nextspanclass="spanStep4"  class="btn btn-cmn type_selection">Female</button>
-                                <button type="button" data-interested_in="1" data-currentdiv="interestedDiv" data-nextdiv="emailDiv" data-nextspanclass="spanStep4"  class="btn btn-cmn type_selection">Male</button>
-                                <button type="button" data-interested_in="3" data-currentdiv="interestedDiv" data-nextdiv="emailDiv" data-nextspanclass="spanStep4"  class="btn btn-cmn type_selection">Both</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- HOTEL GRID -->
+                <div class="col-md-4">
+                    <div class="to-ho-hotel-con">
+                        <div class="to-ho-hotel-con-1">
+                            <div class="hot-page2-hli-3"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/hci1.png" alt=""> </div>
+                            <div class="hom-hot-av-tic"> Available Tickets: 520 </div> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/hotels/2.jpg" alt=""> </div>
+                        <div class="to-ho-hotel-con-23">
+                            <div class="to-ho-hotel-con-2">
+                                <a href="hotel-details.html">
+                                    <h4>Taaj Grand Resorts</h4>
+                                </a>
                             </div>
-                            <input type="hidden" name="man_woman" id="man_woman"/>
-                            <input type="hidden" name="maritial_status" id="maritial_status"/>
-                            <input type="hidden" name="interested_in" id="interested_in"/>
-                            <div id="emailDiv" class="hideAll" data-span="spanStep4" style="display: none">
-                                <div class="col-md-12">
-                                    <div class="form-group col-md-5">
-                                        <label for="exampleInputName2">Email:</label>
-                                    </div>
-									
-									<!--<div class="col-md-6">
-                                      <input type="text" name="interested_in" id="interested_in" class="form-control">
-                                    </div>-->
-									
-                                    <div class="col-md-6">
-                                        <input type="email" id="emailId" name="email" class="form-control" placeholder="Email ID" />
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group col-md-5">
-                                        <label for="exampleInputName2">Password:</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="password" name="password" id="password" class="form-control" placeholder="Password">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group col-md-5">
-                                        <label for="exampleInputName2">Confirm Password:</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="password" name="password_confirm" class="form-control"  placeholder="Confirm Password">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group col-md-5">
-                                        <label for="exampleInputName2">Captcha:</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <span id="captImg"><?php echo $captchaImg; ?> </span>
-                                        <a href="javascript:void(0);" class="refreshCaptcha" ><img src="<?php echo base_url().'public/images/refresh.png'; ?>"/></a>
-                                        <input type="text" class="form-control captcha_clss" id="captcha_code" name="captcha_code" placeholder="Captcha">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <p>By continuing you agree to MyMissingRib's <a target="_blank" href="<?php echo base_url('terms-conditions'); ?>">Terms</a> and <a href="<?php echo base_url('privacy-policy'); ?>" target="_blank">Privacy Policy</a>.</p>
-                                </div>
-                                <button type="submit" class="btn-cmn" value="Submit">Submit</button>
+                            <div class="to-ho-hotel-con-3">
+                                <ul>
+                                    <li>City: illunois,united states
+                                        <div class="dir-rat-star ho-hot-rat-star"> Rating: <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o"
+                                                aria-hidden="true"></i> </div>
+                                    </li>
+                                    <li><span class="ho-hot-pri-dis">$840</span><span class="ho-hot-pri">$540</span> </li>
+                                </ul>
                             </div>
-
-                        </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- HOTEL GRID -->
+                <div class="col-md-4">
+                    <div class="to-ho-hotel-con">
+                        <div class="to-ho-hotel-con-1">
+                            <div class="hot-page2-hli-3"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/hci1.png" alt=""> </div>
+                            <div class="hom-hot-av-tic"> Available Tickets: 92 </div> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/hotels/3.jpg" alt=""> </div>
+                        <div class="to-ho-hotel-con-23">
+                            <div class="to-ho-hotel-con-2">
+                                <a href="hotel-details.html">
+                                    <h4>Keep Grand Hotels</h4>
+                                </a>
+                            </div>
+                            <div class="to-ho-hotel-con-3">
+                                <ul>
+                                    <li>City: illunois,united states
+                                        <div class="dir-rat-star ho-hot-rat-star"> Rating: <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o"
+                                                aria-hidden="true"></i> </div>
+                                    </li>
+                                    <li><span class="ho-hot-pri-dis">$680</span><span class="ho-hot-pri">$380</span> </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <?php } ?>
-            <div class="col-md-6 col-sm-6">
-                <div class="welcometxt">
-                   <?php echo html_entity_decode($cmsContentt['content']); ?>
+        </div>
+    </div>
+</section>
+<!--====== SECTION: FREE CONSULTANT ==========-->
+<section>
+    <div class="offer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="offer-l"> <span class="ol-1"></span> <span class="ol-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span> <span class="ol-4">Standardized Budget Rooms</span>                            <span class="ol-3"></span> <span class="ol-5">$99/-</span>
+                        <ul>
+                            <li class="wow fadeInUp" data-wow-duration="0.5s">
+                                <a href="#!" class="waves-effect waves-light btn-large offer-btn"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/dis1.png" alt="">
+                                </a><span>Free WiFi</span>
+                            </li>
+                            <li class="wow fadeInUp" data-wow-duration="0.7s">
+                                <a href="#!" class="waves-effect waves-light btn-large offer-btn"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/dis2.png" alt=""> </a><span>Breakfast</span>
+                            </li>
+                            <li class="wow fadeInUp" data-wow-duration="0.9s">
+                                <a href="#!" class="waves-effect waves-light btn-large offer-btn"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/dis3.png" alt=""> </a><span>Pool</span>
+                            </li>
+                            <li class="wow fadeInUp" data-wow-duration="1.1s">
+                                <a href="#!" class="waves-effect waves-light btn-large offer-btn"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/dis4.png" alt=""> </a><span>Television</span>
+                            </li>
+                            <li class="wow fadeInUp" data-wow-duration="1.3s">
+                                <a href="#!" class="waves-effect waves-light btn-large offer-btn"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/dis5.png" alt=""> </a><span>GYM</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="offer-r">
+                        <div class="or-1"> <span class="or-11">go</span> <span class="or-12">Stays</span> </div>
+                        <div class="or-2"> <span class="or-21">Get</span> <span class="or-22">70%</span> <span class="or-23">Off</span> <span class="or-24">use code: RG5481WERQ</span> <span class="or-25"></span> </div>
+                    </div>
                 </div>
             </div>
-
-        </div>
-    </div>
-</div>
-
-</div>
-<input type="hidden" id="parentid" value="">
-<input type="hidden" id="parentspan" value="">
-<!-- match list -->
-<section class="testi_wrap">
-    <div class="container">
-
-                <div id="profile-carousel" class="owl-carousel owl-theme mar-top">
-
-                <?php 
-                    if($testimonial){
-                    $i=0;   
-                    foreach($futuremember as $rows=>$vals){
-                        $pic=css_images_js_base_url().'images/images.png';
-                         if($vals['picture']!=''){
-                          $pic=$vals['picture'];
-                         }
-                        ?>
-                        <div class="item <?php if($i==0){ echo 'active';}?>">
-                        <div class="profile-box profile__box--mod">
-                        <!-- <div class="profile-thumb" style="background-image: url(<?php echo $pic;?>);"></div> -->
-                                
-                                <div class="profile-details" onclick="window.location.href='<?= base_url('member/profile/'.base64_encode($vals['id']))?>'">
-                                <div class="profile-thumb-round" style="background-image: url(<?php echo $pic;?>);"></div>
-                                <a href="<?= base_url('member/profile/'.base64_encode($vals['id']))?>">
-                                <div class="profile-title"><?php echo isset($vals['member_name'])?$vals['member_name']:'';?>, <?php echo isset($vals['age'])?$vals['age']:'';?></div>
-                                <span class="status"> <?php if($vals['maritial_status'] == 1){?>
-                                         Single
-                                        <?php } else if($vals['maritial_status'] ==2){?>
-                                         Married
-                                        <?php } else{?>
-                                         Divorced
-                                        <?php } ?></span>
-                                        <p class="profile-address"><?php echo $vals['country_name'];?>, <?php echo $vals['state_name'];?></p>
-                                       
-                                     
-                                    </div>
-                                    </a>
-                               
-                            </div>
-                        </div>
-                
-            <?php 
-            $i++;
-            } 
-                    
-                } ?>
-
-
-
-
-
-                  
-
-        
-    </div>
-</section>
-
-<!-- Info Wrap -->
-<section class="info-bg mt-0">
-    <div class="container">
-        <div class="row">
-            <?php echo html_entity_decode($cmsContent['content']); ?>
         </div>
     </div>
 </section>
-
-<!-- Testimonials wrap -->
-<section class="testi_wrap">
-    <div class="container">
-        <h2 class="testi-title">Testimonials</h2>
-        <!-- <div class="carousel slide" data-ride="carousel" id="quote-carousel"> -->
-            <!-- Bottom Carousel Indicators -->
-            <!-- <ol class="carousel-indicators">
-               
-			   <?php 
-					if($testimonial){
-					$j=0;	
-					foreach($testimonial as $testimonialDetails){						
-				?>
-			   
-				   <li data-target="#quote-carousel" data-slide-to="<?php echo $j;?>" class="<?php if($j==0){ echo 'active';}?>"><img class="img-responsive " src="<?php echo file_upload_base_url();?>testimonial/<?php echo $testimonialDetails['image']?>" alt="">
-				   </li>
-				<?php
-					$j++;
-					} 
-				} ?>
-            </ol> -->
-            <!-- Carousel Slides / Quotes -->
-            <!-- <div class="carousel-inner text-center">
-               <?php 
-					if($testimonial){
-					$i=0;	
-					foreach($testimonial as $testimonialDetails){?>
-                <div class="item <?php if($i==0){ echo 'active';}?>">
-                    <blockquote>
-                        <div class="row">
-                            <div class="col-sm-4">
-
-                                <p class="quote_txt"> <?php echo isset($testimonialDetails['description'])?$testimonialDetails['description']:'';?></p>
-                                <p class="quote_author"><?php echo isset($testimonialDetails['fullname'])?$testimonialDetails['fullname']:'';?><br><?php echo isset($testimonialDetails['address'])?$testimonialDetails['address']:'';?></p>
-                            </div>
-                        </div>
-                    </blockquote>
+<!--====== EVENTS ==========-->
+<section>
+    <div class="rows tb-space">
+        <div class="container events events-1" id="inner-page-title">
+            <!-- TITLE & DESCRIPTION -->
+            <div class="spe-title">
+                <h2>Top <span>Events</span> in this month</h2>
+                <div class="title-line">
+                    <div class="tl-1"></div>
+                    <div class="tl-2"></div>
+                    <div class="tl-3"></div>
                 </div>
-                
-			<?php 
-			$i++;
-			} 
-					
-				} ?>
-			   
-				
-            </div> -->
-            <!-- Carousel Buttons Next/Prev -->
-            <!-- <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-            <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-angle-right" aria-hidden="true"></i></a> -->
-        <!-- </div> -->
-        <div id="testi-carousel" class="owl-carousel owl-theme mar-top">
-        <?php 
-					if($testimonial){
-					
-					foreach($testimonial as $testimonialDetails){?>
-                <div class="item">
-                <div class="testiBlock">
-                               <p>
-                               <!-- <?php echo isset($testimonialDetails['description'])?$testimonialDetails['description']:'';?> -->
-                               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                               </p>
-                               <hr>
-                               <div class="testiImg">
-                                   <img src="<?php echo file_upload_base_url();?>testimonial/<?php echo $testimonialDetails['image']?>" alt="">
-                               </div>
-                               <h3><?php echo isset($testimonialDetails['fullname'])?$testimonialDetails['fullname']:'';?><br><?php echo isset($testimonialDetails['address'])?$testimonialDetails['address']:'';?></h3>
-                              
-                           </div>
-                   
-                </div>
-                
-			<?php 
-			
-			} 
-					
-				} ?>
-               
+                <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide. Book travel packages and enjoy your holidays with distinctive experience</p>
+            </div>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Event Name.." title="Type in a name">
+            <table id="myTable">
+                <tbody>
+                    <tr>
+                        <th>#</th>
+                        <th>Event Name</th>
+                        <th class="e_h1">Date</th>
+                        <th class="e_h1">Time</th>
+                        <th class="e_h1">Location</th>
+                        <th>Book</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/iplace-1.jpg" alt="" /><a href="hotels-list.html" class="events-title">Taj Mahal,Agra, India</a> </td>
+                        <td class="e_h1">16.12.2016</td>
+                        <td class="e_h1">10.00 PM</td>
+                        <td class="e_h1">Australia</td>
+                        <td><a href="booking.html" class="link-btn">Book Now</a> </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/iplace-2.jpg" alt="" /><a href="hotels-list.html" class="events-title">Salesforce Summer, Dubai</a> </td>
+                        <td class="e_h1">16.12.2016</td>
+                        <td class="e_h1">10.00 PM</td>
+                        <td class="e_h1">Dubai</td>
+                        <td><a href="booking.html" class="link-btn">Book Now</a> </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/iplace-3.jpg" alt="" /><a href="hotels-list.html" class="events-title">God Towers, TOKYO, JAPAN</a> </td>
+                        <td class="e_h1">16.12.2016</td>
+                        <td class="e_h1">10.00 PM</td>
+                        <td class="e_h1">JAPAN</td>
+                        <td><a href="booking.html" class="link-btn">Book Now</a> </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/iplace-4.jpg" alt="" /><a href="hotels-list.html" class="events-title">TOUR DE ROMANDIE, Switzerland</a> </td>
+                        <td class="e_h1">16.12.2016</td>
+                        <td class="e_h1">10.00 PM</td>
+                        <td class="e_h1">Switzerland</td>
+                        <td><a href="booking.html" class="link-btn">Book Now</a> </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/iplace-5.jpg" alt="" /><a href="hotels-list.html" class="events-title">TOUR DE POLOGNE, Poland</a> </td>
+                        <td class="e_h1">16.12.2016</td>
+                        <td class="e_h1">10.00 PM</td>
+                        <td class="e_h1">Poland</td>
+                        <td><a href="booking.html" class="link-btn">Book Now</a> </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/iplace-6.jpg" alt="" /><a href="hotels-list.html" class="events-title">Future of Marketing,Sydney, Australia</a> </td>
+                        <td class="e_h1">16.12.2016</td>
+                        <td class="e_h1">10.00 PM</td>
+                        <td class="e_h1">Australia</td>
+                        <td><a href="booking.html" class="link-btn">Book Now</a> </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/iplace-7.jpg" alt="" /><a href="hotels-list.html" class="events-title">Eiffel Tower, Paris</a> </td>
+                        <td class="e_h1">16.12.2016</td>
+                        <td class="e_h1">10.00 PM</td>
+                        <td class="e_h1">France</td>
+                        <td><a href="booking.html" class="link-btn">Book Now</a> </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/iplace-8.jpg" alt="" /><a href="hotels-list.html" class="events-title">PARIS - ROUBAIX, England</a> </td>
+                        <td class="e_h1">16.12.2016</td>
+                        <td class="e_h1">10.00 PM</td>
+                        <td class="e_h1">England</td>
+                        <td><a href="booking.html" class="link-btn">Book Now</a> </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/iplace-9.jpg" alt="" /><a href="hotels-list.html" class="events-title">Dubai Beach Resort, Dubai</a> </td>
+                        <td class="e_h1">16.12.2016</td>
+                        <td class="e_h1">10.00 PM</td>
+                        <td class="e_h1">Dubai</td>
+                        <td><a href="booking.html" class="link-btn">Book Now</a> </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/iplace-4.jpg" alt="" /><a href="hotels-list.html" class="events-title">TOUR DE POLOGNE, Poland</a> </td>
+                        <td class="e_h1">16.12.2016</td>
+                        <td class="e_h1">10.00 PM</td>
+                        <td class="e_h1">Poland</td>
+                        <td><a href="booking.html" class="link-btn">Book Now</a> </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
-  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-  <!--<script src="<?php echo CSS_IMAGES_JS_BASE_URL;?>js/vendor/main.js"></script>-->
-	<script src="<?php echo CSS_IMAGES_JS_BASE_URL; ?>js/vendor/pnotify/dist/pnotify.js"></script>
-    <script src="<?php echo CSS_IMAGES_JS_BASE_URL; ?>js/vendor/pnotify/dist/pnotify.buttons.js"></script>
-    <script src="<?php echo CSS_IMAGES_JS_BASE_URL; ?>js/vendor/pnotify/dist/pnotify.nonblock.js"></script>
-<script>
-    $(".type_selection").on('click',function(){
-        var nextdiv         = $(this).data('nextdiv');
-        var currentdiv      = $(this).data('currentdiv');
-        var nextspanclass   = $(this).data('nextspanclass');
-        var parentid=$(this).parent().attr('id');
-        $('#parentid').val(parentid);
-        $('#parentspan').val($(this).parent().attr('data-span'));
-
-        $("."+nextspanclass).addClass('current');
-        $("#"+currentdiv).hide();
-        $("#"+nextdiv).show();
-
-		var interested_in ='';
-		var maritial_status ='';
-		var manwoman ='';
-		
-        switch (currentdiv){
-            case 'iamDiv':
-                $(".back_type_selection").show();
-                var manwoman                   = $(this).data('manwoman');
-                $("#man_woman").val(manwoman);
-                break;
-            case 'whosDiv':
-                $(".back_type_selection").show();
-                var maritial_status    = $(this).data('maritial_status');
-                $("#maritial_status").val(maritial_status);
-                break;
-            case 'interestedDiv':
-                $(".back_type_selection").show();
-                var interested_in              = $(this).data('interested_in');
-                $("#interested_in").val(interested_in);				
-				//alert(interested_in);				
-                break;
-        }
-    });
-
-    $(".back_type_selection").on('click',function(){
-        var parentid=$('#parentid').val();
-        var parentspan=$('#parentspan').val();
-        console.log(parentid+" : "+parentspan);
-        $('.hideAll').hide();
-        $('#'+parentid).show();
-        $('.'+parentspan).addClass('current');
-        switch (parentid){
-            case 'iamDiv':
-                $(".back_type_selection").hide();
-                $('#parentid').val("iamDiv");
-                $('#parentspan').val("spanStep2");
-                break;
-            case 'whosDiv':
-                $(".back_type_selection").show();
-                $('#parentid').val("iamDiv");
-                $('#parentspan').val("spanStep2");
-                break;
-            case 'interestedDiv':
-                $(".back_type_selection").show();
-                $('#parentid').val("whosDiv");
-                $('#parentspan').val("spanStep3");
-                break;
-        }
-    });
-
-    $(document).ready(function(){
-        $.validator.addMethod("customemail",
-            function(value, element) {
-                return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(value);
-            },
-            "Sorry, I've enabled very strict email validation"
-        );
-        $("#reg_form").validate({
-            // Specify validation rules
-            rules: {
-                email: {
-                    required: true,
-                    email: true,
-                    customemail:true
-                },
-                password: {
-                    required: true,
-                    minlength: 6
-                },
-                password_confirm: {
-                    required: true,
-                    minlength: 6,
-                    equalTo: "#password"
-                },
-                captcha_code:{
-                    required: true
-                }
-            },
-            // Specify validation error messages
-            messages: {
-                email: "Please enter a valid email address.",
-                password: {
-                    required: "Please provide a password.",
-                    minlength: "Your password must be at least 6 characters long."
-                },
-                password_confirm:{
-                    required: "Please provide confirm password.",
-                    equalTo:"Confirm password and password has to same."
-                },
-                captcha_code:{
-                    required: "Please provide captcha code.",
-                }
-            },
-            submitHandler: function(form) {
-                var captcha_code = $("#captcha_code").val();
-                var emailID     = $("#emailId").val();
-                $.ajax({
-                    type:'POST',
-                    url:'<?php echo base_url('page/isValidCaptcha')?>',
-                    dataType:'Json',
-                    data:{captcha_code:captcha_code},
-                    success:function(data){
-                        console.log(data);
-                        if(data.error==1){
-                            alert('Enter Valid Captcha Code.!');
-                            return false;
-                        }else{
-                            $.ajax({
-                                type:'POST',
-                                url:'<?php echo base_url('member/emailExist')?>',
-                                dataType:'Json',
-                                data:{email:emailID},
-                                success:function(data){
-                                    //console.log(data);
-                                    if(data.error==1){
-                                        alert('Email address already exist.');
-                                        return false;
-                                    }else{
-                                        form.submit();
-                                    }
-                                }
-                            });
-                        }
-                    }
-                });
-            }
-        });
-    });
-    $('.refreshCaptcha').on('click', function(){
-        $.get('<?php echo base_url().'page/refresh'; ?>', function(data){
-            $('#captImg').html(data);
-        });
-    });
-</script>
+<!--====== POPULAR TOUR PLACES ==========-->
+<section>
+    <div class="rows pla pad-bot-redu tb-space">
+        <div class="pla1 p-home container">
+            <!-- TITLE & DESCRIPTION -->
+            <div class="spe-title spe-title-1">
+                <h2>Top <span>Sight Seeing</span> in this month</h2>
+                <div class="title-line">
+                    <div class="tl-1"></div>
+                    <div class="tl-2"></div>
+                    <div class="tl-3"></div>
+                </div>
+                <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide. Book travel packages and enjoy your holidays with distinctive experience</p>
+            </div>
+            <div class="popu-places-home">
+                <!-- POPULAR PLACES 1 -->
+                <div class="col-md-6 col-sm-6 col-xs-12 place">
+                    <div class="col-md-6 col-sm-12 col-xs-12"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/place2.jpg" alt="" /> </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <h3><span>Honeymoon Package</span> 7 Days / 6 Nights</h3>
+                        <p>lorem ipsum simplelorem ipsum simplelorem ipsum simplelorem ipsum simple</p> <a href="tour-details.html" class="link-btn">more info</a> </div>
+                </div>
+                <!-- POPULAR PLACES 2 -->
+                <div class="col-md-6 col-sm-6 col-xs-12 place">
+                    <div class="col-md-6 col-sm-12 col-xs-12"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/place1.jpg" alt="" /> </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <h3><span>Family package</span> 14 Days / 13 Nights</h3>
+                        <p>lorem ipsum simplelorem ipsum simplelorem ipsum simplelorem ipsum simple</p> <a href="tour-details.html" class="link-btn">more info</a> </div>
+                </div>
+            </div>
+            <div class="popu-places-home">
+                <!-- POPULAR PLACES 3 -->
+                <div class="col-md-6 col-sm-6 col-xs-12 place">
+                    <div class="col-md-6 col-sm-12 col-xs-12"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/place3.jpg" alt="" /> </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <h3><span>Weekend Package </span> 3 Days / 2 Nights</h3>
+                        <p>lorem ipsum simplelorem ipsum simplelorem ipsum simplelorem ipsum simple</p> <a href="tour-details.html" class="link-btn">more info</a> </div>
+                </div>
+                <!-- POPULAR PLACES 4 -->
+                <div class="col-md-6 col-sm-6 col-xs-12 place">
+                    <div class="col-md-6 col-sm-12 col-xs-12"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/place4.jpg" alt="" /> </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <h3><span>Group Package</span> 10 Days / 9 Nights</h3>
+                        <p>lorem ipsum simplelorem ipsum simplelorem ipsum simplelorem ipsum simple</p> <a href="tour-details.html" class="link-btn">more info</a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== REQUEST A QUOTE ==========-->
+<section>
+    <div class="ho-popu tb-space pad-bot-redu">
+        <div class="rows container">
+            <!-- TITLE & DESCRIPTION -->
+            <div class="spe-title">
+                <h2>Top <span>Branding</span> for this month</h2>
+                <div class="title-line">
+                    <div class="tl-1"></div>
+                    <div class="tl-2"></div>
+                    <div class="tl-3"></div>
+                </div>
+                <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide. Book travel packages and enjoy your holidays with distinctive experience</p>
+            </div>
+            <div class="ho-popu-bod">
+                <div class="col-md-4">
+                    <div class="hot-page2-hom-pre-head">
+                        <h4>Top Branding <span>Hotels</span></h4>
+                    </div>
+                    <div class="hot-page2-hom-pre">
+                        <ul>
+                            <!--LISTINGS-->
+                            <li>
+                                <a href="hotels-list.html">
+                                    <div class="hot-page2-hom-pre-1"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/hotels/1.jpg" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-2">
+                                        <h5>Taaj Club House</h5> <span>City: illunois, United States</span> </div>
+                                    <div class="hot-page2-hom-pre-3"> <span>4.5</span> </div>
+                                </a>
+                            </li>
+                            <!--LISTINGS-->
+                            <li>
+                                <a href="hotels-list.html">
+                                    <div class="hot-page2-hom-pre-1"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/hotels/2.jpg" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-2">
+                                        <h5>Universal luxury Grand Hotel</h5> <span>City: Rio,Brazil</span> </div>
+                                    <div class="hot-page2-hom-pre-3"> <span>4.2</span> </div>
+                                </a>
+                            </li>
+                            <!--LISTINGS-->
+                            <li>
+                                <a href="hotels-list.html">
+                                    <div class="hot-page2-hom-pre-1"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/hotels/3.jpg" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-2">
+                                        <h5>Barcelona Grand Pales</h5> <span>City: Chennai,India</span> </div>
+                                    <div class="hot-page2-hom-pre-3"> <span>5.0</span> </div>
+                                </a>
+                            </li>
+                            <!--LISTINGS-->
+                            <li>
+                                <a href="hotels-list.html">
+                                    <div class="hot-page2-hom-pre-1"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/hotels/4.jpg" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-2">
+                                        <h5>Lake Palace view Hotel</h5> <span>City: Beijing,China</span> </div>
+                                    <div class="hot-page2-hom-pre-3"> <span>2.5</span> </div>
+                                </a>
+                            </li>
+                            <!--LISTINGS-->
+                            <li>
+                                <a href="hotels-list.html">
+                                    <div class="hot-page2-hom-pre-1"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/hotels/8.jpg" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-2">
+                                        <h5>First Class Grandd Hotel</h5> <span>City: Berlin,Germany</span> </div>
+                                    <div class="hot-page2-hom-pre-3"> <span>4.0</span> </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="hot-page2-hom-pre-head">
+                        <h4>Top Branding <span>Packages</span></h4>
+                    </div>
+                    <div class="hot-page2-hom-pre">
+                        <ul>
+                            <!--LISTINGS-->
+                            <li>
+                                <a href="hotels-list.html">
+                                    <div class="hot-page2-hom-pre-1"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/trends/1.jpg" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-2">
+                                        <h5>Family Package Luxury</h5> <span>Duration: 7 Days and 6 Nights</span> </div>
+                                    <div class="hot-page2-hom-pre-3"> <span>4.1</span> </div>
+                                </a>
+                            </li>
+                            <!--LISTINGS-->
+                            <li>
+                                <a href="hotels-list.html">
+                                    <div class="hot-page2-hom-pre-1"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/trends/2.jpg" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-2">
+                                        <h5>Honeymoon Package Luxury</h5> <span>Duration: 14 Days and 13 Nights</span> </div>
+                                    <div class="hot-page2-hom-pre-3"> <span>4.4</span> </div>
+                                </a>
+                            </li>
+                            <!--LISTINGS-->
+                            <li>
+                                <a href="hotels-list.html">
+                                    <div class="hot-page2-hom-pre-1"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/trends/3.jpg" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-2">
+                                        <h5>Group Package Luxury</h5> <span>Duration: 28 Days and 29 Nights</span> </div>
+                                    <div class="hot-page2-hom-pre-3"> <span>3.0</span> </div>
+                                </a>
+                            </li>
+                            <!--LISTINGS-->
+                            <li>
+                                <a href="hotels-list.html">
+                                    <div class="hot-page2-hom-pre-1"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/trends/4.jpg" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-2">
+                                        <h5>Regular Package Luxury</h5> <span>Duration: 12 Days and 11 Nights</span> </div>
+                                    <div class="hot-page2-hom-pre-3"> <span>3.5</span> </div>
+                                </a>
+                            </li>
+                            <!--LISTINGS-->
+                            <li>
+                                <a href="hotels-list.html">
+                                    <div class="hot-page2-hom-pre-1"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/trends/1.jpg" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-2">
+                                        <h5>Custom Package Luxury</h5> <span>Duration: 10 Days and 10 Nights</span> </div>
+                                    <div class="hot-page2-hom-pre-3"> <span>5.0</span> </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="hot-page2-hom-pre-head">
+                        <h4>Top Branding <span>Reviewers</span></h4>
+                    </div>
+                    <div class="hot-page2-hom-pre">
+                        <ul>
+                            <!--LISTINGS-->
+                            <li>
+                                <a href="hotels-list.html">
+                                    <div class="hot-page2-hom-pre-1"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/reviewer/1.jpg" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-2">
+                                        <h5>Christopher</h5> <span>No of Reviews: 620, City: illunois</span> </div>
+                                    <div class="hot-page2-hom-pre-3"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> </div>
+                                </a>
+                            </li>
+                            <!--LISTINGS-->
+                            <li>
+                                <a href="hotels-list.html">
+                                    <div class="hot-page2-hom-pre-1"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/reviewer/2.png" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-2">
+                                        <h5>Matthew</h5> <span>No of Reviews: 48, City: Rio</span> </div>
+                                    <div class="hot-page2-hom-pre-3"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> </div>
+                                </a>
+                            </li>
+                            <!--LISTINGS-->
+                            <li>
+                                <a href="hotels-list.html">
+                                    <div class="hot-page2-hom-pre-1"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/reviewer/3.jpg" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-2">
+                                        <h5>Stephanie</h5> <span>No of Reviews: 560, City: Chennai</span> </div>
+                                    <div class="hot-page2-hom-pre-3"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> </div>
+                                </a>
+                            </li>
+                            <!--LISTINGS-->
+                            <li>
+                                <a href="hotels-list.html">
+                                    <div class="hot-page2-hom-pre-1"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/reviewer/4.jpg" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-2">
+                                        <h5>Robert</h5> <span>No of Reviews: 920, City: Beijing</span> </div>
+                                    <div class="hot-page2-hom-pre-3"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> </div>
+                                </a>
+                            </li>
+                            <!--LISTINGS-->
+                            <li>
+                                <a href="hotels-list.html">
+                                    <div class="hot-page2-hom-pre-1"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/reviewer/5.jpg" alt=""> </div>
+                                    <div class="hot-page2-hom-pre-2">
+                                        <h5>Danielle</h5> <span>No of Reviews: 768, City: Berlin</span> </div>
+                                    <div class="hot-page2-hom-pre-3"> <i class="fa fa-hand-o-right" aria-hidden="true"></i> </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== REQUEST A QUOTE ==========-->
+<section>
+    <div class="foot-mob-sec tb-space">
+        <div class="rows container">
+            <!-- FAMILY IMAGE(YOU CAN USE ANY PNG IMAGE) -->
+            <div class="col-md-6 col-sm-6 col-xs-12 family"> <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/mobile.png" alt="" /> </div>
+            <!-- REQUEST A QUOTE -->
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <!-- THANK YOU MESSAGE -->
+                <div class="foot-mob-app">
+                    <h2>Have you tried our mobile app?</h2>
+                    <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide. Book travel packages and enjoy your holidays with distinctive experience</p>
+                    <ul>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Easy Hotel Booking</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Tour and Travel Packages</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Package Reviews and Ratings</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Manage your Bookings, Enquiry and Reviews</li>
+                    </ul>
+                    <a href="#"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/android.png" alt=""> </a>
+                    <a href="#"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/apple.png" alt=""> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

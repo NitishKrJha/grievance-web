@@ -16,45 +16,17 @@ class ModelCommon extends CI_Model {
 		return true;
 	}
 
-	function getAllMessagelist($member_id,$to_member_id){
-		$this->db->order_by('id','ASC');
-		$this->db->where('(member_id='.$member_id.' AND to_member_id='.$to_member_id.') OR (member_id='.$to_member_id.')');
-		$data=$this->db->select('*')->get('member_message')->result_array();
-		return $data;
-	}
-
-	function getMyFriendList($id,$num){
-		$total=((int)$num * 20);
-		$this->db->join('member as from_mem','from_mem.id=friends_list.from_member','Left Outer');
-		$this->db->join('member as to_mem','to_mem.id=friends_list.to_member','Left Outer');
-		$this->db->where('(friends_list.from_member='.$id.' OR friends_list.to_member='.$id.')');
-		$this->db->limit(20,$total);
-		$data=$this->db->select('from_mem.name as from_name,from_mem.picture as from_picture,to_mem.name as to_name,to_mem.picture as to_picture,friends_list.*')->get_where('friends_list',array('friends_list.status'=>1))->result_array();
-		//echo $this->db->last_query(); die();
-		return $data;
-	}
-
-	function checkFriendOrNot($data){
-		$from_member=$data['from_member'];
-		$to_member=$data['to_member'];
-		$this->db->where('(from_member='.$from_member.' AND to_member='.$to_member.') OR (from_member='.$to_member.' AND to_member='.$from_member.')');
-		$result=$this->db->select('friend_id')->get('friends_list')->row_array();
-		$cnt=0;
-		if(count($result) > 0){
-			if($data['from_chat_id']!=''){
-				$this->db->update('friends_list',$data,array('friend_id'=>$result['friend_id']));
-			}
-			$cnt=1;
-		}
-		return $cnt;
-	}
-
 	function delData($tbl_name,$where){
 		return $this->db->delete($tbl_name,$where);
 	}
 
 	function getSingleData($tbl_name,$where){
-		return $this->db->get_where($tbl_name,$where)->row_array();
+		$query=$this->db->get_where($tbl_name,$where);
+		if($query->num_rows() > 0){
+			return $query->row_array();
+		}else{
+			return false;
+		}
 	}
 	function getAllDatalist($tbl_name,$where){
 		return $this->db->get_where($tbl_name,$where)->result_array();

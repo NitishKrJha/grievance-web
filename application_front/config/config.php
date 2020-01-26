@@ -14,13 +14,13 @@
 | path to your installation.
 |
 */
-	$config['base_url']					      = "http://".$_SERVER['HTTP_HOST']."/mmr/";  //admin root
-	$config['front_base_url']			      = "http://".$_SERVER['HTTP_HOST']."/mmr/"; // for common download uploaded files & fckeditor
-    $config['server_absolute_path'] 	      = $_SERVER['DOCUMENT_ROOT']."/mmr/"; // site root folder to check file exists in server absolute path or not
-    $config['file_upload_absolute_path']      = $_SERVER['DOCUMENT_ROOT']."/mmr/uploads/";
+	$config['base_url']					      = "http://".$_SERVER['HTTP_HOST']."/grievance/";  //admin root
+	$config['front_base_url']			      = "http://".$_SERVER['HTTP_HOST']."/grievance/"; // for common download uploaded files & fckeditor
+    $config['server_absolute_path'] 	      = $_SERVER['DOCUMENT_ROOT']."/grievance/"; // site root folder to check file exists in server absolute path or not
+    $config['file_upload_absolute_path']      = $_SERVER['DOCUMENT_ROOT']."/grievance/uploads/";
 	$config['file_upload_base_url'] 	  	  = $config['front_base_url']."/uploads/";
 	$config['css_images_js_base_url']	      = $config['front_base_url']."public/";
-	$config['fckeditor_base_url']		      = "http://".$_SERVER['HTTP_HOST']."mmr/webadmin/";
+	$config['fckeditor_base_url']		      = "http://".$_SERVER['HTTP_HOST']."grievance/webadmin/";
 
 /*
 |--------------------------------------------------------------------------

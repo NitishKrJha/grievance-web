@@ -1,2 +1,0 @@
-[22-Sep-2018 10:13:21 America/Chicago] PHP Fatal error:  Call to undefined function resolveUrl() in /home3/scanfieil/public_html/public/js/ckfinder/config.php on line 83
-[13-Oct-2018 20:45:07 UTC] PHP Fatal error:  Call to undefined function resolveUrl() in /home/mymissingrib/public_html/public/js/ckfinder/config.php on line 83

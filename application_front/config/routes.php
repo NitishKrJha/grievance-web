@@ -40,6 +40,7 @@
 $route['default_controller']    = "page";
 $route['404_override']          = 'pageNotFound';
 
+$route['contact-us']                  = 'page/contactUs';
 $route['about']                  = 'page/about';
 $route['terms-conditions']       = 'page/termsConditions';
 $route['privacy-policy']         = 'page/privacyPolicy';
@@ -48,8 +49,8 @@ $route['dating-disclaimer']      = 'page/datingDisclaimer';
 $route['help-center']            = 'page/helpCenter';
 $route['how-it-works']           = 'page/howItWorks';
 $route['whats-new']              = 'page/whatsNew';
-$route['login']                  = 'login/index';
-$route['forgot-password']        = 'login/forgotPassword';
+$route['login']                  = 'page/login';
+$route['register']               = 'page/register';
 
 
 /* End of file routes.php */
