@@ -86,10 +86,7 @@ class Page extends CI_Controller {
 	   
     }
 
-    function contactUs(){
-        if(!$this->nsession->userdata('member_login') && !$this->nsession->userdata('member_login')==1){
-            redirect(base_url('login'));
-        }
+    function aboutUs(){
         $data['controller'] = $this->controller;
         // Send captcha image to view
         $data['captchaImg'] = $captcha['image'];
@@ -105,7 +102,7 @@ class Page extends CI_Controller {
         $elements = array();
         $elements['header'] = 'layout/header';
         $element_data['header'] = $data;
-        $elements['main'] = 'page/contactUs';
+        $elements['main'] = 'page/aboutUs';
         $element_data['main'] = $data;
         $elements['footer'] = 'layout/footer';
         $element_data['footer'] = $data;
@@ -211,8 +208,14 @@ class Page extends CI_Controller {
                     'is_active'=>1,
                     'member_type'=>1
                 );
-                $this->ModelCommon->insertData('member',$insert_data);
+                $result=$this->ModelCommon->insertData('member',$insert_data);
+                $user_data=$this->ModelCommon->getSingleData('member',array('id'=>$result));
                 $data = array('status' => true, 'message' => 'Registration Successfully','data'=>$user_data);
+                $this->nsession->set_userdata('member_login', 1);
+                $this->nsession->set_userdata('member_session_id', $user_data['id']);
+                $this->nsession->set_userdata('member_session_membertype', $user_data['member_type']);
+                $this->nsession->set_userdata('member_session_email', $user_data['email']);
+                $this->nsession->set_userdata('member_session_name', $user_data['first_name']);
                 $this->nsession->set_userdata('succmsg',$data['msg']);
                 $this->response($data);
             }else{

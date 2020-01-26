@@ -37,18 +37,13 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-$route['default_controller']    = "page";
-$route['404_override']          = 'pageNotFound';
+$route['default_controller']     = "page";
+$route['404_override']           = 'pageNotFound';
 
-$route['contact-us']                  = 'page/contactUs';
+$route['contact-us']             = 'user/contactUs';
 $route['about']                  = 'page/about';
-$route['terms-conditions']       = 'page/termsConditions';
-$route['privacy-policy']         = 'page/privacyPolicy';
-$route['dating-securely']        = 'page/datingSecurely';
-$route['dating-disclaimer']      = 'page/datingDisclaimer';
-$route['help-center']            = 'page/helpCenter';
-$route['how-it-works']           = 'page/howItWorks';
-$route['whats-new']              = 'page/whatsNew';
+$route['edit-profile']           = 'user/editprofile';
+$route['my-profile']             = 'user/myproifle';
 $route['login']                  = 'page/login';
 $route['register']               = 'page/register';
 

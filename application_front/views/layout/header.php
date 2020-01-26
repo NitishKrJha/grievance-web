@@ -66,12 +66,23 @@ $action = $this->uri->segment(2);
                             <li><a href="all-package.html">All package</a></li><li><a href="hotels-list.html">All hotels</a></li>
                             <li><a href="booking.html">Booking page</a></li>
                         </ul> -->
-                        <h4 class="ed-dr-men-mar-top">User login pages</h4>
+                        <h4 class="ed-dr-men-mar-top">User</h4>
                         <ul>
-                            <li><a href="register.html">Register</a></li>
-                            <li><a href="login.html">Login and Sign in</a></li>
+                        <?php if($this->nsession->userdata('member_login') && $this->nsession->userdata('member_login')==1){
+                            ?>
+                            <li><a href="<?php echo base_url('logout'); ?>">Logout</a>
+                            </li>
+                            <?php
+                        }else{
+                            ?>
+                            <li><a href="<?php echo base_url('login'); ?>">Sign In</a>
+                            </li>
+                            <li><a href="<?php echo base_url('register'); ?>">Sign Up</a>
+                            </li>
+                            <?php
+                        } ?>
                         </ul>
-                        <h4>Other pages:2</h4>
+                        <!-- <h4>Other pages:2</h4>
                         <ul>
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="testimonials.html">Testimonials</a></li>
@@ -84,7 +95,7 @@ $action = $this->uri->segment(2);
                             <li><a href="sitemap.html">Site map</a></li>
                             <li><a href="404.html">404 Page</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
             </div>
