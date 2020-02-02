@@ -28,7 +28,7 @@ class Nsession {
     var $session_id_ttl = 7200; // session id time to live (TTL) in seconds
     var $flash_key = 'flash'; // prefix for "flash" variables (eg. flash:new:message)
     
-    function Nsession()
+    function __construct()
     {
         log_message('debug', "Native_session Class Initialized");
         $this->_sess_run();

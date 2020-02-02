@@ -6,7 +6,7 @@ class Functions
 	/**
 	 * Constructor
 	 */
-    function Functions()
+    function __construct()
     {
         $this->obj =& get_instance();
     }

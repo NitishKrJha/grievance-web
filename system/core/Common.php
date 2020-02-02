@@ -354,7 +354,7 @@
 
 */
 
-	function is_loaded($class = '')
+	function &is_loaded($class = '') // add & by nitish
 
 	{
 

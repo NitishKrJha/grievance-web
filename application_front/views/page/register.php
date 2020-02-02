@@ -175,7 +175,7 @@ function do_customer_reg(formData){
             $('#load-txt').hide();
             var response=$.parseJSON(msg);
             if(response.status==1){
-                window.location.href = "<?php echo base_url('contact-us') ?>";
+                window.location.href = "<?php echo base_url('grievance/index/0/1') ?>";
 			}else{
             	$('#otpDiv').hide();
                 messagealert('Error',response.msg,'error');

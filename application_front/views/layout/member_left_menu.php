@@ -19,7 +19,10 @@
                 <a href=""><img src="<?php echo  CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/dbl6.png" alt="" /> My Profile</a>
             </li>
             <li>
-                <a href=""><img src="<?php echo  CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/dbl7.png" alt="" /> My Complaint</a>
+                <a href="<?php echo base_url('grievance/index/0/1'); ?>"><img src="<?php echo  CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/dbl7.png" alt="" /> My Grievance</a>
+            </li>
+            <li>
+                <a href="<?php echo base_url('grievance/add'); ?>"><img src="<?php echo  CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/dbl7.png" alt="" /> Add Grievance</a>
             </li>
         </ul>
     </div>

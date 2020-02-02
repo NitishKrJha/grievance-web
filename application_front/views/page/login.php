@@ -19,6 +19,12 @@
                         <label>Phone Number</label>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" name="crn">
+                        <label>CRN</label>
+                    </div>
+                </div>
                 <div id="otpDiv" style="display:none;">
                     <div class="row">
                         <div class="input-field col s12">
@@ -50,11 +56,15 @@ $(document).ready(function(){
         rules: {
             phone: {
                 required: true
+            },
+            crn: {
+                required: true
             }
         },
         // Specify validation error messages
         messages: {
-            phone: "Please enter a valid phone number."
+            phone: "Please enter a valid phone number.",
+            crn: "Enter a valid CRN"
         },
         submitHandler: function(form) {
             $('#load-txt').show();
@@ -78,7 +88,7 @@ function sendOtp(){
     $.ajax({
         type:'POST',
         url:"<?php echo base_url('page/sendOtp/login'); ?>",
-        data:{'phone':$('input[name="phone"]').val()},
+        data:{'phone':$('input[name="phone"]').val(),'crn':$('input[name="crn"]').val()},
         success:function(msg){
             var response=$.parseJSON(msg);
             if(response.error==0){
@@ -108,7 +118,7 @@ function do_customer_login(formData){
           success:function(msg){
             var response=$.parseJSON(msg);
             if(response.status==1){
-                window.location.href = "<?php echo base_url('contact-us'); ?>";
+                window.location.href = "<?php echo base_url('grievance/index/0/1'); ?>";
 			}else{
             	$('#otpDiv').hide();
                 messagealert('Error',response.msg,'error');

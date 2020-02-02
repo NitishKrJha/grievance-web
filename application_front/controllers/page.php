@@ -63,10 +63,7 @@ class Page extends CI_Controller {
             redirect(base_url('contact-us'));
         }
         $data['controller'] = $this->controller;
-        // Send captcha image to view
-        $data['captchaImg'] = $captcha['image'];
-
-        /* Captcha End */
+        
 
         $data['succmsg'] = $this->nsession->userdata('succmsg');
         $data['errmsg'] = $this->nsession->userdata('errmsg');
@@ -117,8 +114,15 @@ class Page extends CI_Controller {
             $date=date('Y-m-d H:i:s');
             $otp = rand(1000,9999);
             if($type=='login'){
+                if(!$this->input->post('crn')){
+                    $response=array('error'=>1,'msg'=>'Enter valid CRN');
+                    $this->response($response);
+                    return;
+                }
                 if(empty($phone_data)){
                     $response=array('error'=>1,'msg'=>'Phone number is invalid');
+                }else if($phone_data['crn']!=$this->input->post('crn')){
+                    $response=array('error'=>1,'msg'=>'You have netered invalid CRN');
                 }else{
                     $mobile_number=$this->input->post('phone');
                     $insert_data=array(
@@ -251,7 +255,7 @@ class Page extends CI_Controller {
             $this->nsession->set_userdata('member_session_membertype', $user_data['member_type']);
             $this->nsession->set_userdata('member_session_email', $user_data['email']);
             $this->nsession->set_userdata('member_session_name', $user_data['first_name']);
-            $this->nsession->set_userdata('succmsg',$data['msg']);
+            $this->nsession->set_userdata('succmsg',$data['message']);
             $this->response($data);
         }
     }
