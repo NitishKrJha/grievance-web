@@ -4,9 +4,9 @@
         <div class="container">
             <div class="row">
                 <div class="tourz-search-1">
-                    <h1>Plan Your Travel Now!</h1>
-                    <p>Experience the various exciting tour and travel packages and Make hotel reservations, find vacation packages, search cheap hotels and events</p>
-                    <form class="tourz-search-form">
+                    <h1>Grievance & Quarter Booking</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                    <!-- <form class="tourz-search-form">
                         <div class="input-field">
                             <input type="text" id="select-city" class="autocomplete">
                             <label for="select-city">Enter city</label>
@@ -16,21 +16,22 @@
                             <label for="select-search" class="search-hotel-type">Search over a million tour and travels, sight seeings, hotels and more</label>
                         </div>
                         <div class="input-field">
-                            <input type="submit" value="search" class="waves-effect waves-light tourz-sear-btn"> </div>
-                    </form>
+                            <input type="submit" value="search" class="waves-effect waves-light tourz-sear-btn">
+                        </div>
+                    </form> -->
                     <div class="tourz-hom-ser">
                         <ul>
                             <li>
-                                <a href="booking-tour-package.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="0.5s"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/2.png" alt=""> Tour</a>
+                                <a href="booking-tour-package.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="0.5s"><i class="fa fa-comments" aria-hidden="true"></i> Grievance</a>
                             </li>
                             <li>
-                                <a href="booking-flight.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="1s"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/31.png" alt=""> Flight</a>
+                                <a href="booking-flight.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="1s"><i class="fa fa-bed" aria-hidden="true"></i> Booking</a>
                             </li>
                             <li>
-                                <a href="booking-car-rentals.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="1.5s"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/30.png" alt=""> Car Rentals</a>
+                                <a href="booking-car-rentals.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="1.5s"><i class="fa fa-question" aria-hidden="true"></i> Ask Us</a>
                             </li>
                             <li>
-                                <a href="booking-hotel.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="2s"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/icon/1.png" alt=""> Hotel</a>
+                                <a href="booking-hotel.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="2s"><i class="fa fa-user" aria-hidden="true"></i> About Us</a>
                             </li>
                         </ul>
                     </div>
@@ -39,6 +40,7 @@
         </div>
     </div>
 </section>
+<?php /* ?>
 <!--====== HOME HOTELS ==========-->
 <section>
     <div class="rows tb-space pad-top-o pad-bot-redu">
@@ -131,6 +133,8 @@
         </div>
     </div>
 </section>
+<?php */ ?>
+<?php /* ?>
 <!--====== SECTION: FREE CONSULTANT ==========-->
 <section>
     <div class="offer">
@@ -168,7 +172,9 @@
         </div>
     </div>
 </section>
+<?php */ ?>
 <!--====== EVENTS ==========-->
+<?php /* ?>
 <section>
     <div class="rows tb-space">
         <div class="container events events-1" id="inner-page-title">
@@ -278,7 +284,9 @@
         </div>
     </div>
 </section>
+<?php */ ?>
 <!--====== POPULAR TOUR PLACES ==========-->
+<?php /* ?>
 <section>
     <div class="rows pla pad-bot-redu tb-space">
         <div class="pla1 p-home container">
@@ -327,7 +335,9 @@
         </div>
     </div>
 </section>
+<?php */ ?>
 <!--====== REQUEST A QUOTE ==========-->
+<?php /* ?>
 <section>
     <div class="ho-popu tb-space pad-bot-redu">
         <div class="rows container">
@@ -508,7 +518,9 @@
         </div>
     </div>
 </section>
+<?php */ ?>
 <!--====== REQUEST A QUOTE ==========-->
+<?php /* ?>
 <section>
     <div class="foot-mob-sec tb-space">
         <div class="rows container">
@@ -533,3 +545,4 @@
         </div>
     </div>
 </section>
+<?php */ ?>

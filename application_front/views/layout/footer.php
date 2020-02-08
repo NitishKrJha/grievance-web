@@ -29,50 +29,15 @@ $global_linkedin_url = $this->functions->getGlobalInfo('global_linkdin_url');
 $global_instagram_url = $this->functions->getGlobalInfo('global_instagram_url');
 ?>
 <!--====== FOOTER 1 ==========-->
+<?php  ?>
 <section>
 		<div class="rows">
 				<div class="footer1 home_title tb-space">
-						<div class="pla1 container">
-								<!-- FOOTER OFFER 1 -->
-								<div class="col-md-3 col-sm-6 col-xs-12">
-										<div class="disco">
-												<h3>30%<span>OFF</span></h3>
-												<h4>Eiffel Tower,Rome</h4>
-												<p>valid only for 24th Dec</p> <a href="booking.html">Book Now</a> </div>
-								</div>
-								<!-- FOOTER OFFER 2 -->
-								<div class="col-md-3 col-sm-6 col-xs-12">
-										<div class="disco1 disco">
-												<h3>42%<span>OFF</span></h3>
-												<h4>Colosseum,Burj Al Arab</h4>
-												<p>valid only for 18th Nov</p> <a href="booking.html">Book Now</a> </div>
-								</div>
-								<!-- FOOTER MOST POPULAR VACATIONS -->
-								<div class="col-md-6 col-sm-12 col-xs-12 foot-spec footer_places">
-										<h4><span>Most Popular</span> Vacations</h4>
-										<ul>
-												<li><a href="tour-details.html">Angkor Wat</a> </li>
-												<li><a href="tour-details.html">Buckingham Palace</a> </li>
-												<li><a href="tour-details.html">High Line</a> </li>
-												<li><a href="tour-details.html">Sagrada Família</a> </li>
-												<li><a href="tour-details.html">Statue of Liberty </a> </li>
-												<li><a href="tour-details.html">Notre Dame de Paris</a> </li>
-												<li><a href="tour-details.html">Taj Mahal</a> </li>
-												<li><a href="tour-details.html">The Louvre</a> </li>
-												<li><a href="tour-details.html">Tate Modern, London</a> </li>
-												<li><a href="tour-details.html">Gothic Quarter</a> </li>
-												<li><a href="tour-details.html">Table Mountain</a> </li>
-												<li><a href="tour-details.html">Bayon</a> </li>
-												<li><a href="tour-details.html">Great Wall of China</a> </li>
-												<li><a href="tour-details.html">Hermitage Museum</a> </li>
-												<li><a href="tour-details.html">Yellowstone</a> </li>
-												<li><a href="tour-details.html">Musée d'Orsay</a> </li>
-										</ul>
-								</div>
-						</div>
+						
 				</div>
 		</div>
 </section>
+<?php  ?>
 <!--====== FOOTER 2 ==========-->
 <section>
 		<div class="rows">
@@ -82,8 +47,8 @@ $global_instagram_url = $this->functions->getGlobalInfo('global_instagram_url');
 										<div>
 												<div class="row">
 														<div class="col-sm-3 foot-spec foot-com">
-																<h4><span>Holiday</span> Tour & Travels</h4>
-																<p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
+																<h4><span>User</span> Grievence & Booking</h4>
+																<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
 														</div>
 														<div class="col-sm-3 foot-spec foot-com">
 																<h4><span>Address</span> & Contact Info</h4>
@@ -93,16 +58,13 @@ $global_instagram_url = $this->functions->getGlobalInfo('global_instagram_url');
 														<div class="col-sm-3 col-md-3 foot-spec foot-com">
 																<h4><span>SUPPORT</span> & HELP</h4>
 																<ul class="two-columns">
-																		<li> <a href="#">About Us</a> </li>
-																		<li> <a href="#">FAQ</a> </li>
-																		<li> <a href="#">Feedbacks</a> </li>
-																		<li> <a href="#">Blog </a> </li>
-																		<li> <a href="#">Use Cases</a> </li>
-																		<li> <a href="#">Advertise us</a> </li>
-																		<li> <a href="#">Discount</a> </li>
-																		<li> <a href="#">Vacations</a> </li>
-																		<li> <a href="#">Branding Offers </a> </li>
-																		<li> <a href="#">Contact Us</a> </li>
+																		<li> <a href="<?php echo base_url('page/aboutUs'); ?>">About Us</a> </li>
+																		<li> <a href="<?php echo base_url('page/faq'); ?>">FAQ</a> </li>
+																		<li> <a href="<?php echo base_url('page/aboutUs'); ?>">Testimonial</a> </li>
+																		<li> <a href="<?php echo base_url('page/howitworks'); ?>">How It works </a> </li>
+																		<li> <a href="<?php echo base_url('page/terms'); ?>">Terms</a> </li>
+																		<li> <a href="<?php echo base_url('page/provacy'); ?>">Privacy</a> </li>
+																		<li> <a href="<?php echo base_url('page/contactUs'); ?>">Contact Us</a> </li>
 																</ul>
 														</div>
 														<div class="col-sm-3 foot-social foot-spec foot-com">
@@ -127,11 +89,11 @@ $global_instagram_url = $this->functions->getGlobalInfo('global_instagram_url');
 <section>
 		<div class="rows copy">
 				<div class="container">
-						<p>Copyrights © 2018 Company Name. All Rights Reserved</p>
+						<p>Copyrights © 2020 Company Name. All Rights Reserved</p>
 				</div>
 		</div>
 </section>
-<section>
+<!-- <section>
 		<div class="icon-float">
 				<ul>
 						<li><a href="#" class="sh">1k <br> Share</a> </li>
@@ -143,7 +105,7 @@ $global_instagram_url = $this->functions->getGlobalInfo('global_instagram_url');
 						<li><a href="#" class="sh1"><i class="fa fa-envelope-o" aria-hidden="true"></i></a> </li>
 				</ul>
 		</div>
-</section>
+</section> -->
 
 <script>
 	function messagealert(title,text,type){

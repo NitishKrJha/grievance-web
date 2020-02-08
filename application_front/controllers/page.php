@@ -85,11 +85,6 @@ class Page extends CI_Controller {
 
     function aboutUs(){
         $data['controller'] = $this->controller;
-        // Send captcha image to view
-        $data['captchaImg'] = $captcha['image'];
-
-        /* Captcha End */
-
         $data['succmsg'] = $this->nsession->userdata('succmsg');
         $data['errmsg'] = $this->nsession->userdata('errmsg');
 
@@ -258,6 +253,120 @@ class Page extends CI_Controller {
             $this->nsession->set_userdata('succmsg',$data['message']);
             $this->response($data);
         }
+    }
+
+    function testimonial(){
+        $data['controller'] = $this->controller;
+        $data['succmsg'] = $this->nsession->userdata('succmsg');
+        $data['errmsg'] = $this->nsession->userdata('errmsg');
+
+        $this->nsession->set_userdata('succmsg', "");
+        $this->nsession->set_userdata('errmsg', "");
+
+        $elements = array();
+        $elements['header'] = 'layout/header';
+        $element_data['header'] = $data;
+        $elements['main'] = 'page/testimonial';
+        $element_data['main'] = $data;
+        $elements['footer'] = 'layout/footer';
+        $element_data['footer'] = $data;
+        $this->layout->setLayout('layout_home');
+        $this->layout->multiple_view($elements,$element_data);
+    }
+
+    function privacy(){
+        $data['controller'] = $this->controller;
+        $data['succmsg'] = $this->nsession->userdata('succmsg');
+        $data['errmsg'] = $this->nsession->userdata('errmsg');
+
+        $this->nsession->set_userdata('succmsg', "");
+        $this->nsession->set_userdata('errmsg', "");
+
+        $elements = array();
+        $elements['header'] = 'layout/header';
+        $element_data['header'] = $data;
+        $elements['main'] = 'page/privacy';
+        $element_data['main'] = $data;
+        $elements['footer'] = 'layout/footer';
+        $element_data['footer'] = $data;
+        $this->layout->setLayout('layout_home');
+        $this->layout->multiple_view($elements,$element_data);
+    }
+
+    function terms(){
+        $data['controller'] = $this->controller;
+        $data['succmsg'] = $this->nsession->userdata('succmsg');
+        $data['errmsg'] = $this->nsession->userdata('errmsg');
+
+        $this->nsession->set_userdata('succmsg', "");
+        $this->nsession->set_userdata('errmsg', "");
+
+        $elements = array();
+        $elements['header'] = 'layout/header';
+        $element_data['header'] = $data;
+        $elements['main'] = 'page/terms';
+        $element_data['main'] = $data;
+        $elements['footer'] = 'layout/footer';
+        $element_data['footer'] = $data;
+        $this->layout->setLayout('layout_home');
+        $this->layout->multiple_view($elements,$element_data);
+    }
+
+    function faq(){
+        $data['controller'] = $this->controller;
+        $data['succmsg'] = $this->nsession->userdata('succmsg');
+        $data['errmsg'] = $this->nsession->userdata('errmsg');
+
+        $this->nsession->set_userdata('succmsg', "");
+        $this->nsession->set_userdata('errmsg', "");
+
+        $elements = array();
+        $elements['header'] = 'layout/header';
+        $element_data['header'] = $data;
+        $elements['main'] = 'page/faq';
+        $element_data['main'] = $data;
+        $elements['footer'] = 'layout/footer';
+        $element_data['footer'] = $data;
+        $this->layout->setLayout('layout_home');
+        $this->layout->multiple_view($elements,$element_data);
+    }
+
+    function howitworks(){
+        $data['controller'] = $this->controller;
+        $data['succmsg'] = $this->nsession->userdata('succmsg');
+        $data['errmsg'] = $this->nsession->userdata('errmsg');
+
+        $this->nsession->set_userdata('succmsg', "");
+        $this->nsession->set_userdata('errmsg', "");
+
+        $elements = array();
+        $elements['header'] = 'layout/header';
+        $element_data['header'] = $data;
+        $elements['main'] = 'page/howitworks';
+        $element_data['main'] = $data;
+        $elements['footer'] = 'layout/footer';
+        $element_data['footer'] = $data;
+        $this->layout->setLayout('layout_home');
+        $this->layout->multiple_view($elements,$element_data);
+    }
+
+    function contactUs(){
+        $data['controller'] = $this->controller;
+        $data['succmsg'] = $this->nsession->userdata('succmsg');
+        $data['errmsg'] = $this->nsession->userdata('errmsg');
+
+        $this->nsession->set_userdata('succmsg', "");
+        $this->nsession->set_userdata('errmsg', "");
+
+        $elements = array();
+        $elements['header'] = 'layout/header';
+        $element_data['header'] = $data;
+        $elements['main'] = 'page/contactUs';
+        $element_data['main'] = $data;
+        $elements['footer'] = 'layout/footer';
+        $element_data['footer'] = $data;
+        $this->layout->setLayout('layout_home');
+        $this->layout->multiple_view($elements,$element_data);
     }
 
     function response($data){

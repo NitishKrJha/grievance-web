@@ -41,7 +41,7 @@ $route['default_controller']     = "page";
 $route['404_override']           = 'pageNotFound';
 
 $route['contact-us']             = 'user/contactUs';
-$route['about']                  = 'page/about';
+$route['about']                  = 'page/aboutUs';
 $route['edit-profile']           = 'user/editprofile';
 $route['my-profile']             = 'user/myproifle';
 $route['login']                  = 'page/login';

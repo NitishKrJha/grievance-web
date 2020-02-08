@@ -1657,7 +1657,7 @@
 /*-------------------------------------------------------*/
  .footer1 {
      background: #000000;
-     padding: 100px 0px 50px 0px;
+     padding: 0px 0px 50px 0px;
      border-top: 1px solid;
 }
  .footer_places {
@@ -4356,6 +4356,14 @@
      padding-bottom: 5px;
      width: 36px;
 }
+
+.tourz-hom-ser ul li a i {
+    display: table;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    font-size: 36px;
+}
  .tourz-pop-ser-btn {
 }
  .tourz-pop-ser-btn img {
@@ -5557,7 +5565,7 @@
  .wed-logo a{
 }
  .wed-logo a img{
-     width: 250px;
+     /* width: 250px; */
      padding: 7px 0px;
 }
  .wed-menu{
