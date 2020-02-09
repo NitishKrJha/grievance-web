@@ -25,13 +25,13 @@
                                 <a href="<?php echo base_url('supervisor/login'); ?>" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="0.5s"><i class="fa fa-comments" aria-hidden="true"></i> Grievance</a>
                             </li>
                             <li>
-                                <a href="booking-flight.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="1s"><i class="fa fa-bed" aria-hidden="true"></i> Booking</a>
+                                <a href="#" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="1s"><i class="fa fa-bed" aria-hidden="true"></i> Booking</a>
                             </li>
                             <li>
-                                <a href="booking-car-rentals.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="1.5s"><i class="fa fa-question" aria-hidden="true"></i> Ask Us</a>
+                                <a href="<?php echo base_url('page/aboutUs'); ?>" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="1.5s"><i class="fa fa-question" aria-hidden="true"></i> Ask Us</a>
                             </li>
                             <li>
-                                <a href="booking-hotel.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="2s"><i class="fa fa-user" aria-hidden="true"></i> About Us</a>
+                                <a href="<?php echo base_url('page/aboutus'); ?>" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="2s"><i class="fa fa-user" aria-hidden="true"></i> About Us</a>
                             </li>
                         </ul>
                     </div>

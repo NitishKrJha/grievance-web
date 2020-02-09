@@ -1737,7 +1737,7 @@
      width: 100%;
 }
  .inner_banner_1 {
-     background: url('../images/banner/1.jpg') no-repeat center center;
+     background: url('../images/quarter/5.jpeg') no-repeat center center;
      background-size: cover;
 }
  .inner_banner_2 {
@@ -4204,7 +4204,7 @@
 /* HOME PAGE SEARCH BOX 
 /*-------------------------------------------------*/
  .tourz-search {
-     background: url(../images/consul-bg-3.jpg) no-repeat;
+     background: url(../images/quarter/8.jpeg) no-repeat;
      position: relative;
      background-size: cover;
 }
@@ -4248,12 +4248,12 @@
      position: relative;
 }
  .tourz-search-1 h1 {
-     color: #fff;
+     color: #f4364f;
      font-size: 50px;
 }
  .tourz-search-1 p {
      font-size: 18px;
-     color: #fff;
+     color: #f4364f;
      padding-bottom: 30px;
      margin-bottom: 0px;
 }
@@ -4345,10 +4345,19 @@
  .tourz-hom-ser ul li a:hover {
      -webkit-transform: scale(1.1);
      transform: scale(1.1);
-     background: #f4364f;
-     background: linear-gradient(to bottom,#f4364f,#dc2039);
+     background: #1aa5d8;
+     /* background: linear-gradient(to bottom,#1aa5d8,#dc2039); */
      border: 1px solid #d41e36;
 }
+
+.tourz-hom-ser ul li a {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    background: #f4364f;
+    background: linear-gradient(to bottom,#f4364f,#dc2039);
+    border: 1px solid #d41e36;
+}
+
  .tourz-hom-ser ul li a img {
      display: table;
      text-align: center;
@@ -4922,7 +4931,7 @@
 /* REGISTER AND LOGIN 
 /*-------------------------------------------------------*/
  .tr-register {
-     background: url(../images/face.jpg) #e6e6e6;
+     background: url(../images/quarter/5.jpeg) #e6e6e6;
      position: relative;
     /* overflow: hidden;
      */

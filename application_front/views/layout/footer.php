@@ -63,7 +63,7 @@ $global_instagram_url = $this->functions->getGlobalInfo('global_instagram_url');
 																		<li> <a href="<?php echo base_url('page/aboutUs'); ?>">Testimonial</a> </li>
 																		<li> <a href="<?php echo base_url('page/howitworks'); ?>">How It works </a> </li>
 																		<li> <a href="<?php echo base_url('page/terms'); ?>">Terms</a> </li>
-																		<li> <a href="<?php echo base_url('page/provacy'); ?>">Privacy</a> </li>
+																		<li> <a href="<?php echo base_url('page/privacy'); ?>">Privacy</a> </li>
 																		<li> <a href="<?php echo base_url('page/contactUs'); ?>">Contact Us</a> </li>
 																</ul>
 														</div>
