@@ -59,7 +59,7 @@
             ?>
             <tr class="<?php echo $i%2==0?'even':'odd'; ?> pointer">
 			        <td class=" "><?php echo $i+$startRecord; ?></td>
-			        <td class=" "><?php echo $singleRecord['name']; ?></td>
+			        <td class=" "><?php echo $singleRecord['first_name']." ".$singleRecord['middle_name']." ".$singleRecord['last_name']; ?></td>
               <td class=" "><?php echo $singleRecord['email']; ?></td>
               <td class=" "><?php echo $singleRecord['phone']; ?></td>
               <td class=" "><?php echo date('m-d-Y',strtotime($singleRecord['created'])); ?></td>

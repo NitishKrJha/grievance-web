@@ -59,7 +59,7 @@
 														} ?>
 														<span class="<?php echo $class; ?>"><?php echo $status; ?></span>
 													</td>
-													<td><a href="<?php echo base_url('grievance/detail/'.$val['id']); ?>" class="<?php echo $class; ?>">view more</a>
+													<td><a href="<?php echo base_url('supervisor/detail/'.$val['id']); ?>" class="<?php echo $class; ?>">view more</a>
 													</td>
 												</tr>
 												<?php

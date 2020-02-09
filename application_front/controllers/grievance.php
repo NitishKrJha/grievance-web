@@ -27,7 +27,7 @@ class Grievance extends CI_Controller {
 		$data['controller'] = $this->controller;
 
 		$param['sortType'] 			= $this->input->request('sortType','DESC');
-		$param['sortField'] 		= $this->input->request('sortField','id');
+		$param['sortField'] 		= $this->input->request('sortField','grievances.id');
 		$param['searchField'] 		= $this->input->request('searchField','');
 		$param['searchString'] 		= $this->input->request('searchString','');
 		$param['searchText'] 		= $this->input->request('searchText','');
@@ -101,7 +101,7 @@ class Grievance extends CI_Controller {
 		$data['controller'] = $this->controller;
 		$data['succmsg'] 	= $this->nsession->userdata('succmsg');
 		$data['errmsg'] 	= $this->nsession->userdata('errmsg');
-		
+		$data['departments'] = $this->ModelCommon->getAllDatalist('department',array('status'=>'1'));
 		$this->nsession->set_userdata('succmsg', "");
 		$this->nsession->set_userdata('errmsg', "");
        
@@ -124,8 +124,12 @@ class Grievance extends CI_Controller {
         }else if(!$this->input->post('body')){
             $data = array('status' => false, 'message' => 'Body is blank','data'=>array());
             $this->response($data);
+        }else if(!$this->input->post('department_id')){
+            $data = array('status' => false, 'message' => 'department is blank','data'=>array());
+            $this->response($data);
         }else{
             $subject=$this->input->post('subject');
+			$department_id=$this->input->post('department_id');
 			$query=$this->input->post('body');
 			$email=($this->input->post('optional_email'))?$this->input->post('optional_email'):'';
 			$phone=($this->input->post('optional_phone'))?$this->input->post('optional_phone'):'';
@@ -134,6 +138,7 @@ class Grievance extends CI_Controller {
 			$insert_data=array(
 				'subject'=>$subject,
 				'query'=>$query,
+				'department_id'=>$department_id,
 				'optional_phone'=>$phone,
 				'optional_email'=>$email,
 				'created_date'=>$date,

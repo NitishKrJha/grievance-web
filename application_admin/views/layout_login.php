@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title><?php echo constant("GLOBAL_SITE_NAME");?></title>
+    <link rel="icon" href="<?php echo front_base_url()."public/";?>assets/images/fav.ico">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 	<!---Angular-->
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>

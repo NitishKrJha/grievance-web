@@ -9,6 +9,7 @@
     <meta name="format-detection" content="telephone=yes">
 
     <title><?php echo constant("GLOBAL_SITE_NAME");?></title>
+    <link rel="icon" href="<?php echo front_base_url()."public/";?>assets/images/fav.ico">
 
     <!-- Bootstrap -->
     <link href="<?php echo CSS_IMAGES_JS_BASE_URL; ?>vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">

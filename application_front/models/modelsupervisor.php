@@ -1,5 +1,5 @@
 <?php
-class ModelGrievance extends CI_Model {
+class ModelSupervisor extends CI_Model {
 
     function __construct()
     {
@@ -63,8 +63,8 @@ class ModelGrievance extends CI_Model {
 		if(isset($sessionDataArray['searchField'])){
 			$this->db->like($sessionDataArray['searchField'],$sessionDataArray['searchString'],'both');
 		}
-		
-		$this->db->where('grievances.created_by',$memberID);
+		$this->db->select('grievances.*');
+		//$this->db->where('grievances.created_by',$memberID);
 		$recordSet = $this->db->get('grievances');
 		$config['total_rows'] = 0;
 		$config['per_page'] = $searchDisplay;
@@ -81,14 +81,15 @@ class ModelGrievance extends CI_Model {
 		if($page > 0 && $page < $config['total_rows'] )
 			$start = $page;
 			$this->db->select('grievances.*,department.name as department_name');
-		$this->db->join('department','department.id = grievances.department_id','Left Outer');
 			if(isset($sessionDataArray['searchField'])){
 				$this->db->like($sessionDataArray['searchField'],$sessionDataArray['searchString'],'both');
 			}
 
 		$this->db->order_by($sortField,$sortType);
 		$this->db->limit($config['per_page'],$start);
-		$this->db->where('grievances.created_by',$memberID);
+		$this->db->join('department','department.id = grievances.department_id','Left Outer');
+		//$this->db->where('grievances.created_by',$memberID);
+		
 		$recordSet = $this->db->get('grievances');
 		//echo $this->db->last_query();
 		$rs = false;

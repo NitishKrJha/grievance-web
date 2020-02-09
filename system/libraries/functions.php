@@ -159,9 +159,6 @@ class Functions
 	 */
 	function checkUser($section_name)
 	{
-		if($this->obj->input->request('appcall')==1){
-			return true;
-		}
 		$UserID = $this->obj->nsession->userdata('member_session_id');
 		if(!$UserID)
 		{
@@ -1168,7 +1165,7 @@ class Functions
 		}
 	}
 
-	function mail_template($to,$subject,$body){
+	function mail_template2($to,$subject,$body){
 		
 		$data['body']=$body;
 		$data['global_email']=$this->getGlobalInfo('global_contact_email');
@@ -1212,6 +1209,54 @@ class Functions
 		}else{
 			return false;
 		}
+	}
+
+	function mail_template($to,$subject,$body){
+		
+		$serverYear=date('Y');
+		$global_email = $this->getGlobalInfo('global_contact_email');
+		$global_email_sign = $this->getGlobalInfo('global_email_signature');
+		$global_site_name = $this->getGlobalInfo('global_site_name');
+
+		$emailTo = $to;
+		$emailFrom = $global_email;
+		
+		$mailbody = '<table width="100%" border="0" cellspacing="10" cellpadding="10" bordercolor="#000000" style="border-collapse:collapse; margin:0 auto; border:#C4C4C4 1px solid;">
+					<tr>
+						<td style="background:#3466BF; border-bottom: 1px solid #C4C4C4; height: 100px;">
+							<center><img style="padding:10px 0 10px 20px;" src='.base_url('/').'public/assets/images/logo.png></center>
+						</td>
+					</tr>
+					<tr>'.$body.'</tr>
+					<tr>
+						<td style="background:#C00000;"><p style="color: #ffffff; font-family: Arial,Helvetica,sans-serif; font-size: 11px; padding: 6px 0;text-align: center;"> '.$global_site_name.' &copy; Copyright 2016-'.$serverYear.'. All Rights Reserved.</p></td>
+					</tr>
+				</table>';
+		
+		$to = $to;
+		$subject = $subject;
+		$from = $emailFrom;
+		 
+		// To send HTML mail, the Content-type header must be set
+		$headers  = 'MIME-Version: 1.0' . "\r\n";
+		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		 
+		// Create email headers
+		$headers .= 'From: '.$from."\r\n".
+			'X-Mailer: PHP/' . phpversion();
+		 
+		 
+		// Sending email
+		if(mail($to, $subject, $mailbody, "From:".$from)){
+			//echo 456; die();
+			return true;
+		} else{
+			//echo 444;
+			//print_r(error_get_last()['message']); die();
+			return false;
+		}
+		
+		
 	}
 
 

@@ -22,7 +22,7 @@
                     <div class="tourz-hom-ser">
                         <ul>
                             <li>
-                                <a href="booking-tour-package.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="0.5s"><i class="fa fa-comments" aria-hidden="true"></i> Grievance</a>
+                                <a href="<?php echo base_url('supervisor/login'); ?>" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="0.5s"><i class="fa fa-comments" aria-hidden="true"></i> Grievance</a>
                             </li>
                             <li>
                                 <a href="booking-flight.html" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="1s"><i class="fa fa-bed" aria-hidden="true"></i> Booking</a>

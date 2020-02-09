@@ -35,10 +35,7 @@ class Page extends CI_Controller {
             redirect(base_url('contact-us'));
         }
         $data['controller'] = $this->controller;
-        // Send captcha image to view
-        $data['captchaImg'] = $captcha['image'];
-
-        /* Captcha End */
+        
 
         $data['succmsg'] = $this->nsession->userdata('succmsg');
         $data['errmsg'] = $this->nsession->userdata('errmsg');

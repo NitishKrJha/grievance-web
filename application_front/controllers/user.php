@@ -30,15 +30,12 @@ class User extends CI_Controller {
 		$this->layout->multiple_view($elements,$element_data);
     }
 
-    function myproifle(){
+    function myprofile(){
         if(!$this->nsession->userdata('member_login') && !$this->nsession->userdata('member_login')==1){
             redirect(base_url('login'));
         }
         $data['controller'] = $this->controller;
-        // Send captcha image to view
-        $data['captchaImg'] = $captcha['image'];
-
-        /* Captcha End */
+        
 
         $data['succmsg'] = $this->nsession->userdata('succmsg');
         $data['errmsg'] = $this->nsession->userdata('errmsg');
@@ -62,10 +59,7 @@ class User extends CI_Controller {
             redirect(base_url('login'));
         }
         $data['controller'] = $this->controller;
-        // Send captcha image to view
-        $data['captchaImg'] = $captcha['image'];
-
-        /* Captcha End */
+        
 
         $data['succmsg'] = $this->nsession->userdata('succmsg');
         $data['errmsg'] = $this->nsession->userdata('errmsg');

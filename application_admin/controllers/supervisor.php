@@ -143,6 +143,7 @@ class Supervisor extends CI_Controller {
 		$page = $this->uri->segment(4, 0);
 		
 		if($contentId==0){
+			$password = $this->randomPassword();
 			$data['first_name'] 	     = ($this->input->post('first_name'))?$this->input->post('first_name'):'';
 			$data['middle_name'] 	     = ($this->input->post('middle_name'))?$this->input->post('middle_name'):'';
 			$data['last_name'] 	     = ($this->input->post('last_name'))?$this->input->post('last_name'):'';
@@ -154,11 +155,11 @@ class Supervisor extends CI_Controller {
 			$data['member_type'] = 2;
 			$data['created']     = date('Y-m-d H:i:s');
 			$data['is_active']   = 1;
+			$data['password']   = md5($password);
 			$data['country']    = ($this->input->post('country_id'))?$this->input->post('country_id'):'';
             $data['state']    	= ($this->input->post('state_id'))?$this->input->post('state_id'):'';
             $data['city']    = ($this->input->post('city_id'))?$this->input->post('city_id'):'';
 			$data['zip']    = ($this->input->post('zip'))?$this->input->post('zip'):'';
-			$data['is_active'] = 0;
 		}else{
 			$data['first_name'] 	     = ($this->input->post('first_name'))?$this->input->post('first_name'):'';
 			$data['middle_name'] 	     = ($this->input->post('middle_name'))?$this->input->post('middle_name'):'';
@@ -224,11 +225,13 @@ class Supervisor extends CI_Controller {
 			$result = $this->ModelSupervisor->addContent($data,$Imgdata);
 			
 			$to 				= $data['email'];
-			$subject			='MMR supervisor Registration';
+			$subject			='Supervisor Registration';
 			$body='<tr><td>Hi,</td></tr>
 					<tr style="background:#fff;"><td>We have added you as a supervisor . </td></tr>
-					<tr><td>So, Please complete next step to enter our site</td></tr>
-					<tr><td><a href="'.front_base_url().'page/supervisor/'.base64_encode($to).'">Click Here</a></td></tr>';
+					<tr><td>CRN: '.$data['crn'].'</td></tr>
+					<tr><td>Password: '.$password.'</td></tr>
+					<tr><td>So, Please Login to enter our site</td></tr>
+					<tr><td><a href="'.front_base_url().'supervisor/login">Click Here</a></td></tr>';
 			$this->functions->mail_template($to,$subject,$body);
 			$this->nsession->set_userdata('succmsg','supervisor added successfully.');
 			redirect(base_url($this->controller));
@@ -416,6 +419,17 @@ class Supervisor extends CI_Controller {
 	{
 	   $catId= $this->input->post('state_id');
 	   echo json_encode($this->functions->getAllTable('cities','id,name','state_id',$catId));
+	}
+
+	function randomPassword() {
+		$alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+		$pass = array(); //remember to declare $pass as an array
+		$alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+		for ($i = 0; $i < 8; $i++) {
+			$n = rand(0, $alphaLength);
+			$pass[] = $alphabet[$n];
+		}
+		return implode($pass); //turn the array into a string
 	}
 	 
 

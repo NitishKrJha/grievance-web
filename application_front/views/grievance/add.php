@@ -7,6 +7,9 @@
 	.error{
 		color: red !important;
 	}
+	.select-wrapper{
+		background: #fff;
+	}
 </style>
 <section>
 		<div class="db">
@@ -23,6 +26,21 @@
 								<label id="optional_phone-error" class="error" for="optional_phone" style="display:none;"></label>
 								<label id="optional_email-error" class="error" for="optional_email" style="display:none;"></label>
 								<label id="body-error" class="body" for="body" style="display:none;"></label>
+								<label id="department_id-error" class="department_id" for="department_id" style="display:none;"></label>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<select name="department_id">
+										<option value="">Select Department</option>
+										<?php
+										if(!empty($departments)){
+											foreach($departments as $r=>$v){
+												echo '<option value="'.$v['id'].'">'.$v['name'].'</option>';
+											}
+										}
+										?>
+									</select>
+								</div>
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
@@ -70,12 +88,16 @@ $(document).ready(function(){
             },
             body: {
                 required: true
-            }
+            },
+			department_id: {
+				required: true
+			}
         },
         // Specify validation error messages
         messages: {
             subject: "Please enter subject",
-            body: "Please enter body"
+            body: "Please enter body",
+			department_id: "Please select department"
         },
         submitHandler: function(form) {
 			$('#load-txt').show();

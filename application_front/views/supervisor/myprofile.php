@@ -49,7 +49,7 @@
 						</table>
 						<div class="db-mak-pay-bot">
 							<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p> 
-							<a href="<?php echo base_url('user/editProfile') ?>" class="waves-effect waves-light btn-large">Edit my profile</a> </div>
+							<a href="<?php echo base_url('supervisor/editProfile') ?>" class="waves-effect waves-light btn-large">Edit my profile</a> </div>
 					</div>
 				</div>
 			</div>
