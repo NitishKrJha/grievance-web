@@ -1,5 +1,106 @@
+<style>
+    .main-text
+    {
+        position: absolute;
+        top: 50px;
+        width: 96.66666666666666%;
+        color: #FFF;
+    }
+    .btn-min-block
+    {
+        min-width: 170px;
+        line-height: 26px;
+    }
+    .btn-clear
+    {
+        color: #FFF;
+        background-color: transparent;
+        border-color: #FFF;
+        margin-right: 15px;
+    }
+    .btn-clear:hover
+    {
+        color: #000;
+        background-color: #FFF;
+    }
 
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <section>
+    <div class="">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/8.jpeg" alt="First slide">
+                        </div>
+                        <div class="item">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/7.jpeg" alt="First slide">
+                        </div>
+                        <div class="item">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/6.jpeg" alt="First slide">
+                        </div>
+                        <div class="item">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/5.jpeg" alt="First slide">
+                        </div>
+                        <div class="item">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/4.jpeg" alt="First slide">
+                        </div>
+                        <div class="item">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/3.jpeg" alt="First slide">
+                        </div>
+                        <div class="item">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/2.jpeg" alt="First slide">
+                        </div>
+                        <div class="item">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/1.jpeg" alt="First slide">
+                        </div>
+                    </div>
+                        <a style="z-index: 9999999999999 !important;" class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a style="z-index: 9999999999999 !important;" class="right carousel-control"
+                            href="#carousel-example-generic" data-slide="next"><span class="glyphicon glyphicon-chevron-right">
+                            </span>
+                        </a>
+                </div>
+                <div class="main-text hidden-xs">
+                    <div class="col-md-12 text-center">
+                        <div class="tourz-search-1">
+                            <h1>Grievance & Quarter Booking</h1>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        
+                            <div class="tourz-hom-ser">
+                                <ul>
+                                    <li>
+                                        <a href="<?php echo base_url('supervisor/login'); ?>" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="0.5s"><i class="fa fa-comments" aria-hidden="true"></i> Grievance</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="1s"><i class="fa fa-bed" aria-hidden="true"></i> Booking</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo base_url('page/aboutUs'); ?>" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="1.5s"><i class="fa fa-question" aria-hidden="true"></i> Ask Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo base_url('page/aboutus'); ?>" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="2s"><i class="fa fa-user" aria-hidden="true"></i> About Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php /* ?><section>
     <div class="tourz-search">
         <div class="container">
             <div class="row">
@@ -40,6 +141,7 @@
         </div>
     </div>
 </section>
+<?php */ ?>
 <?php /* ?>
 <!--====== HOME HOTELS ==========-->
 <section>
