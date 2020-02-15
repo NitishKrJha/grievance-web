@@ -212,6 +212,7 @@ class Page extends CI_Controller {
                 $this->nsession->set_userdata('member_session_membertype', $user_data['member_type']);
                 $this->nsession->set_userdata('member_session_email', $user_data['email']);
                 $this->nsession->set_userdata('member_session_name', $user_data['first_name']);
+                $this->nsession->set_userdata('member_session_picture', $user_data['picture']);
                 $this->nsession->set_userdata('succmsg',$data['msg']);
                 $this->response($data);
             }else{

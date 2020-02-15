@@ -47,7 +47,7 @@
 							</tbody>
 						</table>
 						<div class="db-mak-pay-bot">
-							<a href="<?php echo base_url('supervisor/editProfile') ?>" class="waves-effect waves-light btn-large">Edit my profile</a> </div>
+							<a href="<?php echo base_url('user/editProfile') ?>" class="waves-effect waves-light btn-large">Edit my profile</a> </div>
 					</div>
 				</div>
 			</div>

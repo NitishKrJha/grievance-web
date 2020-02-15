@@ -211,8 +211,8 @@ class Users extends CI_Controller {
 			if($upload_data['upload_data']['file_name']) {
 				$implodeData = explode('.',$upload_data['upload_data']['file_name']);
 				$thumbImgNme = $implodeData[0].'_thumb.'.$implodeData[1];
-				$data['picture'] = file_upload_base_url().'profile_pic/'.$upload_data['upload_data']['file_name'];
-				$data['crop_profile_image'] = file_upload_base_url().'profile_pic/tmp/'.$thumbImgNme;
+				$data['picture'] = 'profile_pic/'.$upload_data['upload_data']['file_name'];
+				$data['crop_profile_image'] = 'profile_pic/tmp/'.$thumbImgNme;
 			}
 		}
 

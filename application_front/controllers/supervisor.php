@@ -70,7 +70,7 @@ class Supervisor extends CI_Controller {
 
     function login(){
         if($this->nsession->userdata('member_login') && $this->nsession->userdata('member_login')==1){
-            redirect(base_url('contact-us'));
+            redirect(base_url('supervisor/index'));
         }
         $data['controller'] = $this->controller;
         
@@ -121,6 +121,7 @@ class Supervisor extends CI_Controller {
             $this->nsession->set_userdata('member_session_membertype', $user_data['member_type']);
             $this->nsession->set_userdata('member_session_email', $user_data['email']);
             $this->nsession->set_userdata('member_session_name', $user_data['first_name']);
+            $this->nsession->set_userdata('member_session_image', $user_data['picture']);
             $this->nsession->set_userdata('succmsg',$data['message']);
             $this->response($data);
         }
@@ -350,6 +351,77 @@ class Supervisor extends CI_Controller {
 			$this->nsession->set_userdata('errmsg',$data['message']);
 		}
 		redirect(base_url('supervisor/detail/'.$this->input->post('id')));
+    }
+
+    function doEditProfile(){
+        $memberId = $this->nsession->userdata('member_session_id');
+        $ndata=array();
+        if($this->input->post('first_name')){
+            $ndata['first_name']=$this->input->post('first_name');
+        }
+        if($this->input->post('middle_name')){
+            $ndata['middle_name']=$this->input->post('middle_name');
+        }
+        if($this->input->post('last_name')){
+            $ndata['last_name']=$this->input->post('last_name');
+        }
+
+        if($_FILES['file']['name'])
+        {
+            $this->load->library('image_lib');
+			//pr($_FILES);
+			$memberImage             = $_FILES['file']['name'];
+			$fileMemberImage         = time().$memberImage;
+			$config['upload_path'] 	 = file_upload_absolute_path().'profile_pic/';
+			$config['allowed_types'] = '*';
+			$config['file_name']     = $fileMemberImage;
+			$this->upload->initialize($config);
+			if(!$this->upload->do_upload('file')) {
+                echo $this->upload->display_errors(); die();
+				$this->nsession->set_userdata('errmsg',$this->upload->display_errors());
+				redirect(base_url('supervisor/editprofile/'));
+				return true;
+			} else {
+				$upload_data = array('upload_data' => $this->upload->data());
+				$dataSet = $this->upload->data();
+				$Imgdata = $this->upload->data();
+				$source_path = file_upload_absolute_path() . 'profile_pic/' . $dataSet["file_name"];
+				$target_path = file_upload_absolute_path() . '/profile_pic/tmp/' . $dataSet["file_name"];
+				$configer = array(
+					'image_library' => 'gd2',
+					'source_image' => $source_path,
+					'new_image' => $target_path,
+					'maintain_ratio' => TRUE,
+					'create_thumb' => TRUE,
+					'width' => 280,
+					'height' => 280
+				);
+				$this->image_lib->initialize($configer);
+				$this->image_lib->resize();
+				$this->image_lib->clear();
+				
+				$Imgdata['thamble_image'] = $dataSet['file_name'];
+			}
+			if($upload_data['upload_data']['file_name']) {
+				$implodeData = explode('.',$upload_data['upload_data']['file_name']);
+				$thumbImgNme = $implodeData[0].'_thumb.'.$implodeData[1];
+				$ndata['picture'] = 'profile_pic/'.$upload_data['upload_data']['file_name'];
+				$ndata['crop_profile_image'] = 'profile_pic/tmp/'.$thumbImgNme;
+            }
+            
+            
+
+        }
+        //print_r($ndata); die();
+        if(count($ndata) > 0){
+            $this->ModelCommon->updateData('member',$ndata,array('id'=>$memberId));
+            $user_data=$this->ModelCommon->getSingleData('member',array('id'=>$memberId));
+            $this->nsession->set_userdata('member_session_email', $user_data['email']);
+            $this->nsession->set_userdata('member_session_name', $user_data['first_name']);
+            $this->nsession->set_userdata('member_session_picture', $user_data['crop_profile_image']);
+        }
+
+        redirect(base_url('supervisor/editprofile/'));
     }
 
     function response($data){

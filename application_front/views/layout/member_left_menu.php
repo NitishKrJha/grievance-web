@@ -1,7 +1,13 @@
 <div class="db-l">
     <div class="db-l-1">
         <ul>
-            <li><img src="<?php echo  CSS_IMAGES_JS_BASE_URL;?>assets/images/db-profile.jpg" alt="" /> </li>
+            <?php
+                $pimg = CSS_IMAGES_JS_BASE_URL."assets/images/db-profile.jpg";
+                if($this->nsession->userdata('member_session_picture') && $this->nsession->userdata('member_session_picture')!==''){
+                    $pimg = base_url()."uploads/".$this->nsession->userdata('member_session_picture');
+                }
+            ?>
+            <li><img src="<?php echo  $pimg;?>" alt="" /> </li>
         </ul>
     </div>
     <div class="db-l-2">
