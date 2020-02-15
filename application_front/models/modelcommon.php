@@ -503,5 +503,18 @@ class ModelCommon extends CI_Model {
 	    } else {
 	        return false;
 	    }
-    }
+	}
+	
+	function getMyProfile($id){
+		$this->db->select('member.*');
+		$this->db->from('member');
+		$this->db->where('member.id',$id);
+		$query=$this->db->get();
+		if($query->num_rows() > 0){
+			$data = $query->row_array();
+			return $data;
+		}else{
+			return false;
+		}
+	}
 }

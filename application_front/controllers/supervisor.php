@@ -6,6 +6,7 @@ class Supervisor extends CI_Controller {
 		parent::__construct();
 		$this->controller = 'supervisor';
         $this->load->model('ModelSupervisor');
+        $this->load->model('ModelGrievance');
         $this->load->model('ModelCommon');
 	}
 	
@@ -127,11 +128,15 @@ class Supervisor extends CI_Controller {
 
     function myprofile(){
         if(!$this->nsession->userdata('member_login') && !$this->nsession->userdata('member_login')==1){
-            redirect(base_url('login'));
+            redirect(base_url('supervisor/login'));
         }
         $data['controller'] = $this->controller;
         
-
+        $memberId = $this->nsession->userdata('member_session_id');
+        $data['myDtl']=$this->ModelCommon->getMyProfile($memberId);
+        if(empty($data['myDtl'])){
+            redirect(base_url('supervisor/login'));
+        }
         $data['succmsg'] = $this->nsession->userdata('succmsg');
         $data['errmsg'] = $this->nsession->userdata('errmsg');
 
@@ -141,7 +146,7 @@ class Supervisor extends CI_Controller {
         $elements = array();
         $elements['header'] = 'layout/header';
         $element_data['header'] = $data;
-        $elements['main'] = 'user/myprofile';
+        $elements['main'] = 'supervisor/myprofile';
         $element_data['main'] = $data;
         $elements['footer'] = 'layout/footer';
         $element_data['footer'] = $data;
@@ -149,7 +154,7 @@ class Supervisor extends CI_Controller {
         $this->layout->multiple_view($elements,$element_data);
     }
 
-    function editproifle(){
+    function editProfile(){
         if(!$this->nsession->userdata('member_login') && !$this->nsession->userdata('member_login')==1){
             redirect(base_url('login'));
         }
@@ -161,11 +166,16 @@ class Supervisor extends CI_Controller {
 
         $this->nsession->set_userdata('succmsg', "");
         $this->nsession->set_userdata('errmsg', "");
+        $memberId = $this->nsession->userdata('member_session_id');
+        $data['myDtl']=$this->ModelCommon->getMyProfile($memberId);
+        if(empty($data['myDtl'])){
+            redirect(base_url('supervisor/login'));
+        }
 
         $elements = array();
         $elements['header'] = 'layout/header';
         $element_data['header'] = $data;
-        $elements['main'] = 'user/editProfile';
+        $elements['main'] = 'supervisor/editProfile';
         $element_data['main'] = $data;
         $elements['footer'] = 'layout/footer';
         $element_data['footer'] = $data;
@@ -291,6 +301,7 @@ class Supervisor extends CI_Controller {
 		$this->functions->checkUser($this->controller.'/detail/'.$id,true);
 		$memberId = $this->nsession->userdata('member_session_id');
         // echo $this->nsession->userdata('member_session_id');exit;
+        //pr($_SESSION);
 		$data['controller'] = $this->controller;
 		$data['succmsg'] 	= $this->nsession->userdata('succmsg');
 		$data['errmsg'] 	= $this->nsession->userdata('errmsg');
@@ -307,13 +318,39 @@ class Supervisor extends CI_Controller {
         $elements = array();
 		$elements['header'] = 'layout/header';
 		$element_data['header'] = $data;
-		$elements['main'] = 'grievance/detail';  
+		$elements['main'] = 'supervisor/detail';  
 		$element_data['main'] = $data;
 		$elements['footer'] = 'layout/footer';  
 		$element_data['footer'] = $data;
 		$this->layout->setLayout('layout_home'); 
 		$this->layout->multiple_view($elements,$element_data);
-	}
+    }
+    
+    function changeStatusOfGrievance(){
+        if(!$this->input->post('id')){
+            $data = array('status' => false, 'message' => 'Invalid Request','data'=>array());
+        }else if(!$this->input->post('status')){
+            $data = array('status' => false, 'message' => 'Please select status','data'=>array());
+        }else{
+            $memberId = $this->nsession->userdata('member_session_id');
+            $ndata=array(
+                'status'=>$this->input->post('status'),
+                'modified_by'=>$memberId,
+                'modified_date'=>date('Y-m-d H:i:s')
+            );
+            $this->ModelCommon->updateData('grievances',$ndata,array('id'=>$this->input->post('id')));
+            $data = array('status' => true, 'message' => 'Updated Successfully','data'=>array());
+        }
+
+        if(empty($data['status'])){
+			$this->nsession->set_userdata('errmsg',"Invalid Data");
+		}else if($data['status']==true){
+			$this->nsession->set_userdata('succmsg',$data['message']);
+		}else{
+			$this->nsession->set_userdata('errmsg',$data['message']);
+		}
+		redirect(base_url('supervisor/detail/'.$this->input->post('id')));
+    }
 
     function response($data){
         echo json_encode($data); die();

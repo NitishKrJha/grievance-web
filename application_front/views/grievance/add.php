@@ -20,14 +20,7 @@
 				<div class="db-2-com db-2-main">
 					<h4>Add Grievance</h4>
 					<div class="db-2-main-com db2-form-pay db2-form-com">
-						<form class="col s12" name="addForm" id="addForm" method="post" action="<?php echo base_url('grievance/doAdd'); ?>">
-							<div class="input-field col s12">
-								<label id="subject-error" class="error" for="subject" style="display:none;"></label>
-								<label id="optional_phone-error" class="error" for="optional_phone" style="display:none;"></label>
-								<label id="optional_email-error" class="error" for="optional_email" style="display:none;"></label>
-								<label id="body-error" class="body" for="body" style="display:none;"></label>
-								<label id="department_id-error" class="department_id" for="department_id" style="display:none;"></label>
-							</div>
+						<form class="col s12" name="addForm" id="addForm" method="post" enctype="multipart/form-data" action="<?php echo base_url('grievance/doAdd'); ?>">
 							<div class="row">
 								<div class="input-field col s12">
 									<select name="department_id">
@@ -41,28 +34,46 @@
 										?>
 									</select>
 								</div>
+								<label id="department_id-error" class="error col s12" for="department_id"></label>
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
-									<input type="text" class="validate" name="subject" >
+									<input type="text" name="subject" >
 									<label>Subject</label>
 								</div>
+								<label id="subject-error" class="error col s12" for="subject" ></label>
 							</div>
 							<div class="row">
 								<div class="input-field col s12 m6">
-									<input type="email" class="validate" name="optional_email" >
+									<input type="email" name="optional_email" >
 									<label>Optional Email id</label>
 								</div>
 								<div class="input-field col s12 m6">
-									<input type="text" class="validate" name="optional_phone" >
+									<input type="text" name="optional_phone" >
 									<label>Optional Phone</label>
 								</div>
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
-                                    <textarea  name="body" class="validate"></textarea>
+                                    <textarea  name="body"></textarea>
 									<label for="pay-ca">Body</label>
 								</div>
+								<label id="body-error" class="error col s12" for="body" ></label>
+							</div>
+							
+							<div class="row">
+								<div class="input-field col s12">
+									<div class="file-field">
+										<div class="btn btn-primary btn-sm float-left" style="height: 44px !important;">
+										<span>Choose file</span>
+										<input type="file" name="file">
+										</div>
+										<div class="file-path-wrapper">
+										<input class="file-path validate" type="text" placeholder="Upload your file">
+										</div>
+									</div>
+								</div>
+								<label id="file-error" class="error col s12" for="file" ></label>
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
@@ -91,18 +102,20 @@ $(document).ready(function(){
             },
 			department_id: {
 				required: true
-			}
-        },
-        // Specify validation error messages
+			},
+			file: {
+                required: true
+            }
+		},
         messages: {
             subject: "Please enter subject",
-            body: "Please enter body",
-			department_id: "Please select department"
+            body: "Please enter body"
         },
         submitHandler: function(form) {
 			$('#load-txt').show();
-            var data=$("form[name='addForm']").serialize();
-            do_add(data);
+			form.submit();
+			// var data=$("form[name='addForm']").serialize();
+            // do_add(data);
         }
     });
 })

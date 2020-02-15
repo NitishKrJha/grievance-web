@@ -9,52 +9,33 @@
 					<div class="db-2-main-com db2-form-pay db2-form-com">
 						<form class="col s12">
 							<div class="row">
-								<div class="input-field col s12">
-									<input type="number" class="validate">
-									<label>User Name</label>
+								<div class="input-field col s12 m4">
+									<input type="text" class="validate" name="first_name">
+									<label>First Name</label>
+								</div>
+								<div class="input-field col s12 m4">
+									<input type="text" class="validate" name="middle_name">
+									<label>Middle Name</label>
+								</div>
+								<div class="input-field col s12 m4">
+								<input type="text" class="validate" name="last_name">
+									<label>Last Name</label>
 								</div>
 							</div>
 							<div class="row">
-								<div class="input-field col s12 m6">
-									<input type="password" class="validate">
-									<label>Enter Password</label>
-								</div>
-								<div class="input-field col s12 m6">
-									<input type="password" class="validate">
-									<label>Confirm Password</label>
+								<div class="input-field col s12 m12">
+									<input type="email" value="<?php echo $myDtl['crn']; ?>" disabled>
+									<label>CRN</label>
 								</div>
 							</div>
 							<div class="row">
-								<div class="input-field col s12 m6">
-									<input type="email" class="validate">
+								<div class="input-field col s12 m12">
+									<input type="email" value="<?php echo $myDtl['email']; ?>" disabled>
 									<label>Email id</label>
 								</div>
-								<div class="input-field col s12 m6">
-									<input type="number" class="validate">
+								<div class="input-field col s12 m12">
+									<input type="number" value="<?php echo $myDtl['phone']; ?>" disabled>
 									<label>Phone</label>
-								</div>
-							</div>
-							<div class="row">
-								<div class="input-field col s12">
-									<select>
-										<option value="" disabled selected>Select Status</option>
-										<option value="1">Active</option>
-										<option value="2">Non-Active</option>
-									</select>
-								</div>
-							</div>
-							<div class="row">
-								<div class="input-field col s12">
-									<input id="pay-ca" type="number" class="validate">
-									<label for="pay-ca">Card Number</label>
-								</div>
-							</div>
-							<div class="row db-file-upload">
-								<div class="file-field input-field">
-									<div class="db-up-btn"> <span>File</span>
-										<input type="file"> </div>
-									<div class="file-path-wrapper">
-										<input class="file-path validate" type="text"> </div>
 								</div>
 							</div>
 							<div class="row">

@@ -120,21 +120,43 @@ class Grievance extends CI_Controller {
         $response=array();
         if(!$this->input->post('subject')){
             $data = array('status' => false, 'message' => 'Subject is blank','data'=>array());
-            $this->response($data);
+            // $this->response($data);
         }else if(!$this->input->post('body')){
             $data = array('status' => false, 'message' => 'Body is blank','data'=>array());
             $this->response($data);
         }else if(!$this->input->post('department_id')){
             $data = array('status' => false, 'message' => 'department is blank','data'=>array());
-            $this->response($data);
-        }else{
+            // $this->response($data);
+        }else if(!$_FILES['file']['name']){
+			$data = array('status' => false, 'message' => 'Please upload a valid file','data'=>array());
+            // $this->response($data);
+		}else{
+			//pr($_FILES);
+			$member_session_id=$this->nsession->userdata('member_session_id');
+			$file             = $_FILES['file']['name'];
+			$config['upload_path'] 	 = file_upload_absolute_path().'grievance/';
+			$config['allowed_types'] = 'jpeg|pdf|doc|docx|png';
+			$config['file_name']     = md5(date('Y-m-d H:i:s')).md5($member_session_id);
+			$this->upload->initialize($config);
+			if(!$this->upload->do_upload('file')) {
+				$this->nsession->set_userdata('errmsg',$this->upload->display_errors());
+				$data = array('status' => false, 'message' => 'Please upload a valid file','data'=>array());
+            	redirect(base_url('grievance/index'));
+			} else {
+				$upload_data = $this->upload->data();
+			}
+			if($upload_data['file_name']) {
+				$file_name = $upload_data['file_name'];
+				$file_type = $upload_data['file_type'];
+			}
+
             $subject=$this->input->post('subject');
 			$department_id=$this->input->post('department_id');
 			$query=$this->input->post('body');
 			$email=($this->input->post('optional_email'))?$this->input->post('optional_email'):'';
 			$phone=($this->input->post('optional_phone'))?$this->input->post('optional_phone'):'';
 			$date=date('Y-m-d H:i:s');
-			$member_session_id=$this->nsession->userdata('member_session_id');
+			
 			$insert_data=array(
 				'subject'=>$subject,
 				'query'=>$query,
@@ -146,11 +168,23 @@ class Grievance extends CI_Controller {
 				'modified_date'=>$date,
 				'status'=>'0'
 			);
+			if(isset($file_name)){
+				$insert_data['file_name']=$file_name;
+				$insert_data['file_type']=$file_type;
+			}
 			$result=$this->ModelCommon->insertData('grievances',$insert_data);
 			$data = array('status' => true, 'message' => 'Added Successfully');
 			$this->nsession->set_userdata('succmsg',$data['message']);
-			$this->response($data);
+			// $this->response($data);
 		}
+		if(empty($data['status'])){
+			$this->nsession->set_userdata('errmsg',"Invalid Data");
+		}else if($data['status']==true){
+			$this->nsession->set_userdata('succmsg',$data['message']);
+		}else{
+			$this->nsession->set_userdata('errmsg',$data['message']);
+		}
+		redirect(base_url('grievance/index'));
 	}
 	
 	function response($data){

@@ -21,6 +21,17 @@
 									<td><?php echo $detail['subject']; ?></td>
 								</tr>
 								<tr>
+									<td>File</td>
+									<td>:</td>
+									<td>
+										<?php if($detail['file_name']!=''){
+											?><a href="<?php echo base_url().'uploads/grievance/'.$detail['file_name']; ?>" download><?php echo $detail['file_name']; ?></a><?php
+										}else{
+											echo "NA";
+										} ?>
+									</td>
+								</tr>
+								<tr>
 									<td>Created Date</td>
 									<td>:</td>
 									<td><?php echo date('Y-m-d',strtotime($detail['created_date'])); ?></td>

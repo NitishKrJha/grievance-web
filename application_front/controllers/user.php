@@ -36,7 +36,10 @@ class User extends CI_Controller {
         }
         $data['controller'] = $this->controller;
         
-
+        $data['myDtl']=$this->ModelCommon->getMyProfile($memberId);
+        if(empty($data['myDtl'])){
+            redirect(base_url('supervisor/login'));
+        }
         $data['succmsg'] = $this->nsession->userdata('succmsg');
         $data['errmsg'] = $this->nsession->userdata('errmsg');
 
@@ -59,7 +62,10 @@ class User extends CI_Controller {
             redirect(base_url('login'));
         }
         $data['controller'] = $this->controller;
-        
+        $data['myDtl']=$this->ModelCommon->getMyProfile($memberId);
+        if(empty($data['myDtl'])){
+            redirect(base_url('login'));
+        }
 
         $data['succmsg'] = $this->nsession->userdata('succmsg');
         $data['errmsg'] = $this->nsession->userdata('errmsg');

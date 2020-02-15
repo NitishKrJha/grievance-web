@@ -30,16 +30,16 @@
         <link href="<?php echo CSS_IMAGES_JS_BASE_URL; ?>assets/vendor/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
         <link href="<?php echo CSS_IMAGES_JS_BASE_URL; ?>assets/vendor/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
         <link href="<?php echo CSS_IMAGES_JS_BASE_URL; ?>assets/css/loader.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="<?php echo CSS_IMAGES_JS_BASE_URL; ?>assets/js/jquery-1.10.2.js"></script>
   </head>
   
   <div class="loading" id="load-txt" style="display: none;">Loading&#8230;</div>
   <?php $page = $this->uri->segment(2); ?>
   <body>
     <!-- Preloader -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div id="status">&nbsp;</div>
-    </div>
+    </div> -->
 	<!--Header Section-->
 	<?php echo isset($content_for_layout_header)?$content_for_layout_header:'';?>
 	<!--Main Section-->
@@ -47,8 +47,8 @@
 	<!--Footer Section-->
 	<?php echo isset($content_for_layout_footer)?$content_for_layout_footer:'';?>
    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-	  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	  <script src="<?php echo CSS_IMAGES_JS_BASE_URL; ?>assets/js/jquery.validate.min.js"></script>
+	  <!-- <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script> -->
     <script src="<?php echo CSS_IMAGES_JS_BASE_URL; ?>assets/js/bootstrap.js"></script>
     <script src="<?php echo CSS_IMAGES_JS_BASE_URL; ?>assets/js/wow.min.js"></script>
     <script src="<?php echo CSS_IMAGES_JS_BASE_URL; ?>assets/js/materialize.min.js"></script>

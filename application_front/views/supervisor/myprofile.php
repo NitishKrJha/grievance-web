@@ -10,45 +10,43 @@
 						<table class="responsive-table">
 							<tbody>
 								<tr>
-									<td>User Name</td>
+									<td>Full Name</td>
 									<td>:</td>
-									<td>Sam Anderson</td>
+									<td><?php echo $myDtl['first_name']." ".$myDtl['middle_name']." ".$myDtl['last_name']; ?></td>
 								</tr>
 								<tr>
-									<td>Password</td>
+									<td>CRN</td>
 									<td>:</td>
-									<td>mypasswordtour</td>
+									<td><?php echo $myDtl['crn']; ?></td>
 								</tr>
 								<tr>
-									<td>Eamil</td>
+									<td>DOJ</td>
 									<td>:</td>
-									<td>sam_anderson@gmail.com</td>
+									<td><?php echo $myDtl['doj']; ?></td>
+								</tr>
+								<tr>
+									<td>Department</td>
+									<td>:</td>
+									<td><?php echo $myDtl['department']; ?></td>
+								</tr>
+								<tr>
+									<td>Designation</td>
+									<td>:</td>
+									<td><?php echo $myDtl['designation']; ?></td>
 								</tr>
 								<tr>
 									<td>Phone</td>
 									<td>:</td>
-									<td>+01 4561 3214</td>
+									<td><?php echo $myDtl['phone']; ?></td>
 								</tr>
 								<tr>
-									<td>Date of birth</td>
+									<td>Email</td>
 									<td>:</td>
-									<td>03 Jun 1990</td>
-								</tr>
-								<tr>
-									<td>Address</td>
-									<td>:</td>
-									<td>8800 Orchard Lake Road, Suite 180 Farmington Hills, U.S.A.</td>
-								</tr>
-								<tr>
-									<td>Status</td>
-									<td>:</td>
-									<td><span class="db-done">Active</span>
-									</td>
+									<td><?php echo $myDtl['email']; ?></td>
 								</tr>
 							</tbody>
 						</table>
 						<div class="db-mak-pay-bot">
-							<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p> 
 							<a href="<?php echo base_url('supervisor/editProfile') ?>" class="waves-effect waves-light btn-large">Edit my profile</a> </div>
 					</div>
 				</div>
