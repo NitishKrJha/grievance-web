@@ -79,15 +79,16 @@ class ModelGrievance extends CI_Model {
 
 		if($page > 0 && $page < $config['total_rows'] )
 			$start = $page;
-			$this->db->select('grievances.*,user.first_name as user_first_name,user.middle_name as user_middle_name,user.last_name as user_last_name,user.phone as user_phone,user.email as user_email,supervisor.first_name as supervisor_first_name,supervisor.middle_name as supervisor_middle_name,supervisor.last_name as supervisor_last_name,supervisor.phone as supervisor_phone,supervisor.email as supervisor_email');
+			$this->db->select('grievances.*,department.name as department_name,user.first_name as user_first_name,user.middle_name as user_middle_name,user.last_name as user_last_name,user.phone as user_phone,user.email as user_email,supervisor.first_name as supervisor_first_name,supervisor.middle_name as supervisor_middle_name,supervisor.last_name as supervisor_last_name,supervisor.phone as supervisor_phone,supervisor.email as supervisor_email');
 			if(isset($sessionDataArray['searchField'])){
 				$this->db->like($sessionDataArray['searchField'],$sessionDataArray['searchString'],'both');
 			}
 
 		$this->db->order_by($sortField,$sortType);
 		$this->db->limit($config['per_page'],$start);
-		$this->db->join('member as user','user.id=grievances.cretaed_by','Left Outer');
+		$this->db->join('member as user','user.id=grievances.created_by','Left Outer');
 		$this->db->join('member as supervisor','supervisor.id=grievances.modified_by','Left Outer');
+		$this->db->join('department','department.id = grievances.department_id','Left Outer');
 		$recordSet = $this->db->get('grievances');
 		//echo $this->db->last_query();
 		$rs = false;

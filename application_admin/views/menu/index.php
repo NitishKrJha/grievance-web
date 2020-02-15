@@ -18,7 +18,9 @@ $action = $this->uri->segment(2);
 		    <li <?php if($controller=='supervisor' && $action=='index') {?>class="active" <?php } ?>>
               <a href="<?php echo base_url('supervisor/index/0/1');?>"><i class="fa fa-user" aria-hidden="true"></i> Supervisor</a>
             </li>
-			
+            <li <?php if($controller=='grievance' && $action=='index') {?>class="active" <?php } ?>>
+              <a href="<?php echo base_url('grievance/index/0/1');?>"><i class="fa fa-comments" aria-hidden="true"></i> Grievance</a>
+            </li>
             <li>
                 <a><i class="fa fa-file-o" aria-hidden="true"></i> CMS <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">

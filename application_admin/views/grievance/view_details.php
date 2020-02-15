@@ -7,58 +7,102 @@
       <div class="x_content">
 	  <?php //echo validation_errors(); ?>
       <ul class="parsley-errors-list filled error text-left" ><li class="parsley-required"><?php echo $errmsg; ?></li></ul>
-		<form id="form1" class="form-horizontal" action="<?php echo $do_addedit_link;?>" method="post" enctype="multipart/form-data">
-			<span class="section">Owner Details</span>
-				<div class="form-group">
-					<label class="control-label col-md-3 col-sm-3 col-xs-12">First Name <span class="required">*</span></label>
-					<div class="col-md-6 col-sm-6 col-xs-12">
-					   <input class="validate[required] form-control" type="text" id="first_name" name="first_name" value="<?php echo $first_name;?>" readonly>
-
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-md-3 col-sm-3 col-xs-12">Last Name <span class="required">*</span></label>
-					<div class="col-md-6 col-sm-6 col-xs-12">
-					   <input class="validate[required] form-control" type="text" id="last_name" name="last_name" value="<?php echo $last_name;?>" readonly>
-
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-md-3 col-sm-3 col-xs-12">Email <span class="required">*</span></label>
-					<div class="col-md-6 col-sm-6 col-xs-12">
-					   <input class="validate[required] form-control" type="text" id="email" name="email" value="<?php echo $email;?>" readonly>
-
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-md-3 col-sm-3 col-xs-12">Picture <span class="required">*</span></label>
-					<div class="col-md-6 col-sm-6 col-xs-12">
-            <?php
-							if($picture==''){ ?>
-								<img src="https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg" alt="" class="img-responsive" style="width:100px;height:100px">
-							<?php }else{
-								if($oauth_uid==''){ ?>
-									<img src="<?php echo file_upload_base_url();?>profile_pic/<?php echo $picture; ?>" alt="" class="img-responsive" style="width:100px;height:100px"/>
-								<?php }else{?>
-									<img src="<?php echo $picture; ?>" alt="" class="img-responsive" style="width:100px;height:100px"/>
-								<?php } } ?>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-md-3 col-sm-3 col-xs-12"> Phone Number <span class="required">*</span></label>
-					<div class="col-md-6 col-sm-6 col-xs-12">
-					   <input class="validate[required] form-control" type="text" id="phone_number" name="phone_number" value="<?php echo $phone_no;?>" readonly>
-
-					</div>
-				</div>
-				<div class="ln_solid"></div>
-				<div class="form-group">
-					<div class="col-md-6 col-md-offset-3">
-					  <a class="btn btn-primary" href="javascript:window.history.back();">Back</a>
-					  <!--<button class="btn btn-success" type="submit" id="send">Submit</button>-->
-					</div>
-				</div>
-		</form>
+			<form id="form1" class="form-horizontal" action="<?php echo $do_addedit_link;?>" method="post" enctype="multipart/form-data">
+			<table class="table responsive-table">
+							<tbody>
+								<tr>
+									<td>ID</td>
+									<td>:</td>
+									<td><?php echo $detail['id']; ?></td>
+								</tr>
+								<tr>
+									<td>Department</td>
+									<td>:</td>
+									<td><?php echo $detail['department_name']; ?></td>
+								</tr>
+								<tr>
+									<td>Topic</td>
+									<td>:</td>
+									<td><?php echo $detail['subject']; ?></td>
+								</tr>
+								<tr>
+									<td>Details</td>
+									<td>:</td>
+									<td><?php echo $detail['query']; ?></td>
+								</tr>
+								<tr>
+									<td>Uploaded File</td>
+									<td>:</td>
+									<td>
+										<?php if($detail['file_name']!=''){
+											?><a href="<?php echo base_url().'uploads/grievance/'.$detail['file_name']; ?>" download><?php echo $detail['file_name']; ?></a><?php
+										}else{
+											echo "NA";
+										} ?>
+									</td>
+								</tr>
+								<tr>
+									<td>Created Date</td>
+									<td>:</td>
+									<td><?php echo date('Y-m-d',strtotime($detail['created_date'])); ?></td>
+								</tr>
+								
+								<?php 	
+									if($detail['status'] == '3'){
+										$status='Rejected';
+										$class="db-done";
+									}else if($detail['status'] == '2'){
+										$status='Resolved';
+										$class="db-done";
+									}else if($detail['status'] == '1'){
+										$status='Work In Progress';
+										$class="db-not-done";
+									}else{
+										$status='Pending';
+										$class="db-not-done";
+									}
+								?>
+								<tr>
+									<td>Status</td>
+									<td>:</td>
+									<td>
+										<span class="<?php echo $class; ?>"><?php echo $status; ?></span>
+										
+									</td>
+								</tr>
+								<?php
+								if($detail['status']!='0'){
+									?>
+									<tr>
+										<td>Responded By</td>
+										<td>:</td>
+										<td>
+											<?php
+												$name= '';
+												if($detail['first_name']!==''){
+													$name .= $detail['first_name']." ";
+												}
+												if($detail['middle_name']!==''){
+													$name .= $detail['middle_name']." ";
+												}
+												if($detail['last_name']!==''){
+													$name .= $detail['last_name'];
+												}
+												echo $name;
+											?>
+										</td>
+									</tr>
+									<?php
+								}
+								?>
+								
+								
+							</tbody>
+						</table>
+						<div class="db-mak-pay-bot">
+							<a href="<?php echo base_url('grievance/index/0/1'); ?>" class="btn btn-info">Back To List</a> 
+						</div>
+			</form>
 	 </div>
     </div>
   </div>

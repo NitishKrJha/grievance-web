@@ -40,9 +40,9 @@
           <thead>
             <tr class="headings">
                 <th>Sl</th>
-                <th>Subject</th>
-                <th>Optional Email</th>
-                <th>Optional Phone</th>
+                <th>Grievance ID</th>
+                <th>Topic</th>
+                <th>Department</th>
                 <th>Date</th>
                 <th>Status</th>
                 <th>Action</th>
@@ -51,15 +51,15 @@
           </thead>
 
           <tbody>
-            <?php if(!empty($list)){
+            <?php if(!empty($recordset)){
               $i=1;
               foreach($recordset as $kry=>$val){
                 ?>
                 <tr>
                   <td><?php echo $i+$startRecord; ?></td>
+                  <td><?php echo $val['id']; ?></td>
                   <td><?php echo $val['subject']; ?></td>
-                  <td><?php echo $val['optional_email']; ?></td>
-                  <td><?php echo $val['optional_phone']; ?></td>
+                  <td><?php echo $val['department_name']; ?></td>
                   <td><?php echo date('Y-m-d',strtotime($val['created_date'])); ?></td>
                   <td>
                     <?php if($val['status'] == '3'){

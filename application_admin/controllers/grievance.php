@@ -72,6 +72,31 @@ class Grievance extends CI_Controller {
 		$this->layout->multiple_view($elements,$element_data);
 
 	}
+
+	function detail($id=''){
+		if($id!=''){
+			$data['detail'] = $this->ModelGrievance->getDetailById($id);
+			//pr($rs);
+			//$row = $rs->fields;
+			//pr($data);
+			$data['succmsg'] = $this->nsession->userdata('succmsg');
+			$data['errmsg'] = $this->nsession->userdata('errmsg');
+			$this->nsession->set_userdata('succmsg', "");
+			$this->nsession->set_userdata('errmsg', "");
+			$elements = array();
+			$elements['menu'] = 'menu/index';
+			$elements['topmenu'] = 'menu/topmenu';
+			$elements['main'] = 'grievance/view_details';
+			$element_data['menu'] = $data;//array();
+			$element_data['main'] = $data;
+			$this->layout->setLayout('layout_main_view');
+			$this->layout->multiple_view($elements,$element_data);
+		}else{
+			$this->nsession->set_userdata('errmsg', 'You have requested for invalid page');
+			redirect(base_url($this->controller."/index/"));
+		}
+
+	}
 	 
 
 }
