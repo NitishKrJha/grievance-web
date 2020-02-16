@@ -1743,6 +1743,9 @@
 .tourz-search{
     height: 960px;
 }
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img{
+    height: 700px !important;
+}
  .inner_banner_2 {
      background: url('../images/banner/2.jpg') no-repeat center center;
      background-size: cover;

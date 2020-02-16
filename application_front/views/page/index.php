@@ -39,28 +39,28 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/8.jpeg" alt="First slide">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/8_800x600.jpeg" alt="First slide">
                         </div>
                         <div class="item">
-                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/7.jpeg" alt="First slide">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/7_800x600.jpeg" alt="First slide">
                         </div>
                         <div class="item">
-                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/6.jpeg" alt="First slide">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/6_800x600.jpeg" alt="First slide">
                         </div>
                         <div class="item">
-                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/5.jpeg" alt="First slide">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/5_800x600.jpeg" alt="First slide">
                         </div>
                         <div class="item">
-                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/4.jpeg" alt="First slide">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/4_800x600.jpeg" alt="First slide">
                         </div>
                         <div class="item">
-                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/3.jpeg" alt="First slide">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/3_800x600.jpeg" alt="First slide">
                         </div>
                         <div class="item">
-                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/2.jpeg" alt="First slide">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/2_800x600.jpeg" alt="First slide">
                         </div>
                         <div class="item">
-                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/1.jpeg" alt="First slide">
+                            <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/1_4_800x600.jpeg" alt="First slide">
                         </div>
                     </div>
                         <a style="z-index: 9999999999999 !important;" class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
