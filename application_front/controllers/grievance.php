@@ -177,9 +177,7 @@ class Grievance extends CI_Controller {
 			$this->nsession->set_userdata('succmsg',$data['message']);
 			// $this->response($data);
 		}
-		if(empty($data['status'])){
-			$this->nsession->set_userdata('errmsg',"Invalid Data");
-		}else if($data['status']==true){
+		if($data['status']==true){
 			$this->nsession->set_userdata('succmsg',$data['message']);
 		}else{
 			$this->nsession->set_userdata('errmsg',$data['message']);

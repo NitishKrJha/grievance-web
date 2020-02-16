@@ -103,7 +103,7 @@ class Supervisor extends CI_Controller {
         }else{
             $crn=$this->input->post('crn');
             $password=$this->input->post('password');
-            $user_data=$this->ModelCommon->getSingleData('member',array('crn'=>$crn));
+            $user_data=$this->ModelCommon->getSingleData('member',array('crn'=>$crn,'member_type'=>'2'));
             if(empty($user_data)){
                 $data = array('status' => false, 'message' => 'Invlaid CRN','data'=>array());
                 $this->response($data);

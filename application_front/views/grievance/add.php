@@ -23,7 +23,7 @@
 						<form class="col s12" name="addForm" id="addForm" method="post" enctype="multipart/form-data" action="<?php echo base_url('grievance/doAdd'); ?>">
 							<div class="row">
 								<div class="input-field col s12">
-									<select name="department_id">
+									<select name="department_id" class="form-control">
 										<option value="">Select Department</option>
 										<?php
 										if(!empty($departments)){
@@ -76,8 +76,8 @@
 								<label id="file-error" class="error col s12" for="file" ></label>
 							</div>
 							<div class="row">
-								<div class="input-field col s12">
-									<input type="submit" value="submit" class="waves-effect waves-light full-btn"> 
+								<div class="col s12">
+								<input type="submit" value="submit" class="btn full-btn" style="background: #ee4430 !important;"> 
 								</div>
 							</div>
 						</form>

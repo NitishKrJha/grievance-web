@@ -102,7 +102,7 @@ class Page extends CI_Controller {
     public function sendOtp($type='login'){
         $response=array('error'=>1,'msg'=>'Invalid request');
         if($this->input->post('phone')){
-            $phone_data = $this->ModelCommon->getSingleData('member',array('phone'=>$this->input->post('phone')));
+            $phone_data = $this->ModelCommon->getSingleData('member',array('phone'=>$this->input->post('phone'),'member_type'=>'1'));
             $date=date('Y-m-d H:i:s');
             $otp = rand(1000,9999);
             if($type=='login'){
