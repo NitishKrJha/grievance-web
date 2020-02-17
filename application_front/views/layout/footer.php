@@ -89,7 +89,7 @@ $global_instagram_url = $this->functions->getGlobalInfo('global_instagram_url');
 <section>
 		<div class="rows copy">
 				<div class="container">
-						<p>Copyrights © 2020 Company Name. All Rights Reserved</p>
+						<p>Copyrights © 2020 Minisoft Sollution. All Rights Reserved</p>
 				</div>
 		</div>
 </section>

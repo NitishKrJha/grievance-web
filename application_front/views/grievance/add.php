@@ -66,13 +66,14 @@
 									<div class="file-field">
 										<div class="btn btn-primary btn-sm float-left" style="height: 44px !important;">
 										<span>Choose file</span>
-										<input type="file" name="file">
+										<input type="file" name="file" accept="image/*, .docx,.pdf">
 										</div>
 										<div class="file-path-wrapper">
 										<input class="file-path validate" type="text" placeholder="Upload your file">
 										</div>
 									</div>
 								</div>
+								<label class="success col s12">File Allowed: jpeg,pdf,doc,docx,png</label>
 								<label id="file-error" class="error col s12" for="file" ></label>
 							</div>
 							<div class="row">
@@ -104,8 +105,8 @@ $(document).ready(function(){
 				required: true
 			},
 			file: {
-                required: true
-            }
+				required: true
+			},
 		},
         messages: {
             subject: "Please enter subject",

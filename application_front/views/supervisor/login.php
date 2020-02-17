@@ -1,6 +1,7 @@
 <style>
     .error{
         color: red;
+        font-size: 14px !important;
     }
 </style>
 <section>
@@ -10,20 +11,18 @@
             <p>It's free and always will be.</p>
             <form class="col s12" name="loginForm" id="loginForm" method="post" action="<?php echo base_url('supervisor/doLogin'); ?>">
                 <div class="row">
-                    <label id="crn-error" class="error" for="crn" style="display:none;"></label>
-                    <br/><label id="password-error" class="error" for="password" style="display:none;"></label>
-                </div>
-                <div class="row">
                     <div class="input-field col s12">
                         <input type="text" class="validate" name="crn">
                         <label>CRN</label>
                     </div>
+                    <label id="crn-error" class="error col s12" for="crn" style="display:none;"></label>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="password" class="validate" name="password">
                         <label>Password</label>
                     </div>
+                    <label id="password-error" class="error col s12" for="password" style="display:none;"></label>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">

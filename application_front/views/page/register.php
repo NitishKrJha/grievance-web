@@ -2,6 +2,7 @@
 <style>
     .error{
         color: red;
+        font-size: 14px !important;
     }
 </style>
 <section>
@@ -11,19 +12,11 @@
             <p>It's free and always will be.</p>
             <form class="col s12" name="regForm" id="regForm" method="post" action="<?php echo base_url('page/doRegister'); ?>">
                 <div class="row">
-                    <label id="crn-error" class="error" for="crn" style="display:none;"></label>
-                    <br/><label id="phone-error" class="error" for="phone" style="display:none;"></label>
-                    <br/><label id="email-error" class="error" for="email" style="display:none;"></label>
-                    <br/><label id="first_name-error" class="error" for="first_name" style="display:none;"></label>
-                    <br/><label id="designation-error" class="error" for="designation" style="display:none;"></label>
-                    <br/><label id="department-error" class="error" for="department" style="display:none;"></label>
-                </div>
-                <div class="row">
                     <div class="input-field col s12">
                         <input type="text" class="validate" name="crn">
                         <label>Enter CRN</label>
                     </div>
-                    
+                    <label id="crn-error" class="error col s12" for="crn" style="display:none;"></label>
                 </div>
                 <div class="row">
                     <div class="input-field col s12 m4">
@@ -38,30 +31,38 @@
                         <input type="text" class="validate" name="last_name">
                         <label>Last Name</label>
                     </div>
+                    <label id="first_name-error" class="error col s12" for="first_name" style="display:none;"></label>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12 m6">
+                    <div class="input-field col s12">
                         <div>
                             <input type="email" class="validate" name="email">
                             <label>Email id</label>
                         </div>
                     </div>
-                    <div class="input-field col s12 m6">
+                    <label id="email-error" class="error col s12" for="email" style="display:none;"></label>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
                         <input type="text" class="validate" name="phone">
                         <label>Phone</label>
                     </div>
+                    <label id="phone-error" class="error  col s12" for="phone" style="display:none;"></label>
+                    
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="text" class="validate" name="designation">
                         <label>Designation</label>
                     </div>
+                    <label id="designation-error" class="error col s12" for="designation" style="display:none;"></label>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="text" class="validate" name="department">
                         <label>Department</label>
                     </div>
+                    <label id="department-error" class="error col s12" for="department" style="display:none;"></label>
                 </div>
                 <div id="otpDiv" style="display: none;">
                     <div class="row">
@@ -177,8 +178,7 @@ function do_customer_reg(formData){
             if(response.status==1){
                 window.location.href = "<?php echo base_url('grievance/index/0/1') ?>";
 			}else{
-            	$('#otpDiv').hide();
-                messagealert('Error',response.msg,'error');
+            	messagealert('Error',response.message,'error');
             }
           },
           error: function () {

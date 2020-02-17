@@ -1,6 +1,7 @@
 <style>
     .error{
         color: red;
+        font-size: 14px !important;
     }
 </style>
 <section>
@@ -10,20 +11,18 @@
             <p>It's free and always will be.</p>
             <form class="col s12" name="loginForm" id="loginForm" method="post" action="<?php echo base_url('page/doLogin'); ?>">
                 <div class="row">
-                    <label id="crn-error" class="error" for="crn" style="display:none;"></label>
-                    <br/><label id="phone-error" class="error" for="phone" style="display:none;"></label>
-                </div>
-                <div class="row">
                     <div class="input-field col s12">
                         <input type="text" class="validate" name="phone">
                         <label>Phone Number</label>
                     </div>
+                    <label id="crn-error" class="error col s12" for="crn" style="display:none;"></label>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="text" class="validate" name="crn">
                         <label>CRN</label>
                     </div>
+                    <label id="phone-error" class="error col s12" for="phone" style="display:none;"></label>
                 </div>
                 <div id="otpDiv" style="display:none;">
                     <div class="row">
@@ -80,8 +79,9 @@ $(document).ready(function(){
 })
 
 $(document).on('click','#resendOtp',function(){
+    sendOtp();
     $('#load-txt').show();
-    sebdOtp();
+    
 });
 
 function sendOtp(){

@@ -41,12 +41,12 @@
                         <div class="item active">
                             <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/8_800x600.jpeg" alt="First slide">
                         </div>
-                        <div class="item">
+                        <!-- <div class="item">
                             <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/7_800x600.jpeg" alt="First slide">
                         </div>
                         <div class="item">
                             <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/6_800x600.jpeg" alt="First slide">
-                        </div>
+                        </div> -->
                         <div class="item">
                             <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/5_800x600.jpeg" alt="First slide">
                         </div>
@@ -85,12 +85,12 @@
                                     <li>
                                         <a href="#" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="1s"><i class="fa fa-bed" aria-hidden="true"></i> Booking</a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a href="<?php echo base_url('page/aboutUs'); ?>" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="1.5s"><i class="fa fa-question" aria-hidden="true"></i> Ask Us</a>
                                     </li>
                                     <li>
                                         <a href="<?php echo base_url('page/aboutus'); ?>" class="waves-effect waves-light btn-large tourz-pop-ser-btn wow fadeInUp" data-wow-duration="2s"><i class="fa fa-user" aria-hidden="true"></i> About Us</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </div>

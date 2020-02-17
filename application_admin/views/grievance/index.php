@@ -12,8 +12,8 @@
           <div class="col-md-4 form-group">
             <select class="form-control" aria-controls="example" name="searchField">
                   <option value="">-Select-</option>
-                   <option value="member.name" <?php if(isset($params['searchField']) && $params['searchField']=='member.name') echo 'selected';?>>Name</option>
-                   <option value="member.email" <?php if(isset($params['searchField']) && $params['searchField']=='member.email') echo 'selected';?>>Email</option>
+                   <option value="member.name" <?php if(isset($params['searchField']) && $params['searchField']=='grievances.id') echo 'selected';?>>Grievance ID</option>
+                   <option value="member.email" <?php if(isset($params['searchField']) && $params['searchField']=='grievances.subject') echo 'selected';?>>Topic</option>
                </select>
           </div>
           <div class="col-md-4 form-group">
