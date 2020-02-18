@@ -58,25 +58,28 @@
     <script src="<?php echo CSS_IMAGES_JS_BASE_URL; ?>assets/vendor/pnotify/dist/pnotify.nonblock.js"></script>
 
 	<script>
+  /*$(document).ready(function(){
+      var showHeaderAt = 150;
+      var win = $(window),
+          body = $('body');
+      if(win.width() > 600){
+        win.on('scroll', function(e){
+          if(win.scrollTop() > showHeaderAt) {
+            body.addClass('fixed');
+          }
+          else {
+            body.removeClass('fixed');
+          }
+        });
+      }
+  });*/
 	$("input").on("keypress", function(e) {
 	if (e.which === 32 && !this.value.length)
 		e.preventDefault();
 	});
 	</script>
 	<!-- PNotify -->
-        <script>
-          $(document).ready(function() {
-			    //console.log("<?php echo $succmsg; ?><?php echo $errmsg; ?>");
-            <?php if($succmsg!='' || $errmsg!=''){ ?>
-            new PNotify({
-               title: '<?php echo $succmsg!=""?"Success":"Error";?>',
-              text: '<?php echo $succmsg!=""?$succmsg:$errmsg;?>',
-              type: '<?php echo $succmsg!=""?"success":"error";?>',
-              styling: 'bootstrap3'
-            });
-            <?php } ?>
-          });
-        </script>
+        
         <!-- /PNotify -->
   </body>
 </html>

@@ -21,6 +21,7 @@
 					<h4>Add Grievance</h4>
 					<div class="db-2-main-com db2-form-pay db2-form-com">
 						<form class="col s12" name="addForm" id="addForm" method="post" enctype="multipart/form-data" action="<?php echo base_url('grievance/doAdd'); ?>">
+							<?php $this->load->view('errors/msg');?>
 							<div class="row">
 								<div class="input-field col s12">
 									<select name="department_id" class="form-control">
@@ -62,14 +63,14 @@
 							</div>
 							
 							<div class="row">
-								<div class="input-field col s12">
+								<div class="input-field col s12" style="height: 35px !important;">
 									<div class="file-field">
-										<div class="btn btn-primary btn-sm float-left" style="height: 44px !important;">
+										<div class="btn btn-primary btn-sm float-left" style="height: 35px !important;">
 										<span>Choose file</span>
 										<input type="file" name="file" accept="image/*, .docx,.pdf">
 										</div>
 										<div class="file-path-wrapper">
-										<input class="file-path validate" type="text" placeholder="Upload your file">
+										<input class="file-path validate" type="text" placeholder="Upload your file" style="height: 35px !important;">
 										</div>
 									</div>
 								</div>
@@ -77,8 +78,8 @@
 								<label id="file-error" class="error col s12" for="file" ></label>
 							</div>
 							<div class="row">
-								<div class="col s12">
-								<input type="submit" value="submit" class="btn full-btn" style="background: #ee4430 !important;"> 
+								<div class="col s12 m12">
+								<input type="submit" value="submit" class="btn btn-info full-btn" style="background: #ee4430 !important; height: 51px;"> 
 								</div>
 							</div>
 						</form>

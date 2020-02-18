@@ -12,6 +12,7 @@
                                 Login
                             </h2>
                             <form name="f1" id="reg_form" method="post" action="<?php echo base_url('login/do_login'); ?>">
+                                <?php $this->load->view('errors/msg');?>
                                 <div class="form-group">
                                     <div class="col-md-4">
                                         <label>Select Type</label>

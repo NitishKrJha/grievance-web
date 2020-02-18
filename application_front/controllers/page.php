@@ -32,11 +32,11 @@ class Page extends CI_Controller {
 
     function register(){
         if($this->nsession->userdata('member_login') && $this->nsession->userdata('member_login')==1){
-            redirect(base_url('contact-us'));
+            redirect(base_url('grievance/index/0/1'));
         }
         $data['controller'] = $this->controller;
         
-
+        $data['departments'] = $this->ModelCommon->getAllDatalist('department',array('status'=>'1'));
         $data['succmsg'] = $this->nsession->userdata('succmsg');
         $data['errmsg'] = $this->nsession->userdata('errmsg');
 
@@ -57,7 +57,7 @@ class Page extends CI_Controller {
 
     function login(){
         if($this->nsession->userdata('member_login') && $this->nsession->userdata('member_login')==1){
-            redirect(base_url('contact-us'));
+            redirect(base_url('grievance/index/0/1'));
         }
         $data['controller'] = $this->controller;
         
@@ -171,13 +171,13 @@ class Page extends CI_Controller {
             $email=$this->input->post('email');
             $user_data_by_email=$this->ModelCommon->getSingleData('member',array('email'=>$email));
             if(!empty($user_data_by_emai)){
-                $data = array('status' => false, 'message' => 'Email is laready exist','data'=>array());
+                $data = array('status' => false, 'message' => 'Email is already exist','data'=>array());
                 $this->response($data);
             }
             $crn=$this->input->post('crn');
             $user_data_by_email=$this->ModelCommon->getSingleData('member',array('crn'=>$crn));
             if(!empty($user_data_by_emai)){
-                $data = array('status' => false, 'message' => 'CRN is laready exist','data'=>array());
+                $data = array('status' => false, 'message' => 'CRN is already exist','data'=>array());
                 $this->response($data);
             }
             $mobile_number=$this->input->post('phone');

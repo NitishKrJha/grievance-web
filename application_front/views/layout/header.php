@@ -4,7 +4,46 @@ $ctrl = $this->uri->segment(1);
 $action = $this->uri->segment(2);
 ?>
 
+<style>
+    nav{
+        background-color: inherit !important;
+    }
+</style>
 <!-- MOBILE MENU -->
+
+    
+<header class="header-fixed">
+
+<div class="header-limiter">
+
+    <h1><a href="<?php echo base_url(); ?>"><img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/logo.png" alt="" />
+        </a></h1>
+
+    <nav>
+        <a href="<?php echo base_url(); ?>">Home</a>
+        <a href="<?php echo base_url('page/contactUs'); ?>">Contact us</a>
+        <?php if($this->nsession->userdata('member_login') && $this->nsession->userdata('member_login')==1){
+            ?>
+            <a href="<?php echo base_url('grievance/index/0/1'); ?>">My Dashboard</a>
+            <a href="<?php echo base_url('logout'); ?>">Logout</a>
+            <?php
+        } else if($this->nsession->userdata('member_login') && $this->nsession->userdata('member_login')==2){
+            ?>
+            <a href="<?php echo base_url('supervisor/index/0/1'); ?>">My Dashboard</a>
+            <a href="<?php echo base_url('logout'); ?>">Logout</a>
+            <?php
+        }else{
+            ?><a href="<?php echo base_url('login'); ?>">Sign In</a>
+            <a href="<?php echo base_url('register'); ?>">Sign Up</a>
+            <?php
+        } ?>
+    </nav>
+
+</div>
+
+</header>
+
+<?php /* ?>
 <section>
     <div class="ed-mob-menu">
         <div class="ed-mob-menu-con">
@@ -211,6 +250,7 @@ $action = $this->uri->segment(2);
         </div>
     </div>-->
 </section>
+<?php */ ?>
 <!--END HEADER SECTION-->
 
 <!--HEADER SECTION-->
