@@ -15,14 +15,14 @@
                         <input type="text" class="validate" name="phone">
                         <label>Phone Number</label>
                     </div>
-                    <label id="crn-error" class="error col s12" for="crn" style="display:none;"></label>
+                    <label id="phone-error" class="error col s12" for="phone" style="display:none;"></label>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="text" class="validate" name="crn">
                         <label>CRN</label>
                     </div>
-                    <label id="phone-error" class="error col s12" for="phone" style="display:none;"></label>
+                    <label id="crn-error" class="error col s12" for="crn" style="display:none;"></label>
                 </div>
                 <div id="otpDiv" style="display:none;">
                     <div class="row">
@@ -63,7 +63,7 @@ $(document).ready(function(){
         // Specify validation error messages
         messages: {
             phone: "Please enter a valid phone number.",
-            crn: "Enter a valid CRN"
+            crn: "Please enter a valid CRN"
         },
         submitHandler: function(form) {
             $('#load-txt').show();

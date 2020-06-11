@@ -56,9 +56,9 @@
                         <div class="item">
                             <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/3_800x600.jpeg" alt="First slide">
                         </div>
-                        <div class="item">
+                        <!-- <div class="item">
                             <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/2_800x600.jpeg" alt="First slide">
-                        </div>
+                        </div> -->
                         <div class="item">
                             <img src="<?php  echo CSS_IMAGES_JS_BASE_URL;?>assets/images/quarter/1_4_800x600.jpeg" alt="First slide">
                         </div>
