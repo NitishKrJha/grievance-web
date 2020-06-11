@@ -93,8 +93,8 @@ class Quarter extends CI_Controller {
 		$data['params']['page'] 	= $page;
 		$data['do_addedit_link']	= base_url($this->controller."/do_addedit/".$id."/".$page."/");
 		$data['back_link']			= base_url($this->controller."/index/");
-		$data['allcountry']		= $this->ModelQuarter->getCountry();
 		$data['id']=$id;
+		$data['quarter_type_list'] = $this->ModelQuarter->get_quarter_type_list_data();
 		if($contentId > 0)
 		{
 			$data['id']	= $id;
@@ -142,7 +142,7 @@ class Quarter extends CI_Controller {
 		$contentId = $this->uri->segment(3, 0);
 		$page = $this->uri->segment(4, 0);
 		$data['quarter_no'] 	     = ($this->input->post('quarter_no'))?$this->input->post('quarter_no'):'';
-		$data['quarter_type'] 	     = ($this->input->post('quarter_type'))?$this->input->post('quarter_type'):'';
+		$data['quarter_type_list_id'] 	     = ($this->input->post('quarter_type'))?$this->input->post('quarter_type'):'';
 		$data['full_address'] 	     = ($this->input->post('full_address'))?$this->input->post('full_address'):'';
 		$data['is_active'] 	     = ($this->input->post('is_active'))?$this->input->post('is_active'):'0';
 		

@@ -13,7 +13,7 @@
 
 			<span class="section">Supervisor</span>
 				<div class="form-group">
-					<label class="control-label col-md-3 col-sm-3 col-xs-12">First Quarter No<span class="required">*</span> </label>
+					<label class="control-label col-md-3 col-sm-3 col-xs-12">Quarter No<span class="required">*</span> </label>
 					<div class="col-md-6 col-sm-6 col-xs-12">
 					   <input class="form-control" type="text" id="quarter_no" name="quarter_no" value="<?php echo isset($quarter_no)?$quarter_no:'';?>">
 					</div>
@@ -21,7 +21,22 @@
                 <div class="form-group">
 					<label class="control-label col-md-3 col-sm-3 col-xs-12">Quarter Type </label>
 					<div class="col-md-6 col-sm-6 col-xs-12">
-					   <input class="form-control" type="text" id="quarter_type" name="quarter_type" value="<?php echo isset($quarter_type)?$quarter_type:'';?>">
+                        <select class="form-control" id="quarter_type" name="quarter_type">
+                            <option value="">Select Quarter Type</option>
+                       <?php 
+                        if(!empty($quarter_type_list)){
+                            foreach($quarter_type_list as $row=>$val){
+                                $selected='';
+                                if(!empty($quarter_type_list_id) && ($val['id'] == $quarter_type_list_id)){
+                                    $selected = 'selected="selected"';
+                                }
+                                ?>
+                                <option value="<?php echo $val['id']; ?>"><?php echo $val['name']; ?></option>
+                                <?php
+                            }
+                        }
+                       ?>
+                       </select>
 					</div>
 				</div>
                 <div class="form-group">
@@ -33,8 +48,9 @@
                 <div class="ln_solid"></div>
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-3">
-                        <a class="btn btn-primary" href="javascript:window.history.back();">Cancel</a>
+                        
                         <button class="btn btn-success" type="submit" id="send">Submit</button>
+                        <a class="btn btn-primary" href="javascript:window.history.back();">Cancel</a>
                     </div>
                 </div>
 

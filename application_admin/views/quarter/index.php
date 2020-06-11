@@ -12,7 +12,8 @@
           <div class="col-md-4 form-group">
             <select class="form-control" aria-controls="example" name="searchField">
                   <option value="">-Select-</option>
-                   <option value="quarters.quarter_no" <?php if(isset($params['searchField']) && $params['searchField']=='quarters.quarter_no') echo 'selected';?>>Quarter No.</option>
+                  <option value="quarters.quarter_no" <?php if(isset($params['searchField']) && $params['searchField']=='quarters.quarter_no') echo 'selected';?>>Quarter No.</option>
+                  <option value="qtype.name" <?php if(isset($params['searchField']) && $params['searchField']=='qtype.name') echo 'selected';?>>Quarter Type</option>
                </select>
           </div>
           <div class="col-md-4 form-group">
@@ -29,7 +30,7 @@
         <ul class="nav navbar-right panel_toolbox">
           <li style="width:50px;">&nbsp;
           </li>
-      <li><a title="Add quarter" href="<?php echo $add_link; ?>"><i class="fa fa-plus"></i></a>
+      <li><a href="<?php echo $add_link; ?>"><button class="btn btn-info"><i class="fa fa-plus"></i> Add</button></a>
           </li>
         </ul>
       </div>
@@ -63,7 +64,7 @@
               <td class=" "><?php echo $singleRecord['full_address']; ?></td>
               <td class=" "><?php echo date('m-d-Y',strtotime($singleRecord['created_date'])); ?></td>
               <td><a href="javascript:ChangeStatus('<?php echo $singleRecord['is_active']==1?$inacttivedLink:$activeLink;?>');"><button class="btn btn-<?php echo $singleRecord['is_active']=='1'?'info':'danger';?> btn-xs" type="button"><?php echo $singleRecord['is_active']==1?'Active':'InActive';?></button></a></td>
-              <td class=" last"><a href="<?php echo $ediLink; ?>" title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a> ||  <a href="<?php echo base_url('quarter/delete/'.$singleRecord['id']) ?>" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+              <td class=" last"><a href="<?php echo $ediLink; ?>" title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a> ||  <a href="javascript:void(0)" data-url="<?php echo base_url('quarter/delete/'.$singleRecord['id']) ?>" class="delData" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
             </tr>
           <?php  $i++; }
             }else{ echo '<tr><td colspan="7" align="center">No Record Added Yet.</td></tr>'; }
@@ -76,3 +77,12 @@
   </div>
 </div>
 </div>
+<script>
+  $(document).on('click','.delData',function(){
+    var $this=$(this);
+    var url = $this.data('url');
+    if(window.confirm("Are you sure want to delete this record?")){
+      window.location.href=url;
+    }
+  })
+</script>
