@@ -40,6 +40,27 @@
 					</div>
 				</div>
                 <div class="form-group">
+					<label class="control-label col-md-3 col-sm-3 col-xs-12">Caste Type </label>
+					<div class="col-md-6 col-sm-6 col-xs-12">
+                        <select class="form-control" id="quarter_type" name="caste_type">
+                            <option value="">Select Caste Type</option>
+                       <?php 
+                        if(!empty($caste_type_list)){
+                            foreach($caste_type_list as $row=>$val){
+                                $selected='';
+                                if(!empty($caste_type_list_id) && ($val['id'] == $caste_type_list_id)){
+                                    $selected = 'selected="selected"';
+                                }
+                                ?>
+                                <option value="<?php echo $val['id']; ?>"><?php echo $val['name']; ?></option>
+                                <?php
+                            }
+                        }
+                       ?>
+                       </select>
+					</div>
+				</div>
+                <div class="form-group">
 					<label class="control-label col-md-3 col-sm-3 col-xs-12">Full Address</label>
 					<div class="col-md-6 col-sm-6 col-xs-12">
 					   <input class="form-control" type="text" id="full_address" name="full_address" value="<?php echo isset($full_address)?$full_address:'';?>">
@@ -77,6 +98,9 @@
             }
         },
         quarter_type:{
+            required: true
+        },
+        caste_type:{
             required: true
         },
         full_address:{

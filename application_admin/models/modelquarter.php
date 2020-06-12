@@ -65,6 +65,7 @@ class ModelQuarter extends CI_Model {
 		}
 		$this->db->select('quarters.*');
 		$this->db->join('quarter_type_list as qtype','qtype.id = quarters.quarter_type_list_id','Left Outer');
+		$this->db->join('caste_type_list as caste','caste.id = quarters.caste_type_list_id','Left Outer');
 		$recordSet = $this->db->get('quarters');
 		$config['total_rows'] = 0;
 		$config['per_page'] = $searchDisplay;
@@ -80,7 +81,7 @@ class ModelQuarter extends CI_Model {
 
 		if($page > 0 && $page < $config['total_rows'] )
 			$start = $page;
-			$this->db->select('quarters.*,qtype.name as quarter_type');
+			$this->db->select('quarters.*,qtype.name as quarter_type,caste.name as caste_type');
 			if(isset($sessionDataArray['searchField'])){
 				$this->db->like($sessionDataArray['searchField'],$sessionDataArray['searchString'],'both');
 			}
@@ -89,6 +90,7 @@ class ModelQuarter extends CI_Model {
 		$this->db->group_by('quarters.id');
 		$this->db->limit($config['per_page'],$start);
 		$this->db->join('quarter_type_list as qtype','qtype.id = quarters.quarter_type_list_id','Left Outer');
+		$this->db->join('caste_type_list as caste','caste.id = quarters.caste_type_list_id','Left Outer');
 		$recordSet = $this->db->get('quarters');
 		//echo $this->db->last_query();
 		$rs = false;
@@ -180,6 +182,19 @@ class ModelQuarter extends CI_Model {
 		$this->db->select('*');
 		$this->db->where('is_active','1');
 		$this->db->from('quarter_type_list');
+		$query=$this->db->get();
+		if($query->num_rows() > 0){
+			$data = $query->result_array();
+			return $data;
+		}else{
+			return false;
+		}
+	}
+
+	function get_caste_type_list_data(){
+		$this->db->select('*');
+		$this->db->where('is_active','1');
+		$this->db->from('caste_type_list');
 		$query=$this->db->get();
 		if($query->num_rows() > 0){
 			$data = $query->result_array();

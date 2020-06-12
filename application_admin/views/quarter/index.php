@@ -14,6 +14,7 @@
                   <option value="">-Select-</option>
                   <option value="quarters.quarter_no" <?php if(isset($params['searchField']) && $params['searchField']=='quarters.quarter_no') echo 'selected';?>>Quarter No.</option>
                   <option value="qtype.name" <?php if(isset($params['searchField']) && $params['searchField']=='qtype.name') echo 'selected';?>>Quarter Type</option>
+                  <option value="caste.name" <?php if(isset($params['searchField']) && $params['searchField']=='caste.name') echo 'selected';?>>Caste Type</option>
                </select>
           </div>
           <div class="col-md-4 form-group">
@@ -42,6 +43,7 @@
               <th class="column-title">SL</th>
               <th class="column-title">Quarter No.</th>
               <th class="column-title">Quarter Type</th>
+              <th class="column-title">Caste Type</th>
               <th class="column-title">Full Address</th>
               <th class="column-title">Created</th>
               <th class="column-title">Status</th>
@@ -61,6 +63,7 @@
 			        <td class=" "><?php echo $i+$startRecord; ?></td>
 			        <td class=" "><?php echo $singleRecord['quarter_no']; ?></td>
               <td class=" "><?php echo $singleRecord['quarter_type']; ?></td>
+              <td class=" "><?php echo $singleRecord['caste_type']; ?></td>
               <td class=" "><?php echo $singleRecord['full_address']; ?></td>
               <td class=" "><?php echo date('m-d-Y',strtotime($singleRecord['created_date'])); ?></td>
               <td><a href="javascript:ChangeStatus('<?php echo $singleRecord['is_active']==1?$inacttivedLink:$activeLink;?>');"><button class="btn btn-<?php echo $singleRecord['is_active']=='1'?'info':'danger';?> btn-xs" type="button"><?php echo $singleRecord['is_active']==1?'Active':'InActive';?></button></a></td>
