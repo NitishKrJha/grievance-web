@@ -367,6 +367,128 @@ class Page extends CI_Controller {
         $this->layout->multiple_view($elements,$element_data);
     }
 
+    function employee_register(){
+        $data['controller'] = $this->controller;
+        $data['grade_list'] = $this->ModelCommon->getAllDatalist('grade_list',array('is_active'=>'1'));
+        $data['quarter_type_list'] = $this->ModelCommon->getAllDatalist('quarter_type_list',array('is_active'=>'1'));
+        $data['succmsg'] = $this->nsession->userdata('succmsg');
+        $data['errmsg'] = $this->nsession->userdata('errmsg');
+
+        $this->nsession->set_userdata('succmsg', "");
+        $this->nsession->set_userdata('errmsg', "");
+
+        $elements = array();
+        $elements['header'] = 'layout/header';
+        $element_data['header'] = $data;
+        $elements['main'] = 'page/employee_register';
+        $element_data['main'] = $data;
+        $elements['footer'] = 'layout/footer';
+        $element_data['footer'] = $data;
+        $this->layout->setLayout('layout_home');
+        $this->layout->multiple_view($elements,$element_data);
+	   
+    }
+
+    public function doEmployeeRegister(){
+        $response=array();
+        if(!$this->input->post('full_name')){
+            $data = array('status' => false, 'message' => 'Full Name is blank','data'=>array());
+            $this->response($data);
+        }else if(!$this->input->post('crn')){
+            $data = array('status' => false, 'message' => 'CRN is blank','data'=>array());
+            $this->response($data);
+        }else if(!$this->input->post('father_name')){
+            $data = array('status' => false, 'message' => 'Father Name is blank','data'=>array());
+            $this->response($data);
+        }else if(!$this->input->post('designation')){
+            $data = array('status' => false, 'message' => 'Designation is blank','data'=>array());
+            $this->response($data);
+        }else if(!$this->input->post('mobile_no')){
+            $data = array('status' => false, 'message' => 'Mobile No is blank','data'=>array());
+            $this->response($data);
+        }else if(!$this->input->post('bu_no')){
+            $data = array('status' => false, 'message' => 'BU No is blank','data'=>array());
+            $this->response($data);
+        }else if(!$this->input->post('date_of_joining')){
+            $data = array('status' => false, 'message' => 'Date Of Joining is blank','data'=>array());
+            $this->response($data);
+        }else if(!$this->input->post('date_of_eligibility')){
+            $data = array('status' => false, 'message' => 'Date of Eligibility is blank','data'=>array());
+            $this->response($data);
+        }else if(!$_FILES['file']['name']){
+			$data = array('status' => false, 'message' => 'Please upload a valid file','data'=>array());
+             $this->response($data);
+		}else{
+
+            $member_session_id=rand(6);
+			$file             = $_FILES['file']['name'];
+			$config['upload_path'] 	 = file_upload_absolute_path().'employee/identyCard/';
+			$config['allowed_types'] = 'jpg|pdf|doc|docx|png';
+			$config['file_name']     = md5(date('Y-m-d H:i:s')).md5($member_session_id);
+			$this->upload->initialize($config);
+			if(!$this->upload->do_upload('file')) {
+				$this->nsession->set_userdata('errmsg',$this->upload->display_errors());
+                $data = array('status' => false, 'message' => 'Please upload a valid file','data'=>array());
+                $this->response($data);
+			} else {
+				$upload_data = $this->upload->data();
+			}
+			if($upload_data['file_name']) {
+				$file_name = $upload_data['file_name'];
+				$file_type = $upload_data['file_type'];
+			}
+
+
+            $mobile_no=$this->input->post('mobile_no');
+            $user_data_by_mobile_no=$this->ModelCommon->getSingleData('employee_list',array('mobile_no'=>$mobile_no));
+            if(!empty($user_data_by_mobile_no)){
+                $data = array('status' => false, 'message' => 'Mobile No. is already exist','data'=>array());
+                $this->response($data);
+            }
+            $crn=$this->input->post('crn');
+            $user_data_by_crn=$this->ModelCommon->getSingleData('member',array('crn'=>$crn));
+            if(!empty($user_data_by_crn)){
+                $data = array('status' => false, 'message' => 'CRN is already exist','data'=>array());
+                $this->response($data);
+            }
+            if(empty($user_data_by_mobile_no)){
+                
+                $date=date('Y-m-d H:i:s');
+                $doj=date('Y-m-d',strtotime($this->input->post('date_of_joining')));
+                $doe=date('Y-m-d',strtotime($this->input->post('date_of_eligibility')));
+                $applied_for_st_sc=($this->input->post('applied_for_st_sc'))?$this->input->post('applied_for_st_sc'):'0';
+                $applied_for_fresh_changeover=($this->input->post('applied_for_fresh_changeover'))?$this->input->post('applied_for_fresh_changeover'):'0';
+                $insert_data=array(
+                    'full_name'=>$this->input->post('full_name'),
+                    'crn'=>($this->input->post('crn'))?$this->input->post('crn'):'',
+                    'father_name'=>($this->input->post('father_name'))?$this->input->post('father_name'):'',
+                    'designation'=>($this->input->post('designation'))?$this->input->post('designation'):'',
+                    'mobile_no'=>$this->input->post('mobile_no'),
+                    'bu_no'=>$this->input->post('bu_no'),
+                    'telephone_no'=>($this->input->post('telephone_no'))?$this->input->post('telephone_no'):'',
+                    'date_of_joining'=>$doj,
+                    'date_of_eligibility'=>$doe,
+                    'street_detail'=>$this->input->post('street_detail'),
+                    'quarter_type_id'=>$this->input->post('quarter_type_id'),
+                    'applied_for_fresh_changeover'=>$applied_for_fresh_changeover,
+                    'applied_for_st_sc'=>$applied_for_st_sc,
+                    'created_date'=>$date,
+                    'is_active'=>'1'
+                );
+                if(!empty($file_name)){
+                    $insert_data['identity_card']=$file_name;
+                }
+                $result=$this->ModelCommon->insertData('employee_list',$insert_data);
+                $user_data=$this->ModelCommon->getSingleData('employee_list',array('id'=>$result));
+                $data = array('status' => true, 'message' => 'Registration Successfully','data'=>$user_data);
+                $this->response($data);
+            }else{
+                $data = array('status' => false, 'message' => 'Mobile Number is already exist','data'=>array());
+                $this->response($data);
+            }
+        }
+    }
+
     function response($data){
         echo json_encode($data); die();
     }
